@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Luis Ouriach – Lineswritten on the internet</title>
+  <meta name="description" content="Designer, writer, coder, cook">
+  <meta name="author" content="Luis Ouriach">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Martel:400,900|Poppins:400,900" rel="stylesheet">
+    
+
+<style>
+    /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.serif {
+  font-family: 'Martel';
+}
+
+.sans-serif {
+  font-family: 'Poppins';
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+  background-color: #fff;
+  color: #3b4040;
+  font-family: 'Martel';
+  font-size: 22px;
+
+}
+
+a {
+    color: #3b4040;
+}
+
+/* Overlay */
+
+.overlay {
+  animation: fadeout 4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
+  background-color: #3b4040;
+}
+.copy {
+  align-items: baseline;
+  color: #fff;
+  display: flex;
+  font-weight: 700;
+  flex: 1;
+  font-size: 3rem;
+  justify-content: center;
+}
+.copy--text {
+  animation: fadeout 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
+  margin-left: auto;
+}
+.period {
+  animation: period 4s;
+  animation-delay: 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
+  border-radius: 100%;
+  margin-right: 2rem;
+  height: .5rem;
+  width: .5rem;
+}
+
+/* Gradient */
+.offset-gradient {
+  position: relative;
+}
+
+.profile-pic:after {
+  background: url(luis-ouriach.jpg) no-repeat 0 0;
+  background-size: contain;
+  content: "";
+  height: 80vh;
+  right: 10vw;
+  position: absolute;
+  top: 10vh;
+  width: 45vw;
+  z-index: -2;
+}
+
+@media all and (min-width: 60em) {
+    .profile-pic:after {
+        right: 5vw;
+        width: 45vw;
+    }
+}
+
+.offset-gradient:before {
+  background: linear-gradient(90deg, #fff 0%, #fff 20%, #CDECFF 20%, #96CCFF 90%, #fff 90%);
+  bottom: 0;
+  content: "";
+  left: -5vw;
+  mix-blend-mode: multiply;
+  position: absolute;
+  right: 0;
+  top: 15vh;
+  width: 80vw;
+  z-index: -1;
+}
+
+@media all and (min-width: 75em) {
+    .offset-gradient:before {
+        left: -10vw;
+    }
+}
+
+.gradient {
+    background: linear-gradient(90deg,#CDECFF 0%, #96CCFF 100%);
+}
+
+/* Animations */
+
+.animate-fadein-1{
+    animation: fadein 1s ease-out;
+}
+
+.animate-fadein-2 {
+    animation: fadein 1.5s ease-out;
+}
+
+.animate-fadein-3 {
+    animation: fadein 2s ease-out;
+}
+
+.animate-fadein-4 {
+    animation: fadein 2.5s ease-out;
+}
+
+@keyframes fadein {
+  from { 
+    opacity: 0; 
+  }
+  80% {
+    opacity: 0;
+  }
+  to   { 
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from { 
+    opacity: 1; 
+  }
+  980% {
+    opacity: 1;
+  }
+  to   { 
+    display: none; opacity: 0;
+  }
+}
+</style>
+
+</head>
+
+<body>
+    <div class="fixed pa3">
+        <a href="index.html" class="f4 b flex items-center no-underline dim"><img src="icon--arrow-left-circle.svg" class="mr2 h2"/>Back home</a>
+    </div>
+    <section class="offset-gradient pb3 pb7-ns pt7-ns flex items-center justify-start">
+        <div class="ph3 ph4-ns ph6-l">
+            <header class="ph4">
+                <h1 class="sans-serif mt4 mb6 mb5-ns f1 b flex items-baseline">Milk, No Sugar<div class="animate-fadein-3 bg-light-red period"></div></h1>
+            </header>
+            <div class="measure-narrow-ns lh-copy ph4-ns f5 f3-ns relative z-3">
+                <div class="w-90 br4 ba b--black mb3 mb5-ns nl7"></div>
+                <p class="mb4">my weekly newsletter, where I'm removing small talk, one piece of inspiration content at a time.</p>
+                <p class="f4">Here's an example.</p>
+            </div>
+            <div class="w-20 br4 ba b--black mb3 mb5-ns ml7 absolute right-0"></div>
+        </div>
+    </section>
+
+    <div class="h1 w-100 bg-black mb6"></div>
+
+    <section class="measure center mb6">
+
+        <div class="pa4 tc mb3">  
+            <img alt="Milk, No Sugar" src="https://gallery.mailchimp.com/8db6d814ab1369cedf0901158/images/81abfc64-618f-4da2-b635-8179aa459bee.png">
+        </div>
+
+        <div class="mb5">
+            <a href="https://www.instagram.com/p/BomxZp5lvvO/?taken-by=disco_lu" target="_blank" class="db mb3 dim">
+                <img alt="" src="https://gallery.mailchimp.com/8db6d814ab1369cedf0901158/images/4a9d76a1-b482-48c6-9af5-e0936cffb7e0.jpg"/ class="w-100">
+            </a>
+            <p class="f5 black-40 tr">Winchester Cathedral, Winchester</p>
+        </div>
+    
+    
+        <div class="lh-copy f4 mb5">
+            <p class="mb3">This week was a "welcome back to England" slap round the face, with the weather letting me know that winter is around the corner - flight back to Sydney anyone?</p>
+            <p class="mb3">I did actually have a pretty good week other than that, as a proposal of mine for a revamped website and app at work were signed off. I went through the typical cycles of 1) I've got an idea about where I want to take this 2) Oh my god, I'm a terrible designer, someone send help 3) Seriously, I'm going to get fired 4) This might actually work 5) Finished proposal.</p>
+            <p>It's a stressful cycle, but confidence in ourselves is something that we all struggle with in the office, and the only way to get better is through practice. Secondly, asking for feedback along the way is sometimes the best way to validate your ideas. If you're unsure about the direction of something, just ask your neighbour. They might not like where you're going, but talking through your ideas will make you more sure about where you want to take things.</p>
+        </div>
+
+        <hr class="mb5"/>
+
+        <article class="mb5">
+            <a href="https://www.nytimes.com/2018/09/29/opinion/sunday/in-praise-of-mediocrity.html" class="db mb3">
+                <img src="https://gallery.mailchimp.com/8db6d814ab1369cedf0901158/images/1b3745f8-638e-4e92-a09f-7228689f4df9.jpg" class="w-100">
+            </a>
+            <div class="flex sans-serif mb3">
+                <h3 class="b mr2">In Praise of Mediocrity</h3><span style="color:#A9A9A9">~ Personal</span><br>
+            </div>
+            <p class="lh-copy f4 mb4">
+                I feel like a bit of a broken record on this topic, but it's no harm given the content is quality. Do you have hobbies? Are you competitive with them? This article is an interesting one, in that it discusses our inability to have a hobby just for the fun of it. When was the last time you went for a run and weren't trying to beat your PB? Can it we not just <em>enjoy</em> things? It's not all about being the best, but taking ourselves away from the desk and trying something new, without expectations.
+            </p>
+            <div class="f5">
+                <a href="https://www.nytimes.com/2018/09/29/opinion/sunday/in-praise-of-mediocrity.html" target="_blank" class="dim">Read</a> ~ <a href="https://getpocket.com/edit?url=https://www.nytimes.com/2018/09/29/opinion/sunday/in-praise-of-mediocrity.html" target="_blank" class="dim">Save to Pocket</a>
+            </div>
+        </article>
+                    
+        <hr class="mb5"/>
+
+        <article class="mb5">
+            <a href="https://pjrvs.com/knownperson/" class="db mb3">
+                <img src="https://gallery.mailchimp.com/8db6d814ab1369cedf0901158/images/13831d9a-4c76-4d6e-a1e9-648a194a214e.jpg" class="w-100">
+            </a>
+            <div class="flex sans-serif mb3">
+                <h3 class="b mr2">The drawbacks of being well known</h3><span style="color:#A9A9A9">~ Tech</span><br>
+            </div>
+            <p class="lh-copy f4 mb4">
+                I've touched on our obsession to become well known in our industries before, but this article is a very open piece from a well known blogger, about what it's like to be a 'known person'. When you hit publish on something, you're in effect known whether you like it or not, and we should perhaps think about the repercussion that our opinions have on others. Question is, should we stick to our lanes, or engage in conversations about topics that don't necessarily relate to our industry?
+            </p>
+            <div class="f5">
+                <a href="https://pjrvs.com/knownperson/" target="_blank" class="dim">Read</a> ~ <a href="https://getpocket.com/edit?url=https://pjrvs.com/knownperson/" target="_blank" class="dim">Save to Pocket</a>
+            </div>
+        </article>  
+        
+        <hr class="mb5"/>
+
+        <article class="mb5">
+            <a href="https://oneroomwithaview.com/2018/10/04/lost-in-translation-lonely-city/" class="db mb3">
+                <img src="https://gallery.mailchimp.com/8db6d814ab1369cedf0901158/images/fdfef058-0356-4e6a-8caf-8602d159b0c2.jpg" class="w-100">
+            </a>
+            <div class="flex sans-serif mb3">
+                <h3 class="b mr2">Lost in Translation and the lonely city</h3><span style="color:#A9A9A9">~ Film</span><br>
+            </div>
+            <p class="lh-copy f4 mb4">
+                One of my favourite movies, Lost in Translation is a wonderful dreamlike exploration into the lives of those in a fast paced city trying to keep up. Did you know that Scarlett Johansson was 17 in it? Me neither. This article is a great insight into the mind of director Sofia Coppola and her approach to making the movie, including the fact that the script was written with Bill Murray in mind, and if he said no they would not have gone ahead with it. Have a read, then stick the movie on.
+            </p>
+            <div class="f5">
+                <a href="https://oneroomwithaview.com/2018/10/04/lost-in-translation-lonely-city/" target="_blank" class="dim">Read</a> ~ <a href="https://getpocket.com/edit?url=https://oneroomwithaview.com/2018/10/04/lost-in-translation-lonely-city/" target="_blank" class="dim">Save to Pocket</a>
+            </div>
+        </article>  
+        
+        <hr class="mb5"/>
+
+        <article class="mb5">
+            <a href="https://www.nytimes.com/interactive/2018/10/03/magazine/morality-social-justice-art-entertainment.html" class="db mb3">
+                <img src="https://gallery.mailchimp.com/8db6d814ab1369cedf0901158/images/c90cef45-b3ca-4280-90ad-1477f6c24476.png" class="w-100">
+            </a>
+            <div class="flex sans-serif mb3">
+                <h3 class="b mr2">Should art be a battleground for social justice?</h3><span style="color:#A9A9A9">~ Society</span><br>
+            </div>
+            <p class="lh-copy f4 mb4">
+                This is a good one. When was the last time you hung out with friends and it didn't and the conversation didn't take a controversial turn? Trump, Brexit, immigration, TV shows, is it possible to us to talk about anything without it becoming an intellectual competition or a debate of our morals? I'm not sure. The NYTimes have taken a critical look at this bizarre situation we find ourselves in, and have unsurprisingly knocked it out of the park. Enjoy.
+            </p>
+            <div class="f5">
+                <a href="https://www.nytimes.com/interactive/2018/10/03/magazine/morality-social-justice-art-entertainment.html" target="_blank" class="dim">Read</a> ~ <a href="https://getpocket.com/edit?url=https://www.nytimes.com/interactive/2018/10/03/magazine/morality-social-justice-art-entertainment.html" target="_blank" class="dim">Save to Pocket</a>
+            </div>
+        </article>    
+
+        <hr class="mb5"/>
+        
+        <article>
+            <div class="mb4 sans-serif b">    
+                <h3>Podcasts I'm listening to</h3>
+            </div>
+            <div class="flex-ns justify-between">
+                <div class="mb3-s">
+                    <img alt="" src="https://gallery.mailchimp.com/8db6d814ab1369cedf0901158/images/c25914c1-207a-4b40-8f38-4c4890e9d70f.png">
+                </div>
+                <div>
+                    <p class="lh-copy f5 pl4-ns">
+                        My brother launched his own podcast this week (yes, I know I'm supposed to have launched one too, but he beat me to it), where he dives into the highs and lows of startup culture, specifically in Manchester and the north of England. It's called <a href="https://www.acast.com/what-am-i-doing" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #2BAADF;font-weight: normal;text-decoration: underline;">What Am I Doing?</a> and is available on Acast.
+                    </p>
+                </div>
+            </div>
+        </article>        
+
+    </section>
+
+    <div class="h1 w-100 bg-black"></div>
+
+    <div class="vh-25 bg-white"></div>
+
+    <section class="tc mb4" id="testimonials"> 
+        <p class="sans-serif f4 b">cheers.</p>
+    </section>      
+
+    <footer>
+            <ul class="f3 flex flex-wrap flex-column items-center justify-center">
+                <li class="h4 bg-black mb1 mb3-ns" style="width: 2px"></li>    
+                <li>
+                    <a href="https:/twitter.com/disco_lu" class="b db no-underline">
+                        <img src="icon--twitter.svg" alt="" class="h2 w2 dim" />
+                    </a>      
+                </li>         
+                <li class="mb1 mb3-ns mt1 mt3-ns">
+                    <a href="https://medium.com/@disco_lu" class="b db no-underline">
+                    <img src="icon--medium.svg" alt="" class="h2 w2 dim" />
+                    </a>
+                </li>         
+                <li>
+                    <a href="https:/instagram.com/disco_lu" class="b db no-underline">
+                        <img src="icon--instagram.svg" alt="" class="h2 w2 dim" />
+                    </a>
+                </li>        
+            </ul>
+        </footer>     
+        
+        <div class="vh-25 bg-white"></div>    
+</body>
+</html>
