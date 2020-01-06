@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Luis Ouriach – Creative type</title>
+
+  <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/louriach/lineswritten/master/favicon.jpg"/>
+
+  <meta name="description" content="Communicating ideas through visual design, words, and debate.">
+  <meta name="author" content="Luis Ouriach">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="Luis Ouriach - Designer, writer, creative" />
+    <meta property="og:description" content="Communicating ideas through visual design, words, and debate.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/louriach/lineswritten/master/lineswritten-share-og.jpg">
+    <meta property="og:url" content="https://lineswritten.co.uk/">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <meta property="og:site_name" content="Luis Ouriach - Designer, writer, creative">
+    <meta name="twitter:image:alt" content="Communicating ideas through visual design, words, and debate.">
+    
+    <meta name="twitter:site" content="@disco_lu">
+
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Martel:400,900|Poppins:400,900" rel="stylesheet">
+    
+
+<style>
+    /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+
+.serif {
+  font-family: 'Martel';
+}
+
+.sans-serif {
+  font-family: 'Poppins';
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+  background-color: #fff;
+  color: #3b4040;
+  font-family: 'Martel';
+  font-size: 22px;
+
+}
+
+a {
+    color: #3b4040;
+}
+
+/* Overlay */
+
+.overlay {
+  animation: fadeout 4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
+  background-color: #3b4040;
+}
+.copy {
+  align-items: baseline;
+  color: #fff;
+  display: flex;
+  font-weight: 700;
+  flex: 1;
+  font-size: 3rem;
+  justify-content: center;
+}
+.copy--text {
+  animation: fadeout 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
+  margin-left: auto;
+}
+.period {
+  animation: period 4s;
+  animation-delay: 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
+  border-radius: 100%;
+  margin-right: 2rem;
+  height: .5rem;
+  width: .5rem;
+}
+
+/* Gradient */
+.offset-gradient {
+  position: relative;
+}
+
+.profile-pic:after {
+  background: url(luis-ouriach.jpg) no-repeat 0 0;
+  background-size: contain;
+  content: "";
+  height: 80vh;
+  right: 10vw;
+  position: absolute;
+  top: 10vh;
+  width: 45vw;
+  z-index: -2;
+}
+
+@media all and (min-width: 60em) {
+    .profile-pic:after {
+        right: 5vw;
+        width: 45vw;
+    }
+}
+
+.offset-gradient:before {
+  background: linear-gradient(90deg, #fff 0%, #fff 20%, #CDECFF 20%, #96CCFF 90%, #fff 90%);
+  bottom: 0;
+  content: "";
+  left: -5vw;
+  mix-blend-mode: multiply;
+  position: absolute;
+  right: 0;
+  top: 15vh;
+  width: 80vw;
+  z-index: -1;
+}
+
+@media all and (min-width: 75em) {
+    .offset-gradient:before {
+        left: -10vw;
+    }
+}
+
+.gradient {
+    background: linear-gradient(90deg,#CDECFF 0%, #96CCFF 100%);
+}
+
+/* Animations */
+
+.animate-fadein-1{
+    animation: fadein 1s ease-out;
+}
+
+.animate-fadein-2 {
+    animation: fadein 1.5s ease-out;
+}
+
+.animate-fadein-3 {
+    animation: fadein 2s ease-out;
+}
+
+.animate-fadein-4 {
+    animation: fadein 2.5s ease-out;
+}
+
+@keyframes fadein {
+  from { 
+    opacity: 0; 
+  }
+  80% {
+    opacity: 0;
+  }
+  to   { 
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from { 
+    opacity: 1; 
+  }
+  980% {
+    opacity: 1;
+  }
+  to   { 
+    display: none; opacity: 0;
+  }
+}
+</style>
+
+</head>
+
+<body>
+    
+    <iframe style="border: none;" width="100%" height="100%" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FXIqE7D0yxPHZlTm4brtZXP%2FLuis-Ouriach-November-2019%3Fnode-id%3D1%253A2%26viewport%3D166%252C-1814%252C0.17646868526935577%26scaling%3Dmin-zoom" allowfullscreen></iframe>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-18764357-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-18764357-1');
+    </script>
+
+
+</body>
