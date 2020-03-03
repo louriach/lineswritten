@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Luis Ouriach – Creative type</title>
+
+  <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/louriach/lineswritten/master/favicon.jpg"/>
+
+  <meta name="description" content="Communicating ideas through visual design, words, and debate.">
+  <meta name="author" content="Luis Ouriach">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="Luis Ouriach - Designer, writer, creative" />
+    <meta property="og:description" content="Communicating ideas through visual design, words, and debate.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/louriach/lineswritten/master/lineswritten-share-og.jpg">
+    <meta property="og:url" content="https://lineswritten.co.uk/">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <meta property="og:site_name" content="Luis Ouriach - Designer, writer, creative">
+    <meta name="twitter:image:alt" content="Communicating ideas through visual design, words, and debate.">
+    
+    <meta name="twitter:site" content="@disco_lu">
+
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Martel:400,900|Poppins:400,900" rel="stylesheet">
+    
+
+<style>
+    /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+
+.serif {
+  font-family: 'Martel';
+}
+
+.sans-serif {
+  font-family: 'Poppins';
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+  background-color: #fff;
+  color: #3b4040;
+  font-family: 'Martel';
+  font-size: 22px;
+
+}
+
+a {
+    color: #3b4040;
+}
+
+/* Overlay */
+
+.overlay {
+  animation: fadeout 4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
+  background-color: #3b4040;
+}
+.copy {
+  align-items: baseline;
+  color: #fff;
+  display: flex;
+  font-weight: 700;
+  flex: 1;
+  font-size: 3rem;
+  justify-content: center;
+}
+.copy--text {
+  animation: fadeout 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
+  margin-left: auto;
+}
+.period {
+  animation: period 4s;
+  animation-delay: 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
+  border-radius: 100%;
+  margin-right: 2rem;
+  height: .5rem;
+  width: .5rem;
+}
+
+/* Gradient */
+.offset-gradient {
+  position: relative;
+}
+
+.profile-pic:after {
+  background: url(luis-ouriach.jpg) no-repeat 0 0;
+  background-size: contain;
+  content: "";
+  height: 80vh;
+  right: 10vw;
+  position: absolute;
+  top: 10vh;
+  width: 45vw;
+  z-index: -2;
+}
+
+@media all and (min-width: 60em) {
+    .profile-pic:after {
+        right: 5vw;
+        width: 45vw;
+    }
+}
+
+.offset-gradient:before {
+  background: linear-gradient(90deg, #fff 0%, #fff 20%, #CDECFF 20%, #96CCFF 90%, #fff 90%);
+  bottom: 0;
+  content: "";
+  left: -5vw;
+  mix-blend-mode: multiply;
+  position: absolute;
+  right: 0;
+  top: 15vh;
+  width: 80vw;
+  z-index: -1;
+}
+
+@media all and (min-width: 75em) {
+    .offset-gradient:before {
+        left: -10vw;
+    }
+}
+
+.gradient {
+    background: linear-gradient(90deg,#CDECFF 0%, #96CCFF 100%);
+}
+
+/* Animations */
+
+.animate-fadein-1{
+    animation: fadein 1s ease-out;
+}
+
+.animate-fadein-2 {
+    animation: fadein 1.5s ease-out;
+}
+
+.animate-fadein-3 {
+    animation: fadein 2s ease-out;
+}
+
+.animate-fadein-4 {
+    animation: fadein 2.5s ease-out;
+}
+
+@keyframes fadein {
+  from { 
+    opacity: 0; 
+  }
+  80% {
+    opacity: 0;
+  }
+  to   { 
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from { 
+    opacity: 1; 
+  }
+  980% {
+    opacity: 1;
+  }
+  to   { 
+    display: none; opacity: 0;
+  }
+}
+</style>
+
+</head>
+
+<body>
+    
+    <!-- <iframe style="border: none;" width="100%" height="100%"  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FXIqE7D0yxPHZlTm4brtZXP%2FLuis-Ouriach-November-2019%3Fnode-id%3D1%253A2%26viewport%3D221%252C-1444%252C0.17646868526935577%26scaling%3Dscale-down-width" allowfullscreen></iframe> -->
+
+    <div class="[ fixed z-1 ] pa3">
+        <a href="index.html" class="f4 b [ flex items-center ] no-underline dim"><img src="icon--arrow-left-circle.svg" class="mr2 h2"/>Back home</a>
+    </div>
+    <section class="offset-gradient [ pb5 pb7-ns pt7-ns ] [ flex items-center justify-start ]">
+        <div class="[ ph4 ph6-l ]">
+            <header class="[ ph2 ph4-ns ]">
+                <h1 class="sans-serif [ mt6 mt0-ns mb6 mb5-ns ] f1 b [ flex-ns items-baseline ]">Designer<div class="animate-fadein-3 bg-light-red period [ dib db-m ]"></div></h1>
+            </header>
+            <div class="measure lh-copy ph4-ns [ f5 f3-ns ] [ relative z-3 ]">
+                <div class="w-90 [ br4 ba b--black ] [ mb3 mb5-ns ] nl7"></div>
+                <p class="mb3">Find below some examples of my approach, learned over 8 years working as a creative in 🇬🇧 London and 🇦🇺 Sydney.</p>
+                <p>I've cherry&ndash;picked work from my current employment at <a href="https://www.upgradepack.com" target="_blank">Upgrade Pack</a> and previously at <a href="https://localmeasure.com" target="_blank">Local Measure</a>.
+            </div>
+            <div class="w-20 [ br4 ba b--black ] [ mb5 ml7 ] [ absolute right-0 ]"></div>
+        </div>
+    </section>
+
+
+    <div class="h1 w-100 bg-black"></div>    
+
+    <section class="bg-washed-red pa2 pv4 pa6-ns sans-serif tc mb4 mb6-ns">
+        <p class="f4 f2-ns lh-copy wide-measure center">A <strong class="b">systems oriented</strong>, fast thinking <strong class="b">problem solver</strong> who will <strong class="b">ask questions</strong>, encourage frequent <strong class="b">knowledge sharing</strong> and drive a <strong class="b"> witty, thoughtful</strong> approach to product design.</p>
+    </section>    
+
+    <section class="sans-serif mb5 mw7 center lh-copy">
+        <div class="mw8 center ph4 pa-0-m">
+            <h2 class="f2 b mb5 serif">To the work.</h2>
+            <div class="flex items-center mb5">
+                <img src="https://uploads-ssl.webflow.com/5bd6efd8228022c72f260855/5d970da16f21d767f2d1de7c_UP-Master-NavyBlue-p-500.png" alt="Upgrade Pack" class="w4 mr4"/>
+                <div>
+                    <h3 class="f3 b">Lead Designer</h3>
+                    <p class="f4">September ‘18 - Present</p>
+                    <p class="f6 dim"><a href="https://www.upgradepack.com" target="_blank">Upgradepack.com</a></p>
+                </div>                
+            </div>
+            <div>
+                <h3 class="f4 b mb3">What is it?</h3>
+                <p>
+                    A first-to-market flight and hotel upgrade app for premium banking customers or Mass Affluent employees of the world’s biggest companies. 
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sans-serif mw9 center mb4 mb6-ns">
+        <div class="mw8 center">
+            <div class="mb1">
+                <video src="upgradepack-20-seconds.mp4" controls style="width: 100%;"></video>
+            </div>
+            <p class="f6 black-40 tc">A 20 second snapshot of our product</p>    
+        </div>
+    </section>
+
+    <section class="sans-serif mb4 mb6-ns mw7 center lh-copy">
+        <div class="mw8 center ph4 pa-0-m">
+            <div class="mb4">
+                <h3 class="f4 b mb3">Milestones</h3>
+                <ul class="list">
+                    <li><strong class="red mr1 b">–</strong>£5m private investment &mdash; <a href="https://www.cityam.com/fintech-startup-upgrade-pack-raises-5m-seed-round-for-travel-rewards/" target="_blank">Press coverage    </a></li>
+                    <li><strong class="red mr1 b">–</strong>Joined as 6th employee, global team now ±30</li>
+                    <li><strong class="red mr1 b">–</strong>Directly manage Junior UI designer</li>
+                    <li><strong class="red mr1 b">–</strong>Key in hiring of 2 UX designers, 4 engineers, 2 Product Managers, Marketing Executive</li>
+                </ul>
+            </div> 
+        </div>
+    </section>
+
+    <img src="portfolio-upgrade-pack-devices-planometric.jpg" alt="" class="mb4 mb6-ns"/>
+
+    <section class="sans-serif mb3 mb5-ns mw7 center lh-copy">
+        <div class="mw8 center ph4 pa-0-m">
+            <p class="mb3">The below key areas demonstrate my main responsibilities at Upgrade Pack:</p>
+            <ol class="mb5 list pl0">
+                <li><strong class="b">1.</strong> Systems thinking</li>
+                <li><strong class="b">2.</strong> Management responsibilities</li>
+                <li><strong class="b">3.</strong> Leading <abbr title="user interface">UI</abbr> design</li>
+            </ol>
+            <h4 class="pa2 pl3 pr3 ttu bg-washed-red dib b mb3">1. Systems thinking</h4>
+            <h3 class="f2 b mb3 serif mb3">Driving Dolly, our design system</h3>
+            <p class="mb3">An early project at Upgrade Pack was something that I initially brought up in my interview with the team. The idea was centred around a design system to drive our design and engineering efforts.</p>
+            <p class="mb5">Given my technical background, I was fully aware that in order for us to employ a rapid and efficient approach to product development, we needed a component-first mindset from design through product and finally tech.</p>
+            <h3 class="f4 b mb3">Key milestones</h3>
+            <ul class="list mb5">
+                <li><strong class="red mr1 b">–</strong>Budgeting, pitching and delivering system/s used by ~10 colleagues</li>
+                <li><strong class="red mr1 b">–</strong>Establishing an extensive Atomic series of libraries and guidelines</li>
+                <li><strong class="red mr1 b">–</strong>Onboarding product, design and tech teams with workshops</li>
+                <li><strong class="red mr1 b">–</strong>Wholesale tool migration and consolidation to Figma</li>
+            </ul>
+            <div class="pl4 bl bw2 b--washed-red">
+                <p class="mb5">Why call it <em class="i">Dolly</em>? Given we're in the travel business, and you can obtain everything you want on a flight from the 'Dolly trolley', I felt the name would be perfect for a holistic system.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sans-serif mw9 center mb5">
+        <div class="mw8 center ph4 pa-0-m">
+            <img src="https://pbs.twimg.com/media/EFdgjpuU0AEgtVv?format=jpg&name=4096x4096" alt="" class="pa1 mb1 ba bw2 b--washed-red br3" />
+            <p class="f6 black-40 tc">During a brand update knowledge sharing session</p>    
+        </div>
+    </section>
+
+    <section class="sans-serif mb6 mw7 center lh-copy">
+        <div class="mw8 center ph4 pa-0-m">
+            <div class="pa2 ba bw2 b--washed-red light-red f5">
+                <p>I'm currently in the process of writing up an extensive guide to our Sketch to Figma migration. The draft is <a href="https://paper.dropbox.com/doc/Switching-from-Sketch-to-Figma--At7fnB6oZ_dIS5npx50j5XAtAQ-niPsOTohcD7h1FJXnd61r" target="_blank">stored here</a>, should you be interested.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sans-serif mb5 mw7 center lh-copy">
+        <div class="mw8 center ph4 pa-0-m">
+            <h4 class="pa2 pl3 pr3 ttu bg-washed-red dib b mb3">2. Management responsibilities</h4>
+            <h3 class="f2 b mb3 serif mb3">A framework for position progression</h3>
+            <p>As our team started to grow and we were faced with questions of responsibility and growth, I decided to approach the problem in a systematic way.</p>
+        </div>
+    </section>
+
+    <section class="sans-serif mw9 center mb5">
+        <div class="mw8 center ph4 pa-0-m">
+            <img src="career-matrix-anonymous.jpg" alt="" class="pa1 mb1 ba bw2 b--washed-red br3 w-100" />
+            <p class="f6 black-40 tc">Names in the first table have been anonymised</p>
+        </div>
+    </section>    
+
+    <section class="sans-serif mb5 mw7 center lh-copy">
+        <div class="mw8 center ph4 pa-0-m">
+            <p class="mb3">By removing emotional hunches, we could analyse the team's skill level pragmatically and work out what loose skills we could all be working on to reach the next steps in our careers.</p>
+            <p>I created this system, the criteria, and the placement of our team members on the grid and will work alongside the VP of Product to work with our team on tracking these skills over time.</p>
+        </div>
+    </section>
+    
+
+    <section class="sans-serif mb5 mw7 center lh-copy">
+        <div class="mw8 center ph4 pa-0-m">
+            <h4 class="pa2 pl3 pr3 ttu bg-washed-red dib b mb3">3. Leading <abbr title="user interface">UI</abbr> design</h4>
+            <h3 class="f2 b mb3 serif mb3">Making the flight search journey faster with past searches</h3>
+            <p class="mb3">Our <abbr title="user experience">UX</abbr> designer held user testing sessions with a sample of our beta user group and discovered that the users found the repetition of adding in their booking reference and selecting an airline tedious.</p>
+            <p class="mb5">As a product team, we saw this an an opportunity to investigate a quicker search method, leading us to the idea that perhaps a past search route would satisfy.</p>
+            <h3 class="f4 b mb3">Key enhancements</h3>
+            <ul class="list mb5">
+                <li><strong class="red mr1 b">–</strong>Break down the search flow into <em class="i">new</em> and <em class="i">past searches</em></li>
+                <li><strong class="red mr1 b">–</strong>Provide a snapshot of the previously made search</li>
+                <li><strong class="red mr1 b">–</strong>Route user directly to existing booking <abbr title="application programming interface">API</abbr> call retrieval screen</li>
+                <li><strong class="red mr1 b">–</strong>Option to delete past searches</li>
+            </ul>
+            <div class="tc mb5">
+                <img src="past-search-animation.gif" alt="" style="max-width: 300px;"/>
+            </div>
+            <div class="pl4 bl bw2 b--washed-red">
+                <h3 class="f4 b mb3">Challenges?</h3>
+                <p class="mb3">Our engineering team hadn't been tested with React Native animation before, and the swipe to delete action was certainly an eyebrow raiser.</p>
+                <p class="mb3">It took a while, but I worked alongside one of our engineers to bring the feature to life, and we ended up with a version almost exactly as briefed.</p>                
+                <p class="mb5">Sometimes, pushing your team within a positive and collaborative environment can turn an unpredictable idea into an interactive (and new!) product that takes user experience to another level.</p>                
+            </div>
+        </div>
+    </section>
+
+    <section class="sans-serif mb5 mw7 center lh-copy">
+        <div class="mw8 center ph4 pa-0-m">
+            <div class="h1 w-100 bg-black-10 mb5"></div>
+            <div class="flex items-center mb5">
+                <img src="https://3rxg9qea18zhtl6s2u8jammft-wpengine.netdna-ssl.com/wp-content/uploads/2016/09/local_measure_final_high_logo.png" alt="Local Measure" class="w5 mr4"/>
+                <div>
+                    <h3 class="f3 b">Product Designer</h3>
+                    <p>March ‘17 - September '18</p>
+                    <p class="f6 dim"><a href="https://www.localmeasure.com" target="_blank">localmeasure.com</a></p>
+                </div>                
+            </div>
+            <div>
+                <h3 class="f4 b mb3">What is it?</h3>
+                <p class="mb5">
+                    The leading <abbr title="customer experience">CX</abbr> platform for physical spaces, building social media and customer satisfaction tools for hotels, stadia and events companies across the globe.
+                </p>
+            </div>
+            <h4 class="pa2 pl3 pr3 ttu bg-washed-red dib b mb3">Local Measure Pulse</h4>
+            <h3 class="f2 b mb4 serif mb3">A during&ndash;stay customer satisfaction tool</h3>
+            <p class="mb3">Spotting a gap in the market, the Local Measure <abbr title="Chief Executive Officer">CEO</abbr> briefed the product team to investigate the possiblity of a during&ndash;stay customer satisfaction tool.</p>
+            <p class="mb3">Local Measure had already built a partnership with Cisco to build on premise WiFi solutions for hotels and stadia, and we realised that we could build a tool that'd close the circle on how a customer arrives, interacts with, and ultimately reviews a business whilst they visit the property or venue.</p>            
+            <p class="mb5">If we could positively impact a business' <abbr title="Net Promoter Score">NPS</abbr> score or TripAdvisor review, we were staring into a very profitable revenue stream for Local Measure.</p>                        
+            <div class="tc mb5">
+                <img src="local-measure-pulse-animation.gif" alt="" style="max-width: 300px;"/>
+            </div>
+            <img src="luis-ouriach-project-pulse2.jpg" alt="" class="pa1 mb3 ba bw2 b--washed-red br3 w-100" />
+            <img src="luis-ouriach-project-pulse3.jpg" alt="" class="pa1 mb3 ba bw2 b--washed-red br3 w-100" />
+            <img src="luis-ouriach-project-pulse4.jpg" alt="" class="pa1 mb3 ba bw2 b--washed-red br3 w-100" />            
+            <img src="luis-ouriach-project-pulse5.jpg" alt="" class="pa1 mb3 ba bw2 b--washed-red br3 w-100" />
+            <img src="luis-ouriach-project-pulse6.jpg" alt="" class="pa1 mb3 ba bw2 b--washed-red br3 w-100" />
+            <img src="luis-ouriach-project-pulse7.jpg" alt="" class="pa1 mb3 ba bw2 b--washed-red br3 w-100" />
+            <img src="luis-ouriach-project-pulse8.jpg" alt="" class="pa1 mb3 ba bw2 b--washed-red br3 w-100" />
+            <img src="luis-ouriach-project-pulse9.jpg" alt="" class="pa1 mb3 ba bw2 b--washed-red br3 w-100" />
+            <img src="luis-ouriach-project-pulse10.jpg" alt="" class="pa1 mb3 ba bw2 b--washed-red br3 w-100" />
+            <img src="luis-ouriach-project-pulse11.jpg" alt="" class="pa1 mb3 ba bw2 b--washed-red br3 w-100" />
+            <img src="luis-ouriach-project-pulse12.jpg" alt="" class="pa1 mb3 ba bw2 b--washed-red br3 w-100" />
+            <img src="luis-ouriach-project-pulse13.jpg" alt="" class="pa1 mb3 ba bw2 b--washed-red br3 w-100" />
+            <img src="luis-ouriach-project-pulse14.jpg" alt="" class="pa1 mb3 ba bw2 b--washed-red br3 w-100" />
+            <img src="luis-ouriach-project-pulse15.jpg" alt="" class="pa1 mb3 ba bw2 b--washed-red br3 w-100" />                
+        </div>
+    </section>  
+
+    <section class="tc mb4"> 
+        <p class="sans-serif f4 b">cheers.</p>
+    </section>  
+
+    <footer class="mb5">
+        <ul class="list f3 [ flex flex-wrap flex-column items-center justify-center ]">
+            <li class="h4 bg-black mb1 mb3-ns" style="width: 2px"></li>    
+            <li>
+                <a href="https://twitter.com/disco_lu" class="b db no-underline">
+                    <img src="icon--twitter.svg" alt="" class="h2 w2 dim" />
+                </a>      
+            </li>         
+            <li class="[ mb1 mb3-ns mt1 mt3-ns ]">
+                <a href="https://medium.com/@disco_lu" class="b db no-underline">
+                <img src="icon--medium.svg" alt="" class="h2 w2 dim" />
+                </a>
+            </li>         
+            <li>
+                <a href="https://instagram.com/disco_lu" class="b db no-underline">
+                    <img src="icon--instagram.svg" alt="" class="h2 w2 dim" />
+                </a>
+            </li>        
+        </ul>
+    </footer>   
+
+    <div class="h1 w-100 bg-black"></div> 
+
+    <section class="sans-serif mb5 mw7 center lh-copy">
+        <div class="mw8 center ph4 pa-0-m">
+            <h4 class="pa2 pl3 pr3 ttu bg-washed-red dib b mb3">p.s.</h4>
+            <h3 class="f2 b mb4 serif mb3 mb5-ns">I do other things</h3>
+            <div class="flex-ns items-center mb5">
+                <div class="w-60-ns mb3 mb0-ns">
+                    <h3 class="f3 b mb3">Noise podcast</h3>
+                    <p class="mb3">Collaborating with a co&ndash;host in Los Angeles, <a href="https://anchor.fm/thenoisepod">Noise</a> was launched in April 2019.</p>
+                    <p class="mb3">We interview creatives from across the globe to try and understand their journeys and what makes them tick.</p>                
+                    <p>We're currently recording season 2, aiming for release in March 2020.</p>      
+                </div> 
+                <div class="w-40-ns ml2-ns">
+                    <img src="anchor-noise-podcast.jpg" alt=""/>
+                </div>
+            </div>
+
+            <img src="8px.jpg" alt="" class="pa1 mb3 ba bw2 b--washed-red br3 w-100" />
+
+            <div class="mb5">
+                <h3 class="f3 b mb3">8px Magazine</h3>
+                <p class="mb3">A <a href="https://medium.com/8px-magazine">Medium publication</a> with the aim of creating a space where designers can write about things other than design; we're human too.</p>
+                <p class="mb3">As well as publishing articles from other designers, I run a bi&ndash;monthly interview series with creatives.</p>                
+                <p>8px was launched in December 2017, currently listing 96 stories and has clocked in nearly 3,500 views.</p>      
+            </div>
+                     
+            <div class="flex-ns items-center mb5">
+                <div class="w-60-ns mb3 mb0-ns">
+                    <h3 class="f3 b mb3">Milk, No Sugar &mdash; a newsletter</h3>
+                    <p class="mb3">I'm on a mission to help people remove small talk from conversations, one newsletter at a time.</p>
+                    <p class="mb3">Every Sunday, I muse on a topic, send out a trio of curious links and a podcast to listen to.</p>                
+                    <p><a href="https://www.lineswritten.co.uk/newsletter" target="blank">Milk, No Sugar</a> was launched in January 2016 and is currently being received by 818 subscribers, we're on issue #213.</p>      
+                </div> 
+                <div class="w-40-ns ml2-ns">
+                    <img src="milk-no-sugar.jpg" alt="" class="pa1 mb3 ba bw2 b--washed-red br3 w-100" />
+                </div>
+            </div>
+                                
+        </div>
+    </section>  
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-18764357-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-18764357-1');
+    </script>
+
+
+</body>
