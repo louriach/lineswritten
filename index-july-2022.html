@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Luis Ouriach – Creative type</title>
+
+  <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/louriach/lineswritten/master/favicon.jpg"/>
+
+  <meta name="description" content="Communicating ideas through visual design, words, and debate.">
+  <meta name="author" content="Luis Ouriach">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="Luis Ouriach - Designer, writer, creative" />
+    <meta property="og:description" content="Communicating ideas through visual design, words, and debate.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/louriach/lineswritten/master/lineswritten-share-og.jpg">
+    <meta property="og:url" content="https://lineswritten.co.uk/">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <meta property="og:site_name" content="Luis Ouriach - Designer, writer, creative">
+    <meta name="twitter:image:alt" content="Communicating ideas through visual design, words, and debate.">
+    
+    <meta name="twitter:site" content="@disco_lu">
+
+    <link href="https://fonts.googleapis.com/css?family=Martel:400,900|Poppins:400,900" rel="stylesheet">
+
+<style>
+    /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+
+.serif {
+  font-family: 'Martel';
+}
+
+.sans-serif {
+  font-family: 'Poppins';
+}
+
+body, html {
+    background-color: #0F002E;
+    background: linear-gradient(129.38deg, #0F002E 0%, #220066 100%);      
+    height: 100%;
+    width: 100%;
+}
+
+body {
+  color: #3b4040;
+  font-family: 'Prata', Serif;
+  font-size: 22px;
+  padding: 120px 0;
+}
+
+a {
+    color: #FFCCFD;
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 50%;
+}
+
+.card {
+    background-color: #0F002E;
+    background: linear-gradient(311.38deg, #0F002E 0%, #220066 96.37%);
+    border: 1px solid #220066;
+    border-radius: 24px;
+    /* box-shadow: 0px 24px 24px rgba(0, 0, 0, 0.25); */
+    /* box-shadow: 0px 12px 40px #220066, 0px 24px 24px rgba(0, 0, 0, 0.25); */
+    box-shadow: 0px 10px 120px 64px rgba(15,0,46,0.24);
+    color: #FFCCFD;
+    margin: 0 auto;
+    max-width: 480px;
+    position: relative;
+    z-index: 1;
+}
+
+.avatar {
+    border: 1px solid #220066;
+    border-radius: 100%;
+    margin-bottom: 16px;
+    max-width: 120px;
+}
+
+.intro {
+    background: #FFCCFD;
+    background: linear-gradient(311.38deg, #0F002E 0%, #220066 96.37%);
+    border-bottom: 1px solid #220066;
+    border-radius: 24px 24px 0 0;
+    padding: 48px;
+    text-align: center;
+}
+
+.intro h1 {
+    font-size: 32px;
+    line-height: 100%;
+    margin-bottom: 12px;
+}
+
+.intro a {
+    text-decoration: none;
+}
+
+.divider-vertical {
+    background: #220066;
+    bottom: 0;
+    left: 50%;   
+    position: fixed;     
+    right: 50%;
+    top: 0; 
+    width: 1px;
+}
+
+.divider-horizontal {
+    background: #220066;
+    height: 1px;
+    left: 50%; 
+    margin-left: -50vw; 
+    margin-right: -50vw;  
+    position: relative;     
+    right: 50%; 
+    width: 100vw;     
+}
+
+.card p {
+    font-family: 'Prata', Serif;
+    font-style: normal;
+    font-weight: 250;
+    font-size: 18px;
+    line-height: 150%;
+}
+
+.items {
+    padding: 0 24px;
+}
+
+.list-item {
+    margin: 24px 0;
+}
+
+.list-item p {
+    font-size: 14px;
+}
+
+.label {
+    background: #FFCCFD;
+    border-radius: 100px;
+    color: #220066;
+    display: inline-block;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 100%;
+    margin-bottom: 16px;
+    padding: 6px 10px;
+    text-transform: uppercase;
+}
+
+.label-wrap {
+    flex-basis: 25%;
+}
+
+.callout {
+    align-items: center;
+    display: flex;
+    font-size: 32px;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.content {
+    flex-basis: 75%;
+}
+
+.content p {
+    font-size: 18px;
+    line-height: 150%;
+}
+
+.social-icon {
+    width: 24px;
+}
+
+.connector {
+    background: #220066;
+    height: 120px;
+    margin: 0 auto;
+    width: 2px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+    <div class="divider-vertical"></div>
+
+    <div class="card">
+        <section class="intro">
+            <img src="luis-ouriach-headshot.jpg" alt="Luis" class="avatar"/>
+            <h1>Hey, I'm Luis&nbsp;
+                <a href="https://twitter.com/disco_lu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0ZM16.7741 9.74874C16.7741 9.64214 16.7741 9.53553 16.7665 9.42893C17.2462 9.07866 17.665 8.64466 18 8.15737C17.5584 8.34771 17.0787 8.48479 16.5838 8.53807C17.0939 8.23352 17.4822 7.75382 17.665 7.18274C17.1929 7.46446 16.6599 7.67006 16.1041 7.77665C15.6548 7.29695 15.0152 7 14.3071 7C12.9442 7 11.8477 8.10405 11.8477 9.4594C11.8477 9.64976 11.8706 9.8401 11.9086 10.0228C9.86802 9.91622 8.04821 8.94162 6.83754 7.44923C6.62433 7.81471 6.50253 8.2335 6.50253 8.69034C6.50253 9.54314 6.93652 10.2969 7.59896 10.7386C7.19543 10.7234 6.81469 10.6092 6.48729 10.4264V10.4569C6.48729 11.6523 7.3325 12.6421 8.4594 12.8706C8.25383 12.9239 8.033 12.9543 7.81219 12.9543C7.65228 12.9543 7.50001 12.9391 7.34771 12.9163C7.6599 13.8909 8.56599 14.599 9.64722 14.6219C8.80203 15.2843 7.74364 15.6726 6.59391 15.6726C6.38831 15.6726 6.19798 15.665 6 15.6422C7.08884 16.3426 8.38325 16.7462 9.77666 16.7462C14.2995 16.7462 16.7741 13 16.7741 9.74874Z" fill="#FFCCFD"/>
+                    </svg>                        
+                </a>      
+            </h1>
+            <p>Designer, writer, podcaster.</p>
+        </section>
+
+        <div class="divider-horizontal"></div>
+
+        <div class="items">
+            <div class="list-item">
+                <a href="https://anchor.fm/8px">                
+                    <div class="label-wrap">
+                        <span class="label">Podcast</span>
+                    </div>
+                    <div class="content">
+                        <h3 class="callout">8px Radio 
+                            <span class="icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0ZM11.4701 6.59998H8.29698C7.3699 6.60134 6.48119 6.97022 5.82565 7.62576C5.17011 8.2813 4.80123 9.17002 4.79987 10.0971V10.3131C4.80648 11.1646 5.12359 11.9845 5.6917 12.6189C6.25981 13.2533 7.03988 13.6586 7.88555 13.7588V12.7302C7.3118 12.6345 6.79046 12.3387 6.41393 11.8954C6.03739 11.452 5.82997 10.8896 5.82843 10.3079V10.0971C5.82843 9.77291 5.89228 9.45191 6.01634 9.15242C6.14039 8.85292 6.32222 8.58079 6.55145 8.35156C7.01439 7.88862 7.64228 7.62854 8.29698 7.62854H11.4752C12.1282 7.63126 12.7534 7.89254 13.2141 8.35519C13.6748 8.81784 13.9335 9.44417 13.9335 10.0971V10.3131C13.9308 10.9651 13.6702 11.5896 13.2087 12.0502C12.7471 12.5107 12.1221 12.77 11.4701 12.7714H10.9712V13.7999H11.4701C12.3967 13.7999 13.2854 13.4322 13.9411 12.7775C14.5968 12.1227 14.9658 11.2345 14.9672 10.3079V10.0971C14.9672 9.1696 14.5988 8.28009 13.9429 7.62426C13.2871 6.96842 12.3976 6.59998 11.4701 6.59998ZM16.1142 9.72681V10.7554C16.6888 10.8513 17.2108 11.1478 17.5875 11.5922C17.9641 12.0366 18.171 12.6002 18.1713 13.1828V13.3988C18.1686 14.0508 17.908 14.6753 17.4465 15.1359C16.9849 15.5964 16.3599 15.8557 15.7079 15.857H12.5296C11.8767 15.8557 11.2509 15.5957 10.7892 15.134C10.3276 14.6723 10.0676 14.0466 10.0662 13.3936V13.1828C10.0662 12.529 10.3256 11.9019 10.7874 11.4391C11.2493 10.9763 11.8758 10.7156 12.5296 10.7142H13.0285V9.68567H12.5296C11.603 9.68703 10.7149 10.0561 10.0601 10.7118C9.4054 11.3675 9.03766 12.2562 9.03767 13.1828V13.3988C9.04039 14.3236 9.40932 15.2097 10.0638 15.8632C10.7182 16.5166 11.6048 16.8843 12.5296 16.8856H15.7079C16.6332 16.8829 17.5198 16.5141 18.1741 15.8598C18.8284 15.2056 19.1972 14.3189 19.1999 13.3936V13.1828C19.1958 12.3294 18.8798 11.5071 18.3114 10.8705C17.7431 10.234 16.9616 9.8272 16.1142 9.72681Z" fill="#FFCCFD"/>
+                                </svg>                                                           
+                            </span>
+                        </h3>
+                    </div>
+                </a>
+            </div>
+
+            <div class="divider-horizontal"></div>
+
+            <div class="list-item">
+                <a href="https://www.getrevue.co/profile/milknosugar">
+                    <div class="label-wrap">
+                        <span class="label">Newsletter</span>
+                    </div>
+                    <div class="content">
+                        <h3 class="callout">Milk, No Sugar 
+                            <span class="icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0ZM11.4701 6.59998H8.29698C7.3699 6.60134 6.48119 6.97022 5.82565 7.62576C5.17011 8.2813 4.80123 9.17002 4.79987 10.0971V10.3131C4.80648 11.1646 5.12359 11.9845 5.6917 12.6189C6.25981 13.2533 7.03988 13.6586 7.88555 13.7588V12.7302C7.3118 12.6345 6.79046 12.3387 6.41393 11.8954C6.03739 11.452 5.82997 10.8896 5.82843 10.3079V10.0971C5.82843 9.77291 5.89228 9.45191 6.01634 9.15242C6.14039 8.85292 6.32222 8.58079 6.55145 8.35156C7.01439 7.88862 7.64228 7.62854 8.29698 7.62854H11.4752C12.1282 7.63126 12.7534 7.89254 13.2141 8.35519C13.6748 8.81784 13.9335 9.44417 13.9335 10.0971V10.3131C13.9308 10.9651 13.6702 11.5896 13.2087 12.0502C12.7471 12.5107 12.1221 12.77 11.4701 12.7714H10.9712V13.7999H11.4701C12.3967 13.7999 13.2854 13.4322 13.9411 12.7775C14.5968 12.1227 14.9658 11.2345 14.9672 10.3079V10.0971C14.9672 9.1696 14.5988 8.28009 13.9429 7.62426C13.2871 6.96842 12.3976 6.59998 11.4701 6.59998ZM16.1142 9.72681V10.7554C16.6888 10.8513 17.2108 11.1478 17.5875 11.5922C17.9641 12.0366 18.171 12.6002 18.1713 13.1828V13.3988C18.1686 14.0508 17.908 14.6753 17.4465 15.1359C16.9849 15.5964 16.3599 15.8557 15.7079 15.857H12.5296C11.8767 15.8557 11.2509 15.5957 10.7892 15.134C10.3276 14.6723 10.0676 14.0466 10.0662 13.3936V13.1828C10.0662 12.529 10.3256 11.9019 10.7874 11.4391C11.2493 10.9763 11.8758 10.7156 12.5296 10.7142H13.0285V9.68567H12.5296C11.603 9.68703 10.7149 10.0561 10.0601 10.7118C9.4054 11.3675 9.03766 12.2562 9.03767 13.1828V13.3988C9.04039 14.3236 9.40932 15.2097 10.0638 15.8632C10.7182 16.5166 11.6048 16.8843 12.5296 16.8856H15.7079C16.6332 16.8829 17.5198 16.5141 18.1741 15.8598C18.8284 15.2056 19.1972 14.3189 19.1999 13.3936V13.1828C19.1958 12.3294 18.8798 11.5071 18.3114 10.8705C17.7431 10.234 16.9616 9.8272 16.1142 9.72681Z" fill="#FFCCFD"/>
+                                </svg>                          
+                            </span>
+                        </h3>
+                    </div>
+                </a>
+            </div>
+
+            <div class="divider-horizontal"></div>
+
+            <div class="list-item">
+                <a href="https://twitter.com/disco_lu/status/1518527499667451906">
+                    <div class="label-wrap">                
+                        <span class="label">Guides</span>
+                    </div>
+                    <div class="content">
+                        <h3 class="callout">Figma best practices
+                            <span class="icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0ZM11.4701 6.59998H8.29698C7.3699 6.60134 6.48119 6.97022 5.82565 7.62576C5.17011 8.2813 4.80123 9.17002 4.79987 10.0971V10.3131C4.80648 11.1646 5.12359 11.9845 5.6917 12.6189C6.25981 13.2533 7.03988 13.6586 7.88555 13.7588V12.7302C7.3118 12.6345 6.79046 12.3387 6.41393 11.8954C6.03739 11.452 5.82997 10.8896 5.82843 10.3079V10.0971C5.82843 9.77291 5.89228 9.45191 6.01634 9.15242C6.14039 8.85292 6.32222 8.58079 6.55145 8.35156C7.01439 7.88862 7.64228 7.62854 8.29698 7.62854H11.4752C12.1282 7.63126 12.7534 7.89254 13.2141 8.35519C13.6748 8.81784 13.9335 9.44417 13.9335 10.0971V10.3131C13.9308 10.9651 13.6702 11.5896 13.2087 12.0502C12.7471 12.5107 12.1221 12.77 11.4701 12.7714H10.9712V13.7999H11.4701C12.3967 13.7999 13.2854 13.4322 13.9411 12.7775C14.5968 12.1227 14.9658 11.2345 14.9672 10.3079V10.0971C14.9672 9.1696 14.5988 8.28009 13.9429 7.62426C13.2871 6.96842 12.3976 6.59998 11.4701 6.59998ZM16.1142 9.72681V10.7554C16.6888 10.8513 17.2108 11.1478 17.5875 11.5922C17.9641 12.0366 18.171 12.6002 18.1713 13.1828V13.3988C18.1686 14.0508 17.908 14.6753 17.4465 15.1359C16.9849 15.5964 16.3599 15.8557 15.7079 15.857H12.5296C11.8767 15.8557 11.2509 15.5957 10.7892 15.134C10.3276 14.6723 10.0676 14.0466 10.0662 13.3936V13.1828C10.0662 12.529 10.3256 11.9019 10.7874 11.4391C11.2493 10.9763 11.8758 10.7156 12.5296 10.7142H13.0285V9.68567H12.5296C11.603 9.68703 10.7149 10.0561 10.0601 10.7118C9.4054 11.3675 9.03766 12.2562 9.03767 13.1828V13.3988C9.04039 14.3236 9.40932 15.2097 10.0638 15.8632C10.7182 16.5166 11.6048 16.8843 12.5296 16.8856H15.7079C16.6332 16.8829 17.5198 16.5141 18.1741 15.8598C18.8284 15.2056 19.1972 14.3189 19.1999 13.3936V13.1828C19.1958 12.3294 18.8798 11.5071 18.3114 10.8705C17.7431 10.234 16.9616 9.8272 16.1142 9.72681Z" fill="#FFCCFD"/>
+                                </svg>
+                            </span>
+                        </h3>
+                    </div>
+                </a>
+            </div>   
+            
+            <div class="divider-horizontal"></div>
+
+            <div class="list-item">
+                <a href="https://twitter.com/disco_lu/status/1540278986948968448?s=20&t=--wUIcsGX4JmTByh3FqE5A">
+                    <div class="label-wrap">                
+                        <span class="label">Design systems</span>
+                    </div>
+                    <div class="content">
+                        <h3 class="callout">Component challenges
+                            <span class="icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0ZM11.4701 6.59998H8.29698C7.3699 6.60134 6.48119 6.97022 5.82565 7.62576C5.17011 8.2813 4.80123 9.17002 4.79987 10.0971V10.3131C4.80648 11.1646 5.12359 11.9845 5.6917 12.6189C6.25981 13.2533 7.03988 13.6586 7.88555 13.7588V12.7302C7.3118 12.6345 6.79046 12.3387 6.41393 11.8954C6.03739 11.452 5.82997 10.8896 5.82843 10.3079V10.0971C5.82843 9.77291 5.89228 9.45191 6.01634 9.15242C6.14039 8.85292 6.32222 8.58079 6.55145 8.35156C7.01439 7.88862 7.64228 7.62854 8.29698 7.62854H11.4752C12.1282 7.63126 12.7534 7.89254 13.2141 8.35519C13.6748 8.81784 13.9335 9.44417 13.9335 10.0971V10.3131C13.9308 10.9651 13.6702 11.5896 13.2087 12.0502C12.7471 12.5107 12.1221 12.77 11.4701 12.7714H10.9712V13.7999H11.4701C12.3967 13.7999 13.2854 13.4322 13.9411 12.7775C14.5968 12.1227 14.9658 11.2345 14.9672 10.3079V10.0971C14.9672 9.1696 14.5988 8.28009 13.9429 7.62426C13.2871 6.96842 12.3976 6.59998 11.4701 6.59998ZM16.1142 9.72681V10.7554C16.6888 10.8513 17.2108 11.1478 17.5875 11.5922C17.9641 12.0366 18.171 12.6002 18.1713 13.1828V13.3988C18.1686 14.0508 17.908 14.6753 17.4465 15.1359C16.9849 15.5964 16.3599 15.8557 15.7079 15.857H12.5296C11.8767 15.8557 11.2509 15.5957 10.7892 15.134C10.3276 14.6723 10.0676 14.0466 10.0662 13.3936V13.1828C10.0662 12.529 10.3256 11.9019 10.7874 11.4391C11.2493 10.9763 11.8758 10.7156 12.5296 10.7142H13.0285V9.68567H12.5296C11.603 9.68703 10.7149 10.0561 10.0601 10.7118C9.4054 11.3675 9.03766 12.2562 9.03767 13.1828V13.3988C9.04039 14.3236 9.40932 15.2097 10.0638 15.8632C10.7182 16.5166 11.6048 16.8843 12.5296 16.8856H15.7079C16.6332 16.8829 17.5198 16.5141 18.1741 15.8598C18.8284 15.2056 19.1972 14.3189 19.1999 13.3936V13.1828C19.1958 12.3294 18.8798 11.5071 18.3114 10.8705C17.7431 10.234 16.9616 9.8272 16.1142 9.72681Z" fill="#FFCCFD"/>
+                                </svg>
+                            </span>
+                        </h3>
+                    </div>
+                </a>
+            </div>               
+            
+        </div>
+    </div>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-18764357-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-18764357-1');
+    </script>
+
+
+</body>
