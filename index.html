@@ -2,28 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Luis Ouriach – Creative type</title>
+  <title>Luis Ouriach</title>
 
   <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/louriach/lineswritten/master/favicon.jpg"/>
 
-  <meta name="description" content="Communicating ideas through visual design, words, and debate.">
+  <meta name="description" content="Designer, writer, podcaster, advocate.">
   <meta name="author" content="Luis Ouriach">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta property="og:title" content="Luis Ouriach - Designer, writer, creative" />
-    <meta property="og:description" content="Communicating ideas through visual design, words, and debate.">
+    <meta property="og:title" content="Luis Ouriach - Designer, writer, podcaster, advocate" />
+    <meta property="og:description" content="Designer, writer, podcaster, advocate.">
     <meta property="og:image" content="https://raw.githubusercontent.com/louriach/lineswritten/master/lineswritten-share-og.jpg">
     <meta property="og:url" content="https://lineswritten.co.uk/">
     <meta name="twitter:card" content="summary_large_image">
     
-    <meta property="og:site_name" content="Luis Ouriach - Designer, writer, creative">
-    <meta name="twitter:image:alt" content="Communicating ideas through visual design, words, and debate.">
+    <meta property="og:site_name" content="Luis Ouriach - Designer, writer, podcaster, advocate">
+    <meta name="twitter:image:alt" content="Designer, writer, podcaster, advocate.">
     
     <meta name="twitter:site" content="@disco_lu">
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css"/>
+    <!-- iOS top bar color settings -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
     <link href="https://fonts.googleapis.com/css?family=Martel:400,900|Poppins:400,900" rel="stylesheet">
-    
 
 <style>
     /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -60,687 +62,289 @@ body {
 	line-height: 1;
 }
 
-.serif {
-  font-family: 'Martel';
-}
-
-.sans-serif {
-  font-family: 'Poppins';
-}
-
-body, html {
-    height: 100%;
-    width: 100%;
-}
-
 body {
-  background-color: #fff;
-  color: #3b4040;
-  font-family: 'Martel';
-  font-size: 22px;
-
+    background-color: #0F002E;
+    background: linear-gradient(129.38deg, #0F002E 0%, #220066 100%);  
+    color: #3b4040;
+    font-family: 'Prata', Serif;
+    font-size: 22px;
+    min-height: 100vh;
 }
 
 a {
-    color: #3b4040;
+    color: #FFCCFD;
+    text-decoration: none;
 }
 
-/* Overlay */
-
-.overlay {
-  animation: fadeout 4s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards; 
-  background-color: #3b4040;
-}
-.copy {
-  align-items: baseline;
-  color: #fff;
-  display: flex;
-  font-weight: 700;
-  flex: 1;
-  font-size: 3rem;
-  justify-content: center;
-}
-.copy--text {
-  animation: fadeout 3s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards; 
-  margin-left: auto;
-}
-.period {
-  animation: period 4s;
-  animation-delay: 3s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards; 
-  border-radius: 100%;
-  margin-right: 2rem;
-  height: .5rem;
-  width: .5rem;
+a:hover {
+    opacity: 50%;
 }
 
-/* Gradient */
-.offset-gradient {
-  position: relative;
+.container {
+    padding: 24px;
 }
 
-.profile-pic:after {
-  background: url(luis-ouriach.jpg) no-repeat 0 0;
-  background-size: contain;
-  content: "";
-  height: 80vh;
-  right: 10vw;
-  position: absolute;
-  top: 10vh;
-  width: 45vw;
-  z-index: -2;
-}
-
-@media all and (min-width: 60em) {
-    .profile-pic:after {
-        right: 5vw;
-        width: 45vw;
+@media all and (min-width: 480px) {
+    .container {
+        padding: 120px 24px;
     }
 }
 
-.offset-gradient:before {
-  background: linear-gradient(90deg, #fff 0%, #fff 20%, #CDECFF 20%, #96CCFF 90%, #fff 90%);
-  bottom: 0;
-  content: "";
-  left: -5vw;
-  mix-blend-mode: multiply;
-  position: absolute;
-  right: 0;
-  top: 15vh;
-  width: 80vw;
-  z-index: -1;
+.card {
+    background-color: #0F002E;
+    background: linear-gradient(311.38deg, #0F002E 0%, #220066 96.37%);
+    border: 1px solid #220066;
+    border-radius: 24px;
+    box-shadow: 32px 32px 120px #0f0035;
+    color: #FFCCFD;
+    margin: 0 auto;
+    max-width: 480px;
+    position: relative;
+    z-index: 1;
 }
 
-@media all and (min-width: 75em) {
-    .offset-gradient:before {
-        left: -10vw;
-    }
+.avatar {
+    border: 1px solid #220066;
+    border-radius: 100%;
+    margin-bottom: 16px;
+    max-width: 120px;
 }
 
-.gradient {
-    background: linear-gradient(90deg,#CDECFF 0%, #96CCFF 100%);
+.intro {
+    background: #FFCCFD;
+    background: linear-gradient(311.38deg, #0F002E 0%, #220066 96.37%);
+    border-bottom: 1px solid #220066;
+    border-radius: 24px 24px 0 0;
+    padding: 48px;
+    text-align: center;
 }
 
-/* Animations */
-
-.animate-fadein-1{
-    animation: fadein 1s ease-out;
+.intro h1 {
+    font-size: 32px;
+    line-height: 100%;
+    margin-bottom: 8px;
 }
 
-.animate-fadein-2 {
-    animation: fadein 1.5s ease-out;
+.intro a {
+    text-decoration: none;
 }
 
-.animate-fadein-3 {
-    animation: fadein 2s ease-out;
+.divider-vertical {
+    background: #220066;
+    bottom: 0;
+    left: 50%;   
+    position: fixed;     
+    right: 50%;
+    top: 0; 
+    width: 1px;
 }
 
-.animate-fadein-4 {
-    animation: fadein 2.5s ease-out;
+.divider-horizontal {
+    background: #220066;
+    height: 1px;
+    left: 50%; 
+    margin-left: -50vw; 
+    margin-right: -50vw;  
+    position: relative;     
+    right: 50%; 
+    width: 100vw;     
 }
 
-@keyframes fadein {
-  from { 
-    opacity: 0; 
-  }
-  80% {
-    opacity: 0;
-  }
-  to   { 
-    opacity: 1;
-  }
+.card p {
+    font-family: 'Prata', Serif;
+    font-style: normal;
+    font-weight: 250;
+    font-size: 18px;
+    line-height: 150%;
 }
 
-@keyframes fadeout {
-  from { 
-    opacity: 1; 
-  }
-  980% {
-    opacity: 1;
-  }
-  to   { 
-    display: none; opacity: 0;
-  }
+.items {
+    padding: 0 24px;
 }
+
+.list-item {
+    margin: 24px 0;
+}
+
+.list-item p {
+    font-size: 14px;
+}
+
+.label {
+    background: #FFCCFD;
+    border-radius: 100px;
+    color: #220066;
+    display: inline-block;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 100%;
+    margin-bottom: 16px;
+    padding: 6px 10px;
+    text-transform: uppercase;
+}
+
+.label-wrap {
+    flex-basis: 25%;
+}
+
+.callout {
+    align-items: center;
+    display: flex;
+    font-size: 32px;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.content {
+    flex-basis: 75%;
+}
+
+.content p {
+    font-size: 18px;
+    line-height: 150%;
+}
+
+.social-icon {
+    width: 24px;
+}
+
+.connector {
+    background: #220066;
+    height: 120px;
+    margin: 0 auto;
+    width: 2px;
+}
+
 </style>
 
 </head>
 
 <body>
-    
-    <section class="offset-gradient profile-pic mb2 [ pb3 pb5-ns pt7-ns ] [ flex items-center justify-start ]">
-      <div class="[ ph3 ph4-ns ph6-l ]">
-          <header class="ph4">
-            <h1 class="sans-serif [ mt4 mb6 mb5-ns ] f1 b [ flex items-baseline ]">luis<div class="animate-fadein-3 bg-light-red period"></div></h1>
-          </header>
-          <div class="lh-copy ph4-ns [ f5 f3-ns ] relative z-3">
-            <div class="w-90 [ br4 ba b--black ] [ mb3 mb5-ns ] nl7"></div>
-            <p class="mb4 measure-narrow-ns">communicating ideas through visual design, words, and debate</p>
-            <h3 class="sans-serif b tracked f6 ttu black-40 mb1">Jump to</h3>
-            <ul class="list [ flex flex-wrap ] [ f6 f5-ns ] relative z-1">
-                <li class="[ mb3 mb0-ns mr2 ]">
-                    <a href="#bio" class="b black link bb dim">Bio</a>
-                </li>
-                <li class="[ mb3 mb0-ns mr2 ]">
-                    <a href="#writing" class="b black link bb dim">Writing</a>
-                </li>
-                <li class="[ mb3 mb0-ns mr2 ]">
-                    <a href="#appearances" class="b black link bb dim">Appearances</a>
-                </li>                
-                <li class="[ mb3 mb0-ns mr2 ]">
-                    <a href="#newsletter" class="b black link bb dim">Newsletter</a>
-                </li>          
-                <li class="[ mb3 mb0-ns mr2 ]">
-                    <a href="#testimonials" class="b black link bb dim">Testimonials</a>
-                </li>
-                <!-- <li class="mr2">
-                    <a href="#writing" class="b black link bb dim">Writing</a>
-                </li>           -->
-            </ul>
-          </div>
-          <div class="w-20 [ br4 ba b--black ] [ mb3 mb5-ns ml7 ] [ absolute right-0 ]"></div>
-        </div>
-    </section>
-    
-    <section class="footer [ absolute-xl bottom-1-ns left-0 right-2-ns ]">
-      <ul class="list f3 [ flex flex-wrap flex-column items-center justify-center ]">
-        <li class="h4 bg-black [ mb1 mb3-ns ]" style="width: 2px"></li>    
-        <li>
-            <a href="https://twitter.com/disco_lu" class="b db no-underline">
-                <img src="icon--twitter.svg" alt="" class="h2 w2 dim" />
-            </a>      
-        </li>         
-        <li class="mb1 mb3-ns mt1 mt3-ns">
-          <a href="https://medium.com/@disco_lu" class="b db no-underline">
-            <img src="icon--medium.svg" alt="" class="h2 w2 dim" />
-          </a>
-        </li>         
-        <li>
-            <a href="https://instagram.com/disco_lu" class="b db no-underline">
-                <img src="icon--instagram.svg" alt="" class="h2 w2 dim" />
-            </a>
-        </li>        
-      </ul>
-    </section>  
 
-    <section class="pt5 relative" id="bio">
-        <div class="[ ph3 ph4-ns ph6-l pv5 ] ml6-ns bg-black-05 relative">
-            <div class="w-75 [ br4 ba b--black ] mb4 [ absolute top-2 ] nl7"></div>    
-            <div class="vh-100 [ br4 ba b--black ] mb4 [ absolute right-2 ] nt7"></div>               
-            <div class="flex-l">
-                <header class="w-50-l pr4-ns">
-                    <h1 class="sans-serif [ f4 f1-ns ] b [ flex items-baseline ]">
-                        bio<div class="animate-fadein-3 bg-light-red period"></div>
-                    </h1>
-                    <h2 class="sans-serif mb3 [ f4 f3-ns ] [ flex items-baseline ] black-50">curious type</h2>
-                </header>
-                <div class="w-50-l [ mt4 mt6-ns ] lh-copy">
-                    <p class="mb3">designer, writer, and cook, i work fast and skip to the best approach for the job, not what will win awards.</p>
-                    <p class="mb3">i prefer to work on multiple things at a time. my desk is a mess, but it keeps my brain organised.</p>         
-                    <p class="mb4">i've <strike>designed</strike> solved problems for companies in e-commerce, charity, journalism and guest experience, in London and Sydney.</p>          
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="divider-vertical"></div>
 
-    <div class="w-50 [ br4 ba b--black ] [ mb4 mt4 ] fr"></div>
+    <div class="container">
 
-    <section class="pt5 relative" id="writing">
-        <div class="[ ph3 ph4-ns ph6-l pv5 ] ml6-ns bg-black-05 relative">
-            <div class="w-75 [ br4 ba b--black ] mb4 [ absolute top-2 ] nl7"></div>    
-            <div class="vh-100 [ br4 ba b--black ] mb4 [ absolute right-2 ] nt7"></div>               
-            <header class="w-50-ns pr4-ns">
-                <h1 class="sans-serif [ f4 f1-ns ] b [ flex items-baseline ]">
-                    writing<div class="animate-fadein-3 bg-light-red period"></div>
+        <div class="card">
+            <section class="intro">
+                <img src="luis-ouriach-headshot.jpg" alt="Luis" class="avatar"/>
+                <h1>Hey, I'm Luis
+                    <a href="https://twitter.com/disco_lu" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21.533 7.11169C21.5482 7.32488 21.5482 7.53811 21.5482 7.7513C21.5482 14.2538 16.599 21.7462 7.5533 21.7462C4.76648 21.7462 2.17767 20.9391 0 19.5381C0.395953 19.5838 0.776625 19.599 1.18781 19.599C3.48727 19.599 5.60405 18.8224 7.29441 17.4975C5.13197 17.4518 3.31978 16.0356 2.69541 14.0863C3 14.132 3.30455 14.1624 3.62437 14.1624C4.06598 14.1624 4.50764 14.1015 4.91878 13.995C2.66498 13.5381 0.974578 11.5584 0.974578 9.16753V9.10664C1.62937 9.47213 2.39086 9.70055 3.19791 9.73097C1.87303 8.8477 1.00505 7.34011 1.00505 5.63452C1.00505 4.72083 1.24866 3.88327 1.67508 3.1523C4.09641 6.13706 7.73602 8.08627 11.8172 8.2995C11.7411 7.93402 11.6954 7.55335 11.6954 7.17263C11.6954 4.46194 13.8883 2.25385 16.6141 2.25385C18.0304 2.25385 19.3095 2.84775 20.208 3.80714C21.3197 3.59395 22.3857 3.18277 23.3299 2.61933C22.9643 3.76149 22.1877 4.72088 21.1674 5.32997C22.1573 5.22342 23.1167 4.94925 23.9999 4.56858C23.33 5.54316 22.4924 6.41114 21.533 7.11169V7.11169Z" fill="#FFCCFD"/>
+                        </svg>                                                    
+                    </a>      
                 </h1>
-                <h2 class="sans-serif mb3 [ f4 f3-ns ] [ flex items-baseline ] black-50">design etc</h2>
-            </header>
-            <div class="[ mt4 mt6-ns ]">
-                <article class="[ bb b--black-10 ]">
-                    <a class="db [ pv4 ph3-l ph0-l ] no-underline dim" href="https://medium.com/8px-magazine/migrating-to-figma-the-business-case-the-process-and-the-libraries-dedd205a9958">
-                        <div class="[ flex flex-column flex-row-l ]">
-                            <div class="pr3-l [ mb2 mb4-ns mb0-ns ] [ w-100 w-40-l ]">
-                                <img src="https://miro.medium.com/max/2000/1*XJI91kJl7zH4ALVwi7VQ1A.jpeg" class="dtc v-top" />
-                            </div>
-                            <div class="[ w-100 w-60-l ] pl3-l">
-                                <h1 class="f3 fw6 sans-serif [ mt0 mb2 ] lh-title">Migrating to Figma: the business case, the process, and the libraries</h1>
-                                <p class="f4 db black-70 lh-copy">Over the course of Q4 2019, we decided to migrate our design tool suite over to Figma for myriad reasons. I’ve documented the process and decided to write up a transparent mega article for you all.</p>
-                            </div>
+                <p>Designer, writer, podcaster.</p>
+            </section>
+
+            <div class="divider-horizontal"></div>
+
+            <div class="items">
+                <div class="list-item">
+                    <a href="https://anchor.fm/8px" target="_blank">                
+                        <div class="label-wrap">
+                            <span class="label">Podcast</span>
+                        </div>
+                        <div class="content">
+                            <h3 class="callout">8px Radio 
+                                <span class="icon">
+                                    <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.82852 0H11.117C12.6629 0 14.1454 0.614075 15.2384 1.70713C16.3315 2.80019 16.9456 4.2827 16.9456 5.82852V6.17995C16.9433 7.72428 16.3282 9.20459 15.2354 10.2958C14.1426 11.387 12.6614 11.9999 11.117 11.9999H10.2856V10.2856H11.117C12.2038 10.2834 13.2455 9.85126 14.0147 9.08364C14.7839 8.31602 15.2182 7.27523 15.2227 6.18852V5.82852C15.2227 4.74032 14.7916 3.69643 14.0238 2.92535C13.2559 2.15427 12.2138 1.71881 11.1256 1.71427H5.82852C4.73735 1.71427 3.69088 2.14774 2.91931 2.91931C2.53726 3.30135 2.23421 3.7549 2.02745 4.25407C1.82069 4.75323 1.71427 5.28823 1.71427 5.82852V6.17995C1.71685 7.14942 2.06254 8.08668 2.6901 8.82563C3.31766 9.56458 4.18656 10.0575 5.14281 10.2171V11.9313C3.73335 11.7644 2.43324 11.0889 1.48639 10.0316C0.539535 8.97427 0.0110208 7.60779 0 6.18852V5.82852C0.00226724 4.2834 0.61707 2.80221 1.70964 1.70964C2.80221 0.61707 4.2834 0.00226724 5.82852 0Z" fill="#FFCCFD"/>
+                                        <path d="M18.8572 6.92566V5.21139C20.2696 5.3787 21.572 6.05665 22.5193 7.11756C23.4665 8.17847 23.9931 9.54911 24 10.9713V11.3228C23.9955 12.8649 23.3809 14.3426 22.2904 15.4331C21.1999 16.5236 19.7222 17.1382 18.18 17.1427H12.883C11.3416 17.1405 9.86386 16.5277 8.77315 15.4386C7.68243 14.3495 7.06753 12.8727 7.063 11.3313V10.9713C7.063 9.42701 7.6759 7.9458 8.7671 6.85298C9.85831 5.76017 11.3386 5.14509 12.883 5.14282H13.7144V6.85709H12.883C11.7933 6.85936 10.749 7.29383 9.97928 8.06516C9.20956 8.83648 8.77727 9.88166 8.77727 10.9713V11.3228C8.77954 12.411 9.21282 13.4539 9.9823 14.2234C10.7518 14.9929 11.7948 15.4262 12.883 15.4284H18.18C19.2668 15.4262 20.3085 14.9941 21.0777 14.2265C21.8469 13.4588 22.2812 12.4181 22.2857 11.3313V10.9713C22.2852 10.0004 21.9404 9.0611 21.3127 8.32037C20.6849 7.57964 19.8149 7.08546 18.8572 6.92566Z" fill="#FFCCFD"/>
+                                    </svg>    
+                                </span>
+                            </h3>
                         </div>
                     </a>
-                </article>
-                <article class="[ bb b--black-10 ]">
-                    <a class="db [ pv4 ph3-l ph0-l ] no-underline dim" href="https://medium.com/@disco_lu/the-blurring-lines-between-product-designer-and-product-manager-e07b979f2044">
-                        <div class="[ flex flex-column flex-row-l ]">
-                            <div class="pr3-l [ mb2 mb4-ns mb0-ns ] [ w-100 w-40-l ]">
-                                <img src="https://raw.githubusercontent.com/louriach/lineswritten/master/article--blurring-lines.jpg" class="dtc v-top" />
-                            </div>
-                            <div class="[ w-100 w-60-l ] pl3-l">
-                                <h1 class="f3 fw6 sans-serif [ mt0 mb2 ] lh-title">The blurring lines between product designer and product manager</h1>
-                                <p class="f4 db black-70 lh-copy">The design industry is careering towards a defining junction. Our job titles are all over the place, our career paths changing month by month and, to be honest, most people still don’t know what we do.</p>
-                            </div>
-                        </div>
-                    </a>
-                </article>   
-                <article class="[ bb b--black-10 ]">
-                    <a class="db [ pv4 ph3-l ph0-l ] no-underline dim" href="https://medium.com/@disco_lu/the-12-hour-product-launch-36983b29421b">
-                        <div class="[ flex flex-column flex-row-l ]">
-                            <div class="pr3-l [ mb2 mb4-ns mb0-ns ] [ w-100 w-40-l ]">
-                                <img src="https://raw.githubusercontent.com/louriach/lineswritten/master/article--12-hour.jpg" class="dtc v-top" />
-                            </div>
-                            <div class="[ w-100 w-60-l ] pl3-l">
-                                <h1 class="f3 fw6 sans-serif [ mt0 mb2 ] lh-title">The 12 hour product launch</h1>
-                                <p class="f4 db black-70 lh-copy">I launched a micro product a few weeks ago and I was asked how I turned it around so quick. In thinking about it, I realised I may have stumbled across a formula for product launches, which I am calling the 12 hour product launch.</p>
-                            </div>
-                        </div>
-                    </a>
-                </article>     
-                <div class="mt4 center w-40-l">
-                    <a href="https://www.medium.com/@disco_lu" class="tc db b [ ph4 pv3 ] input-reset [ ba b--black ] white [ bg-black hover-bg-black-70 ] pointer f5 no-underline lh-copy">Plenty more articles over on Medium</a>
                 </div>
+
+                <div class="divider-horizontal"></div>
+
+                <div class="list-item">
+                    <a href="https://www.getrevue.co/profile/milknosugar" target="_blank">
+                        <div class="label-wrap">
+                            <span class="label">Newsletter</span>
+                        </div>
+                        <div class="content">
+                            <h3 class="callout">Milk, No Sugar 
+                                <span class="icon">
+                                    <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.82852 0H11.117C12.6629 0 14.1454 0.614075 15.2384 1.70713C16.3315 2.80019 16.9456 4.2827 16.9456 5.82852V6.17995C16.9433 7.72428 16.3282 9.20459 15.2354 10.2958C14.1426 11.387 12.6614 11.9999 11.117 11.9999H10.2856V10.2856H11.117C12.2038 10.2834 13.2455 9.85126 14.0147 9.08364C14.7839 8.31602 15.2182 7.27523 15.2227 6.18852V5.82852C15.2227 4.74032 14.7916 3.69643 14.0238 2.92535C13.2559 2.15427 12.2138 1.71881 11.1256 1.71427H5.82852C4.73735 1.71427 3.69088 2.14774 2.91931 2.91931C2.53726 3.30135 2.23421 3.7549 2.02745 4.25407C1.82069 4.75323 1.71427 5.28823 1.71427 5.82852V6.17995C1.71685 7.14942 2.06254 8.08668 2.6901 8.82563C3.31766 9.56458 4.18656 10.0575 5.14281 10.2171V11.9313C3.73335 11.7644 2.43324 11.0889 1.48639 10.0316C0.539535 8.97427 0.0110208 7.60779 0 6.18852V5.82852C0.00226724 4.2834 0.61707 2.80221 1.70964 1.70964C2.80221 0.61707 4.2834 0.00226724 5.82852 0Z" fill="#FFCCFD"/>
+                                        <path d="M18.8572 6.92566V5.21139C20.2696 5.3787 21.572 6.05665 22.5193 7.11756C23.4665 8.17847 23.9931 9.54911 24 10.9713V11.3228C23.9955 12.8649 23.3809 14.3426 22.2904 15.4331C21.1999 16.5236 19.7222 17.1382 18.18 17.1427H12.883C11.3416 17.1405 9.86386 16.5277 8.77315 15.4386C7.68243 14.3495 7.06753 12.8727 7.063 11.3313V10.9713C7.063 9.42701 7.6759 7.9458 8.7671 6.85298C9.85831 5.76017 11.3386 5.14509 12.883 5.14282H13.7144V6.85709H12.883C11.7933 6.85936 10.749 7.29383 9.97928 8.06516C9.20956 8.83648 8.77727 9.88166 8.77727 10.9713V11.3228C8.77954 12.411 9.21282 13.4539 9.9823 14.2234C10.7518 14.9929 11.7948 15.4262 12.883 15.4284H18.18C19.2668 15.4262 20.3085 14.9941 21.0777 14.2265C21.8469 13.4588 22.2812 12.4181 22.2857 11.3313V10.9713C22.2852 10.0004 21.9404 9.0611 21.3127 8.32037C20.6849 7.57964 19.8149 7.08546 18.8572 6.92566Z" fill="#FFCCFD"/>
+                                    </svg>    
+                                </span>
+                            </h3>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="divider-horizontal"></div>
+
+                <div class="list-item">
+                    <a href="https://twitter.com/disco_lu/status/1518527499667451906" target="_blank">
+                        <div class="label-wrap">                
+                            <span class="label">Guides</span>
+                        </div>
+                        <div class="content">
+                            <h3 class="callout">Figma best practices
+                                <span class="icon">
+                                    <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.82852 0H11.117C12.6629 0 14.1454 0.614075 15.2384 1.70713C16.3315 2.80019 16.9456 4.2827 16.9456 5.82852V6.17995C16.9433 7.72428 16.3282 9.20459 15.2354 10.2958C14.1426 11.387 12.6614 11.9999 11.117 11.9999H10.2856V10.2856H11.117C12.2038 10.2834 13.2455 9.85126 14.0147 9.08364C14.7839 8.31602 15.2182 7.27523 15.2227 6.18852V5.82852C15.2227 4.74032 14.7916 3.69643 14.0238 2.92535C13.2559 2.15427 12.2138 1.71881 11.1256 1.71427H5.82852C4.73735 1.71427 3.69088 2.14774 2.91931 2.91931C2.53726 3.30135 2.23421 3.7549 2.02745 4.25407C1.82069 4.75323 1.71427 5.28823 1.71427 5.82852V6.17995C1.71685 7.14942 2.06254 8.08668 2.6901 8.82563C3.31766 9.56458 4.18656 10.0575 5.14281 10.2171V11.9313C3.73335 11.7644 2.43324 11.0889 1.48639 10.0316C0.539535 8.97427 0.0110208 7.60779 0 6.18852V5.82852C0.00226724 4.2834 0.61707 2.80221 1.70964 1.70964C2.80221 0.61707 4.2834 0.00226724 5.82852 0Z" fill="#FFCCFD"/>
+                                        <path d="M18.8572 6.92566V5.21139C20.2696 5.3787 21.572 6.05665 22.5193 7.11756C23.4665 8.17847 23.9931 9.54911 24 10.9713V11.3228C23.9955 12.8649 23.3809 14.3426 22.2904 15.4331C21.1999 16.5236 19.7222 17.1382 18.18 17.1427H12.883C11.3416 17.1405 9.86386 16.5277 8.77315 15.4386C7.68243 14.3495 7.06753 12.8727 7.063 11.3313V10.9713C7.063 9.42701 7.6759 7.9458 8.7671 6.85298C9.85831 5.76017 11.3386 5.14509 12.883 5.14282H13.7144V6.85709H12.883C11.7933 6.85936 10.749 7.29383 9.97928 8.06516C9.20956 8.83648 8.77727 9.88166 8.77727 10.9713V11.3228C8.77954 12.411 9.21282 13.4539 9.9823 14.2234C10.7518 14.9929 11.7948 15.4262 12.883 15.4284H18.18C19.2668 15.4262 20.3085 14.9941 21.0777 14.2265C21.8469 13.4588 22.2812 12.4181 22.2857 11.3313V10.9713C22.2852 10.0004 21.9404 9.0611 21.3127 8.32037C20.6849 7.57964 19.8149 7.08546 18.8572 6.92566Z" fill="#FFCCFD"/>
+                                    </svg>    
+                                </span>
+                            </h3>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="divider-horizontal"></div>
+                
+                <div class="list-item">
+                    <a href="https://medium.com/@disco_lu" target="_blank">
+                        <div class="label-wrap">                
+                            <span class="label">Articles</span>
+                        </div>
+                        <div class="content">
+                            <h3 class="callout">Design &amp; other stories
+                                <span class="icon">
+                                    <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.82852 0H11.117C12.6629 0 14.1454 0.614075 15.2384 1.70713C16.3315 2.80019 16.9456 4.2827 16.9456 5.82852V6.17995C16.9433 7.72428 16.3282 9.20459 15.2354 10.2958C14.1426 11.387 12.6614 11.9999 11.117 11.9999H10.2856V10.2856H11.117C12.2038 10.2834 13.2455 9.85126 14.0147 9.08364C14.7839 8.31602 15.2182 7.27523 15.2227 6.18852V5.82852C15.2227 4.74032 14.7916 3.69643 14.0238 2.92535C13.2559 2.15427 12.2138 1.71881 11.1256 1.71427H5.82852C4.73735 1.71427 3.69088 2.14774 2.91931 2.91931C2.53726 3.30135 2.23421 3.7549 2.02745 4.25407C1.82069 4.75323 1.71427 5.28823 1.71427 5.82852V6.17995C1.71685 7.14942 2.06254 8.08668 2.6901 8.82563C3.31766 9.56458 4.18656 10.0575 5.14281 10.2171V11.9313C3.73335 11.7644 2.43324 11.0889 1.48639 10.0316C0.539535 8.97427 0.0110208 7.60779 0 6.18852V5.82852C0.00226724 4.2834 0.61707 2.80221 1.70964 1.70964C2.80221 0.61707 4.2834 0.00226724 5.82852 0Z" fill="#FFCCFD"/>
+                                        <path d="M18.8572 6.92566V5.21139C20.2696 5.3787 21.572 6.05665 22.5193 7.11756C23.4665 8.17847 23.9931 9.54911 24 10.9713V11.3228C23.9955 12.8649 23.3809 14.3426 22.2904 15.4331C21.1999 16.5236 19.7222 17.1382 18.18 17.1427H12.883C11.3416 17.1405 9.86386 16.5277 8.77315 15.4386C7.68243 14.3495 7.06753 12.8727 7.063 11.3313V10.9713C7.063 9.42701 7.6759 7.9458 8.7671 6.85298C9.85831 5.76017 11.3386 5.14509 12.883 5.14282H13.7144V6.85709H12.883C11.7933 6.85936 10.749 7.29383 9.97928 8.06516C9.20956 8.83648 8.77727 9.88166 8.77727 10.9713V11.3228C8.77954 12.411 9.21282 13.4539 9.9823 14.2234C10.7518 14.9929 11.7948 15.4262 12.883 15.4284H18.18C19.2668 15.4262 20.3085 14.9941 21.0777 14.2265C21.8469 13.4588 22.2812 12.4181 22.2857 11.3313V10.9713C22.2852 10.0004 21.9404 9.0611 21.3127 8.32037C20.6849 7.57964 19.8149 7.08546 18.8572 6.92566Z" fill="#FFCCFD"/>
+                                    </svg>    
+                                </span>                               
+                            </h3>
+                        </div>
+                    </a>
+                </div>            
+                
+                <div class="divider-horizontal"></div>
+
+                <div class="list-item">
+                    <a href="https://twitter.com/disco_lu/status/1540278986948968448?s=20&t=--wUIcsGX4JmTByh3FqE5A" target="_blank">
+                        <div class="label-wrap">                
+                            <span class="label">Design systems</span>
+                        </div>
+                        <div class="content">
+                            <h3 class="callout">Component challenges
+                                <span class="icon">
+                                    <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.82852 0H11.117C12.6629 0 14.1454 0.614075 15.2384 1.70713C16.3315 2.80019 16.9456 4.2827 16.9456 5.82852V6.17995C16.9433 7.72428 16.3282 9.20459 15.2354 10.2958C14.1426 11.387 12.6614 11.9999 11.117 11.9999H10.2856V10.2856H11.117C12.2038 10.2834 13.2455 9.85126 14.0147 9.08364C14.7839 8.31602 15.2182 7.27523 15.2227 6.18852V5.82852C15.2227 4.74032 14.7916 3.69643 14.0238 2.92535C13.2559 2.15427 12.2138 1.71881 11.1256 1.71427H5.82852C4.73735 1.71427 3.69088 2.14774 2.91931 2.91931C2.53726 3.30135 2.23421 3.7549 2.02745 4.25407C1.82069 4.75323 1.71427 5.28823 1.71427 5.82852V6.17995C1.71685 7.14942 2.06254 8.08668 2.6901 8.82563C3.31766 9.56458 4.18656 10.0575 5.14281 10.2171V11.9313C3.73335 11.7644 2.43324 11.0889 1.48639 10.0316C0.539535 8.97427 0.0110208 7.60779 0 6.18852V5.82852C0.00226724 4.2834 0.61707 2.80221 1.70964 1.70964C2.80221 0.61707 4.2834 0.00226724 5.82852 0Z" fill="#FFCCFD"/>
+                                        <path d="M18.8572 6.92566V5.21139C20.2696 5.3787 21.572 6.05665 22.5193 7.11756C23.4665 8.17847 23.9931 9.54911 24 10.9713V11.3228C23.9955 12.8649 23.3809 14.3426 22.2904 15.4331C21.1999 16.5236 19.7222 17.1382 18.18 17.1427H12.883C11.3416 17.1405 9.86386 16.5277 8.77315 15.4386C7.68243 14.3495 7.06753 12.8727 7.063 11.3313V10.9713C7.063 9.42701 7.6759 7.9458 8.7671 6.85298C9.85831 5.76017 11.3386 5.14509 12.883 5.14282H13.7144V6.85709H12.883C11.7933 6.85936 10.749 7.29383 9.97928 8.06516C9.20956 8.83648 8.77727 9.88166 8.77727 10.9713V11.3228C8.77954 12.411 9.21282 13.4539 9.9823 14.2234C10.7518 14.9929 11.7948 15.4262 12.883 15.4284H18.18C19.2668 15.4262 20.3085 14.9941 21.0777 14.2265C21.8469 13.4588 22.2812 12.4181 22.2857 11.3313V10.9713C22.2852 10.0004 21.9404 9.0611 21.3127 8.32037C20.6849 7.57964 19.8149 7.08546 18.8572 6.92566Z" fill="#FFCCFD"/>
+                                    </svg>    
+                                </span>
+                            </h3>
+                        </div>
+                    </a>
+                </div>               
+                
             </div>
         </div>
-    </section>
-
-    <div class="w-50 [ br4 ba b--black ] [ mb4 mt4 ] fr"></div>
-
-    <section class="pt5 relative" id="appearances">
-        <div class="[ ph3 ph4-ns ph6-l pv5 ] ml6-ns bg-black-05 relative">
-            <div class="w-75 [ br4 ba b--black ] mb4 [ absolute top-2 ] nl7"></div>    
-            <div class="vh-100 [ br4 ba b--black ] mb4 [ absolute right-2 ] nt7"></div>               
-            <header class="w-50-ns pr4-ns mb6">
-                <h1 class="sans-serif [ f4 f1-ns ] b [ flex items-baseline ]">
-                    appearances<div class="animate-fadein-3 bg-light-red period"></div>
-                </h1>
-                <h2 class="sans-serif [ f4 f3-ns ] [ flex items-baseline ] black-50">podcasts et al</h2>
-            </header>
-
-            <div class="mb5">
-                <h3 class="sans-serif mb5 f2 black b">podcasts</h3>
-
-                <div class="flex-l justify-between">
-                    <article class="w-30-l mr3-l mb3">
-                        <a href="https://anchor.fm/thenoisepod/" class="link dim bg-white pa3 db br2">
-                            <img src="https://s3-us-west-2.amazonaws.com/anchor-generated-image-bank/production/podcast_uploaded_nologo400/1662062/1662062-1556917784742-c09e4f44f149e.jpg" alt="" class="mb3"/>
-                            <h3 class="f4 fw6 sans-serif mt0 lh-title dim">Noise Podcast</h3>
-                            <span class="f6 black-70">(I host this one)</span>
-                        </a>    
-                    </article>
-                    <article class="w-30-l mr3-l mb3">
-                        <a href="https://open.spotify.com/episode/5MxyVbPZoEXfNwdEFAUHDb" class="link dim bg-white pa3 db br2">
-                            <img src="https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/2866231/2866231-1586498999442-09fa0f6a00778.jpg" alt="" class="mb3"/>
-                            <h3 class="f4 fw6 sans-serif mt0 lh-title dim">Nodes of Design #16: Design Systems by Luis Ouriach</h3>
-                        </a>    
-                    </article>    
-                    <article class="w-30-l mr3-l mb3">
-                        <a href="https://open.spotify.com/episode/3otVD9fxrk5YVZy29B6HQ0?si=WsRp3hBDRD-EZt_h8vkspA" class="link dim bg-white pa3 db br2">
-                            <img src="https://s3-us-west-2.amazonaws.com/anchor-generated-image-bank/production/podcast_uploaded_nologo400/309118/309118-1592367972723-04dbdce22845d.jpg" alt="" class="mb3"/>
-                            <h3 class="f4 fw6 sans-serif mt0 lh-title dim">The Future of Restaurants: A Silver Lining in the Middle of a Crisis, with Luis Ouriach</h3>
-                        </a>    
-                    </article>                                        
-                </div>
-
-            </div>
-
-            <div class="mb5">
-                <h3 class="sans-serif mb5 f2 black b">interviews</h3>
-
-                <div class="flex-l flex-wrap">
-                        <article class="w-30-l mr3-l mb3">
-                        <a href="https://www.theuxsyndicate.com/interview/2019/10/23/luis-ouriach-lead-designer-at-upgrade-pack/" class="link dim bg-white pa3 db br2">
-                            <h4 class="f6 mb2">The <abbr title="User Experience">UX</abbr> Syndicate</h4>
-                            <h3 class="f4 fw6 sans-serif mt0 lh-title dim">Speaking with Luis Ouriach, Lead Designer at Upgrade Pack</h3>
-                        </a>    
-                    </article>
-                    <!-- <article class="bg-white pa3 br2 w-30-l mb3">
-                        <a href="https://studiomason.co.uk/scamptalks/2019/7/23/luis-ouriach" class="link dim">
-                            <h4 class="f6">Scamp Talks</h4>
-                            <h3 class="f4 fw6 sans-serif mt0 lh-title dim">Scamp Talks, with Luis Ouriach</h3>
-                        </a>    
-                    </article>   -->
-                    <article class="w-30-l mr3-l mb3">
-                        <a href="http://userleague.com/luis-ouriach/" class="link dim bg-white pa3 db br2">
-                            <h4 class="f6 mb2">User League</h4>
-                            <h3 class="f4 fw6 sans-serif mt0 lh-title dim">User League &mdash; Product Designer Stories &mdash; Luis Ouriach</h3>
-                        </a>    
-                    </article>   
-                    <article class="w-30-l mr3-l mb3">
-                        <a href="https://howigotjob.com/product-designer/got-product-designer-job-local-measure/" class="link dim bg-white pa3 db br2">
-                            <h4 class="f6 mb2">How I Got Job</h4>
-                            <h3 class="f4 fw6 sans-serif mt0 lh-title dim">How I Got Product Designer Job at Local Measure</h3>
-                        </a>    
-                    </article>  
-                    <article class="w-30-l mr3-l mb3">
-                        <a href="https://www.we-are.cc/blog-post-luis.html" class="link dim bg-white pa3 db br2">
-                            <h4 class="f6 mb2">we-are</h4>
-                            <h3 class="f4 fw6 sans-serif mt0 lh-title dim">we-are &mdash; Luis Ouriach</h3>
-                        </a>    
-                    </article>                                                                               
-                                      
-                </div>
-
-            </div>            
-
-            <h3 class="sans-serif mb5 f2 black b">guest articles</h3>
-                
-            <div class="flex-l flex-wrap mb5">
-                <article class="w-30-l mr3-l mb3">
-                    <a href="https://dropeverything.com.au/post/designers-workflow" class="link dim bg-white pa3 db br2">
-                        <h4 class="f6 mb2">Dropbox</h4>
-                        <h3 class="f4 fw6 sans-serif mt0 lh-title dim">Dropbox and a designer’s workflow</h3>
-                    </a>    
-                </article>  
-                <article class="w-30-l mr3-l mb3">
-                    <a href="https://www.localmeasure.com/post/core-values-matter-employees-customers" class="link dim bg-white pa3 db br2">
-                        <h4 class="f6 mb2">Local Measure</h4>
-                        <h3 class="f4 fw6 sans-serif mt0 lh-title dim">Why Core Values Matter for Employees and Customers</h3>
-                    </a>    
-                </article>                                                                                              
-                <article class="w-30-l mr3-l mb3">
-                    <a href="https://www.upgradepack.com/thinking/up-designing-from-the-pixel-up" class="link dim bg-white pa3 db br2">
-                        <h4 class="f6 mb2">Upgrade Pack</h4>
-                        <h3 class="f4 fw6 sans-serif mt0 lh-title dim">Designing from the pixel up</h3>
-                    </a>    
-                </article>                                                                                                                        
-            </div>  
-
-            <h3 class="sans-serif mb5 f2 black b">side projects</h3>
-                
-            <div class="flex-l flex-wrap">
-                <article class="w-30-l mr3-l mb3">
-                    <a href="https://medium.com/8px-magazine" class="link dim bg-white pa3 db br2">
-                        <h3 class="f4 fw6 sans-serif mt0 lh-title dim mb2">8px Magazine</h3>
-                        <p class="f5 db black-70 lh-copy">A Medium publication, highlighting designers around the globe and original pieces about creativity.</p>
-                    </a>    
-                </article>                  
-                <article class="w-30-l mr3-l mb3">
-                    <a href="https://juniordesignjobs.com" class="link dim bg-white pa3 db br2">
-                        <h3 class="f4 fw6 sans-serif mt0 lh-title dim mb2">Junior Design Jobs</h3>
-                        <p class="f5 db black-70 lh-copy">Junior jobs are scarce, so I built a website to list only junior jobs (sometimes others creep in by mistake).</p>
-                    </a>    
-                </article>              
-                <article class="w-30-l mr3-l mb3">
-                    <a href="https://shopindie.8px.design/" class="link dim bg-white pa3 db br2">
-                        <h3 class="f4 fw6 sans-serif mt0 lh-title dim mb2">Shop Indie</h3>
-                        <p class="f5 db black-70 lh-copy">A directory of products from smaller global producers.</p>
-                    </a>    
-                </article> 
-                <article class="w-30-l mr3-l mb3">
-                    <a href="https://unmasked.8px.design/" class="link dim bg-white pa3 db br2">
-                        <h3 class="f4 fw6 sans-serif mt0 lh-title dim mb2">Unmasked</h3>
-                        <p class="f5 db black-70 lh-copy">British companies where you can buy face coverings from, in the wake of COVID-19.</p>
-                    </a>    
-                </article> 
-                <article class="w-30-l mr3-l mb3">
-                    <a href="http://8px.design/typography-starter-kit/" class="link dim bg-white pa3 db br2">
-                        <h3 class="f4 fw6 sans-serif mt0 lh-title dim mb2">The Sketch typography starter kit</h3>
-                        <h4 class="f6 mb2 light-red">553 sales</h4>
-                        <p class="f5 db black-70 lh-copy">A freebie where designers can save time with their typography system.</p>
-                    </a>    
-                </article>                                                                                                                                                                                                                                     
-            </div>                          
-                
-        </div>
-    </section>    
-    
-    <div class="w-50 [ br4 ba b--black] [ mb4 mt4 ] fr"></div>    
-
-    <section class="pt5 relative" id="newsletter">
-        <div class="[ ph3 ph4-ns ph6-l pv5 ] ml6-ns bg-black-05 relative">
-            <div class="w-75 [ br4 ba b--black ] mb4 [ absolute top-2 nl7 ]"></div>    
-            <div class="vh-100 [ br4 ba b--black ] mb4 [ absolute right-2 nt7 ]"></div> 
-            <div class="flex-l">
-                <header class="w-50-l pr4-l mt3">
-                    <h1 class="sans-serif [ f4 f1-ns ] b [ flex items-baseline ]">milk, no sugar<div class="animate-fadein-3 bg-light-red period"></div></h1>
-                    <h2 class="sans-serif mb3 [ f4 f3-ns ] [ flex items-baseline ] black-50">my newsletter</h2>
-                </header>
-                <div class="w-50-l [ mt4 mt6-ns ] lh-copy">
-                    <p class="mb3"><span class="b">i hate small talk</span>. so much, that I decided to start a weekly newsletter.</p>         
-                    <p class="mb4">Milk, No Sugar is a curated list of inspiring articles, photography, video and tales through the lens of a designer; informing you (and me) on topics we may not have seen that week.</p>
-                    <p class="mb4 f5">Want to <a href="https://www.getrevue.co/profile/milknosugar/issues/are-we-free-useless-futures-new-religions-967088" target="_blank">preview an issue</a>?</p>
-                    <div class="w-50 [ br4 ba b--black ] mb4 nl6"></div> 
-                    <!-- Begin MailChimp Signup Form -->
-                    <div id="revue-embed">
-  <form action="https://www.getrevue.co/profile/milknosugar/add_subscriber" method="post" id="revue-form" name="revue-form"  target="_blank">
-  <div class="revue-form-group">
-    <label for="member_email" class="f6 b db mb2">Email address</label>
-    <input class="revue-form-field input-reset ba b--black-20 pa2 mb2 db w-100" placeholder="Your email address..." type="email" name="member[email]" id="member_email">
-  </div>
-  <div class="revue-form-group">
-    <label for="member_first_name" class="f6 b db mb2">First name <span class="optional">(Optional)</span></label>
-    <input class="revue-form-field input-reset ba b--black-20 pa2 mb2 db w-100" placeholder="First name... (Optional)" type="text" name="member[first_name]" id="member_first_name">
-  </div>
-  <div class="revue-form-group">
-    <label for="member_last_name" class="f6 b db mb2">Last name <span class="optional">(Optional)</span></label>
-    <input class="revue-form-field input-reset ba b--black-20 pa2 mb2 db w-100" placeholder="Last name... (Optional)" type="text" name="member[last_name]" id="member_last_name">
-  </div>
-  <div class="revue-form-actions">
-    <input type="submit" value="Subscribe" name="member[subscribe]" id="member_submit" class="f6 link dim ph3 pv2 mb2 dib white bg-black">
-  </div>
-  <div class="revue-form-footer f7">By subscribing, you agree with Revue’s <a target="_blank" href="https://www.getrevue.co/terms">Terms of Service</a> and <a target="_blank" href="https://www.getrevue.co/privacy">Privacy Policy</a>.</div>
-  </form>
-</div>
-                   </div>
-            </div>
-        </div>        
-
-    </section>
-
-    <div class="w-50 [ br4 ba b--black ] [ mb4 mt4 ] fr"></div>
-
-    <section class="pt5 relative" id="testimonials"> 
-        <div class="[ ph3 ph4-ns ph6-l pv5 ] ml6-ns bg-black-05 relative">
-            <div class="w-75 [ br4 ba b--black ] mb4 [ absolute top-2 nl7 ]"></div>    
-            <div class="vh-100 [ br4 ba b--black ] mb4 [ absolute right-2 nt7 ]"></div>      
-            <header class="pr4-l mt3">
-                <h2 class="sans-serif [ f4 f1-ns ] b [ flex items-baseline ]">testimonials<div class="animate-fadein-3 bg-light-red period"></div></h2>
-                <h3 class="sans-serif mb3 [ f4 f3-ns ] [ flex items-baseline ] black-50">yes, real people</h3>
-            </header>
-            <div class="lh-copy [ mt4 mt6-ns mb5 ] measure">
-                <div class="mb5">
-                    <div class="bg-white [ bl bw1 ] pa3 mb4">
-                        <p class="f5 mb3">
-                            Working with Luis is a real pleasure. He is positive, always approachable and he knows how to uncover the potential in people by fully supporting them. Also, he is an excellent professional in terms of work being delivered and creating a perfect balance between being a manager and being a friend. 
-                        </p> 
-                        <p class="f5">
-                            I am hoping to cross paths again with him in the future. 
-                        </p> 
-                    </div>
-                    <div class="[ flex items-center ]">
-                        <img src="merve-guneyhan.jpg" alt="" class="h3 w3 br-100 mr3" />
-                        <div class="sans-serif">
-                            <h3 class="f4 b">Merve Sen Guneyhan</h3>
-                            <h4 class="f6"><abbr title="User Interface">UI</abbr> designer</h4>
-                            <p class="f6"><a href="https://www.ig.com/" class="black [ no-underline underline-hover ]">IG</a>, London</p>
-                        </div>
-                    </div>                                          
-                </div>	
-                <div class="mb5">
-                    <div class="bg-white [ bl bw1 ] pa3 mb4">
-                        <p class="f5">
-                            Luis is a fantastic designer and has been integral to the development of Upgrade Pack’s market-first app. His sound understanding of product processes and code gives him an edge over most designers and enables him to offer value across a number of teams and projects outside of the design scope. A real team player, Luis consistently goes out of his way to help and challenge those around him to deliver the best possible outcome for the business. I’ve really enjoyed my time working with Luis at Upgrade Pack.
-                        </p> 
-                    </div>
-                    <div class="[ flex items-center ]">
-                        <img src="kasia-bobinski.jpg" alt="" class="h3 w3 br-100 mr3" />
-                        <div class="sans-serif">
-                            <h3 class="f4 b">Kasia Bobinski</h3>
-                            <h4 class="f6">Product Manager</h4>
-                            <p class="f6"><a href="https://www.upgradepack.com/" class="black [ no-underline underline-hover ]">Upgrade Pack</a>, London</p>
-                        </div>
-                    </div>                                          
-                </div>	
-                <div class="mb5">
-                    <div class="bg-white [ bl bw1 ] pa3 mb4">
-                        <p class="f5">
-                            Luis has played a critical role in conceptualising and designing Upgrade Pack’s market-first app. Hard-working, motivated and intelligent, Luis continually strives for excellence in his work. He also goes out of his way to help others in the company, which is highly valuable in a startup/scaleup environment. Been a pleasure to work with.
-                        </p> 
-                    </div>
-                    <div class="[ flex items-center ]">
-                        <img src="nick-richardson.jpg" alt="" class="h3 w3 br-100 mr3" />
-                        <div class="sans-serif">
-                            <h3 class="f4 b">Nick Richardson</h3>
-                            <h4 class="f6"><abbr title="Public relations">PR</abbr> Manager</h4>
-                            <p class="f6"><a href="https://www.upgradepack.com/" class="black [ no-underline underline-hover ]">Upgrade Pack</a>, London</p>
-                        </div>
-                    </div>                   
-                </div>	                	    
-                <div class="mb5">
-                    <div class="bg-white [ bl bw1 ] pa3 mb4">
-                        <p class="f5">
-                            I have worked with Luis (and continue to do so) to produce internal corporate e-newsletters. Luis was on board from the start of the project and designed a visual identity to be used in the newsletters as well as building the emails in html each month. He is a pleasure to work with and turns around edits very quickly. I would definitely recommend him to others.
-                        </p> 
-                    </div>
-                    <div class="[ flex items-center ]">
-                        <img src="holly-howe.jpg" alt="" class="h3 w3 br-100 mr3" />
-                        <div class="sans-serif">
-                            <h3 class="f4 b">Holly Howe</h3>
-                            <h4 class="f6">Arts Journalist & Internal Comms Advisor</h4>
-                            <p class="f6"><a href="https://www.mckinsey.com/" class="black [ no-underline underline-hover ]">McKinsey &amp; Company</a>, London</p>
-                        </div>
-                    </div>                    
-                </div>
-		    <div class="mb5">
-                    <div class="bg-white [ bl bw1 ] pa3 mb4">
-                        <p class="f5">
-                            Luis is a highly talented problem-solver. He thinks creatively and strategically to come up with effective, elegant solutions for every project he takes on. His passion for design is evident not only in his work but through the energy he pours into his blog and his participation in various design groups. Luis stands out from other designers by also being an adept writer and by giving copy a high degree of consideration. Suffice it to say, I highly recommend Luis and hope to see him back in Australia some day.
-                        </p> 
-                    </div>
-                    <div class="[ flex items-center ]">
-                        <img src="anne-benoit.jpg" alt="" class="h3 w3 br-100 mr3" />
-                        <div class="sans-serif">
-                            <h3 class="f4 b">Anne Benoit</h3>
-                            <h4 class="f6">Marketing Director</h4>
-                            <p class="f6"><a href="https://www.localmeasure.com/" class="black [ no-underline underline-hover ]">Local Measure</a>, Sydney</p>
-                        </div>
-                    </div>                    
-                </div>
-                <div class="mb5">
-                    <div class="bg-white [ bl bw1 ] pa3 mb4">
-                        <p class="f5 mb2">
-                            Luis is an exceptionally talented designer with genuine flair and creativity. He is one of those very rare individuals who can create from a vacuum (i.e. with little or no coherent brief from the business). 
-                        </p>
-                        <p class="f5">
-                            He is a very likeable person and works in a professional and dedicated fashion until a task is done. He is good under pressure (i.e. up against deadlines) and has all the contemporary skills required to execute design projects at a high level.
-                        </p> 
-                    </div>
-                    <div class="[ flex items-center ]">
-                        <img src="jeremy-howard.jpg" alt="" class="h3 w3 br-100 mr3" />
-                        <div class="sans-serif">
-                            <h3 class="f4 b">Jeremy Howard</h3>
-                            <h4 class="f6">Chief Executive Officer</h4>
-                            <p class="f6"><a href="https://eu.cruworldwine.com/" class="black [ no-underline underline-hover ]">Cru World Wine</a>, London &amp; Hong Kong</p>
-                        </div>
-                    </div>                    
-                </div>                
-                <div class="mb5">
-                    <div class="bg-white [ bl bw1 ] pa3 mb4">
-                        <p class="f5 mb2">
-                            It was great to work with Luis during his time at Local Measure. He and I worked together on product launches as well as evolving our support messaging for growth. 
-                        </p>
-                        <p class="f5 mb2">
-                            Luis is always curious, looking for new ways to bring things forward; not just within his areas of responsibility, but throughout the organisation. He's open to feedback and ideas, working collaboratively to bring out the best in the results for both the customers, users, support and product. 
-                        </p>
-                        <p class="f5">
-                            He also knows how to bring fun into the equation, which is critical in any fast-paced environment. So sad to see him moving back to the UK; but know that he's going to achieve great things wherever life takes him.
-                        </p> 
-                    </div>
-                    <div class="[ flex items-center ]">
-                        <img src="mark-adams.jpg" alt="" class="h3 w3 br-100 mr3" />
-                        <div class="sans-serif">
-                            <h3 class="f4 b">Mark Adams</h3>
-                            <h4 class="f6">Strategic Accounts Manager</h4>
-                            <p class="f6"><a href="https://www.localmeasure.com" class="black [ no-underline underline-hover ]">Local Measure</a>, Sydney</p>
-                        </div>
-                    </div>                    
-                </div>                               
-                <div class="mb5">
-                    <div class="bg-white [ bl bw1 ] pa3 mb4">
-                        <p class="f5 mb2">
-                            Luis is a joy to work with. We first worked together on hiring IBT UK's first-ever data journalist and I found him a collegiate colleague who disarmed me - in a good way - with some top ideas. 
-                        </p>
-                        <p class="f5">
-                            We have totally different skill sets but time after time I found Luis as a designer could visualise what I was saying out loud. He was hugely liked in our office and will be missed greatly.
-                        </p> 
-                    </div>
-                    <div class="[ flex items-center ] mb3">
-                        <img src="john-crowley.jpg" alt="" class="h3 w3 br-100 mr3" />
-                        <div class="sans-serif">
-                            <h3 class="f4 b">John Crowley</h3>
-                            <h4 class="f6">Editor in Chief</h4>
-                            <p class="f6"><a href="https://www.ibtimes.co.uk" class="black [ no-underline underline-hover ]">IBTimes.co.uk</a>, London</p>
-                        </div>
-                    </div>
-                </div>                                                                                                 
-                <div class="mb5">
-                    <div class="bg-white [ bl bw1 ] pa3 mb4">
-                        <p class="f5 mb2">
-                            I worked with Luis on multiple feature updates as well as a new product MVP from conception to launch.
-                        </p>
-                        <p class="f5">
-                            It’s been great working together, brainstorming (I’ll miss our sessions!) and seeing him come up with designs to solve our customer pain points.                                
-                        </p> 
-                    </div>
-                    <div class="[ flex items-center ]">
-                        <img src="rafika-radjam.jpg" alt="" class="h3 w3 br-100 mr3" />
-                        <div class="sans-serif">
-                            <h3 class="f4 b">Rafika Radjam</h3>
-                            <h4 class="f6">Product Manager</h4>
-                            <p class="f6"><a href="https://www.localmeasure.com/" class="black [ no-underline underline-hover ]">Local Measure</a>, Sydney</p>
-                        </div>
-                    </div>                    
-                </div> 
-                <div class="mb5">
-                    <div class="bg-white [ bl bw1 ] pa3 mb4">
-                        <p class="f5">
-                            Luis was a great support to me and is a very knowledgable digital designer. He took great care and detail over digital, marketing and brand related projects.
-                        </p>
-                    </div>
-                    <div class="[ flex items-center ]">
-                        <img src="nic-moran.jpg" alt="" class="h3 w3 br-100 mr3" />
-                        <div class="sans-serif">
-                            <h3 class="f4 b">Nic Moran</h3>
-                            <h4 class="f6">Global Head of Brand</h4>
-                            <p class="f6"><a href="https://www.newsweek.com/" class="black [ no-underline underline-hover ]">Newsweek Media Group</a>, London</p>
-                        </div>
-                    </div>                    
-                </div>                                                                                  
-            </div>              
-        </div>        
-    </section>  
-    
-    <div class="vh-25 bg-white"></div>
-
-    <section class="tc mb4"> 
-        <p class="sans-serif f4 b">cheers.</p>
-    </section>    
-    <footer>
-        <ul class="list f3 [ flex flex-wrap flex-column items-center justify-center ]">
-            <li class="h4 bg-black mb1 mb3-ns" style="width: 2px"></li>    
-            <li>
-                <a href="https://twitter.com/disco_lu" class="b db no-underline">
-                    <img src="icon--twitter.svg" alt="" class="h2 w2 dim" />
-                </a>      
-            </li>         
-            <li class="[ mb1 mb3-ns mt1 mt3-ns ]">
-                <a href="https://medium.com/@disco_lu" class="b db no-underline">
-                <img src="icon--medium.svg" alt="" class="h2 w2 dim" />
-                </a>
-            </li>         
-            <li>
-                <a href="https://instagram.com/disco_lu" class="b db no-underline">
-                    <img src="icon--instagram.svg" alt="" class="h2 w2 dim" />
-                </a>
-            </li>        
-        </ul>
-    </footer>     
-    
-    <div class="vh-25 bg-white"></div>
+    </div>        
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-18764357-1"></script>
