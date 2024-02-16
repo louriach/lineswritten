@@ -67,33 +67,56 @@ body {
     color: #000;
     font-family: sans-serif;
     font-size: 22px;
+    /* width: 400vw;
+    height: 400vh; */
+    overflow: auto;
 }
 
+
 .container {
-    align-items: center;
+
+    height: 100vh;
+    width: 100vw;
+
     display: grid;
-    min-height: 100vh;
+
+    align-items: center;
     justify-content: center;
+    
+    overflow: hidden;
 }
+
+/* .column { 
+    background: rgba(0,0,0,.2);
+} */
 
 </style>
 	
 <!-- Google tag (gtag.js) -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-C4T5V47TG6"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C4T5V47TG6"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-C4T5V47TG6');
-</script> -->
+</script>
 
 </head>
 
 <body>
 
+<!-- 
+    <div class="s">
+        <div class="d">
+            <h1>This is my website</h1>
+        </div>
+     </div> -->
+
     <div class="container">
-        <h1>This is my website</h1>
+        <div class="column">
+            <h1>This is my website</h1>
+        </div>
     </div>        
 
 
