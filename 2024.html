@@ -105,6 +105,8 @@ body {
  /* Make Grid Items Control Absolute Pseudo Positioning */
 .grid__item {
   border: 1px solid var(--line-color);
+  box-shadow: .25px .25px 2px 0px rgba(255,255,255,0.04) inset;
+  border-radius: 4px;
   position: relative;
 }
 
@@ -140,24 +142,43 @@ body {
 }
 
 .item {
-    border: .25px solid black;
+    border: .25px solid rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
     color: white;
-    padding: 16px;
+    padding: 3rem;
 }
 
-.item-a {
+.item-content {
+  background: rgba(0,0,0,0.2);
+  /* box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.04) inset, -1px -2px 2px 0px rgba(255,255,255,0.04); */
+  box-shadow: .25px .25px 2px 0px rgba(255,255,255,0.04) inset, 1px 1px 2px 0px rgba(255,255,255,0.04), -8px -8px 24px 0px rgba(0,0,0,0.1), 8px 8px 24px 0px rgba(0,0,0,0.1), 4px 4px 24px 0px rgba(0,0,0,0.1) inset;
+  overflow: hidden;
+}
+
+.header {
   grid-area: header;
 }
 .item-b {
-  background: rgba(0,0,0,0.2);
   grid-area: intro;
 }
 .item-c {
-  background: rgba(0,0,0,0.2);
   grid-area: sidebar;
 }
-.item-d {
+.footer {
   grid-area: footer;
+}
+
+/* Type stuff */
+
+h1 {
+  font-size: 18px;
+  border-bottom: rgba(255,255,255,.4);
+}
+
+h1 span {
+  color: rgba(255,255,255,.4);
+  font-size: 14px;
 }
 
 </style>
@@ -285,17 +306,19 @@ body {
      </div>
 
 <div class="content">
-    <div class="item item-a">
-        <h1>Top clearance</h1>
+    <div class="item header">
+      &nbsp;
     </div>
-    <div class="item item-b">
-        <h1>This is a section of content</h1>
+    <div class="item item-content item-b">
+        <h1>Luis <span>(The S is silent)</span></h1>
+        <!-- <p>Person who does stuff</p> -->
     </div>
-    <div class="item item-c">
-        <h1>This is a section of content</h1>
+    <div class="item item-content item-c">
+        <h2>This is a section of content</h2>
+        <!-- <p>This is a line of text</p> -->
     </div>
-    <div class="item item-d">
-        <h1>Bottom clearance</h1>
+    <div class="item footer">
+      &nbsp;
     </div>
 </div>
 
