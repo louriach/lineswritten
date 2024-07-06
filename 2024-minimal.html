@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Luis Ouriach</title>
+
+  <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/louriach/lineswritten/master/favicon.jpg"/>
+
+  <meta name="description" content="Designer, writer, podcaster, advocate.">
+  <meta name="author" content="Luis Ouriach">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="Luis Ouriach - Designer, writer, podcaster, advocate" />
+    <meta property="og:description" content="Designer, writer, podcaster, advocate.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/louriach/lineswritten/master/lineswritten-share-og.jpg">
+    <meta property="og:url" content="https://lineswritten.co.uk/">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <meta property="og:site_name" content="Luis Ouriach - Designer, writer, podcaster, advocate">
+    <meta name="twitter:image:alt" content="Designer, writer, podcaster, advocate.">
+    
+    <meta name="twitter:site" content="@disco_lu">
+
+    <!-- iOS top bar color settings -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@600&family=Cormorant+Upright&family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+
+    <!-- DM Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+
+<style>
+    /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+
+/* Variables */
+
+:root {
+    --font-size-body: 17px;
+    --font-size-h1: calc(var(--font-size-body) *.8);
+    --body-font: DM Mono, sans-serif;
+    --body-line-height: 150%;
+    --body-letter-spacing: .25px;
+    --font-small: .8rem;
+
+    --fg: rgba(0,0,0, 0.8);
+    --fg-secondary: rgba(0,0,0, 0.25); 
+    --bg: rgba(0,0,0,0.05);
+    --card: rgba(255,255,255,0.9);
+    --border: rgba(0,0,0, .1);
+    --border-inverse: rgba(0,0,0, .3);
+    --border-link-width: 1px;
+    --border-link-color: rgba(0,0,0, .3);
+
+    --panel-shadow-inner-blur: 0;
+    --panel-shadow-inner: rgba(0,0,0,0);
+    --panel-shadow-outer-blur: 6px;
+    --panel-shadow-outer-offset: 4px;
+    --panel-shadow-outer: rgba(0,0,0,0.05);
+
+    /* Light switch */
+    --switch: #fff;
+    --switch-border: #ddd;
+    --switch-groove: #fff;
+    --switch-top: #eee;
+    --switch-top-outset: #fff;
+    --switch-bottom: #fff;
+    --switch-bottom-outset: #ccc; 
+}
+
+[data-theme="dark"] {
+    --fg: rgba(255,255,255, 0.8);
+    --fg-secondary: rgba(255,255,255, 0.3); 
+    --bg: rgba(0,0,0,0.9);
+    --card: rgba(0,0,0,0.1);
+    --border: rgba(0,0,0, .4);
+    --border-inverse: rgba(255,255,255, .2);
+    --border-link-width: 2px;
+    --border-link-color: rgba(255,255,255, .3);
+
+    --panel-shadow-inner-blur: 4px;
+    --panel-shadow-inner: rgba(255,255,255,0.1);
+
+    /* Light switch */
+    --switch: #eee;
+    --switch-border: #aaa;
+    --switch-groove: #fcfcfc;
+    --switch-top: #aaa;
+    --switch-top-outset: #fcfcfc;
+    --switch-bottom: #fcfcfc;
+    --switch-bottom-outset: #aaa; 
+}
+
+body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--body-font);
+    font-size: var(--font-size-body);
+    line-height: var(--body-line-height);
+    /* cursor: url('custom-cursor.png'), auto; */
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+    font-weight: 700;
+}
+
+a {
+    border-bottom: var(--border-link-width) solid var(--border-link-color);
+    color: var(--fg);
+    font-weight: bold;
+    padding-bottom: 1px;
+    text-decoration: none;
+}
+
+a:hover {
+    border: none;
+}
+
+em {
+  font-style: italic;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--border-inverse);
+    margin: 1rem 0;
+}
+
+.small {
+    font-size: var(--font-small);
+}
+
+.avatar {
+    margin-bottom: 1rem;
+}
+
+.avatar img {
+  border-radius: calc(20px - 1rem);
+  filter: sepia(1);
+  width: 100%;
+}
+
+/* Stuff */
+
+.icon {
+    color: var(--fg);
+    fill: var(--fg);
+    stroke: var(--fg);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1rem 1fr 1rem 2fr 1rem 48px 1rem;
+    grid-template-rows: .5rem 1fr .5rem;
+}
+
+.panel {
+  margin: 1rem 0;
+}
+
+.panel > div {
+  background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: 0 1px var(--panel-shadow-inner-blur) 0 var(--panel-shadow-inner) inset, 
+    var(--panel-shadow-outer-offset) var(--panel-shadow-outer-offset) var(--panel-shadow-outer-blur) var(--panel-shadow-outer);
+}
+
+.panel--profile {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.panel--profile > div {
+    padding: 1rem;
+    min-width: 240px;
+}
+
+.panel--main {
+  grid-column: 4;
+  grid-row: 2;
+}
+
+.panel--main > div {
+    min-width: 480px;
+    max-width: 640px;
+    padding: 2rem;
+}
+
+.panel--main h1 {
+    letter-spacing: 1px;
+    margin-bottom: .5rem;    
+    text-transform: uppercase;
+}
+
+.subtitle {
+    color: var(--fg-secondary);
+}
+
+.words {
+  letter-spacing: var(--body-letter-spacing);
+  line-height: var(--body-line-height);
+}
+
+.words h1 {
+    color: var(--fg-secondary);
+    margin-bottom: 1rem;
+}
+
+.words p {
+    margin-bottom: 1rem;
+}
+
+.words p:last-child {
+    margin-bottom: 0;
+}
+
+.words em {
+  color: white;
+}
+
+.ol {
+  margin-left: 2rem;
+}
+
+.section {
+    margin-bottom: 3rem;
+}
+
+.section:last-child {
+    margin: 0;
+}
+
+/* Light switch */
+
+.theme-switcher {
+  grid-column: 6;
+  grid-row: 2;
+}
+
+.switch-panel {
+  background-color: var(--switch-panel);
+  border-radius: 4px;
+  /* height: 80px; */
+  position: relative;
+  width: 100%;
+}
+
+.switch {
+  background-color: var(--switch);
+  border-radius: 3px;
+  border: 1px solid var(--switch-border);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), -2px -2px 2px rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.switch__hole {
+  border-radius: 6px;
+  height: 64px;
+  margin-left: 8px;
+  padding: 2px;
+  width: 32px;
+}
+
+.switch__groove {
+  background-color: var(--switch-groove);
+  border-radius: 5px;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2), inset -1px -1px 4px rgba(0, 0, 0, 0.2), -1px -1px 4px rgba(255, 255, 255, 0.5);
+  padding: 4px 4px 4px 2px;
+  height: 100%;
+  width: 100%;
+}
+.switch__top {
+  background-color: var(--switch-top);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.05), inset 0 0 24px rgba(0, 0, 0, 0.025), inset -16px -16px 36px rgba(0, 0, 0, 0.1);
+  height: 50%;
+  left: 0;
+  top: 0;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+  width: 100%;
+}
+.switch__top-outset {
+  background-color: var(--switch-top-outset);
+  background-image: linear-gradient(90deg, var(--switch-outset-gradient-top-start) 0%, var(--switch-outset-gradient-top-end) 100%);
+  height: 10px;
+  transition: height 0.25s ease;
+}
+.switch__bottom {
+  background-color: var(--switch-bottom);
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1), inset 0 0 12px rgba(0, 0, 0, 0.05);
+  height: 50%;
+  left: 0;
+  top: 50%;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+  width: 100%;
+}
+.switch__bottom-outset {
+  bottom: 0;
+  background-color: var(--switch-bottom-outset);
+  background-image: linear-gradient(90deg, var(--switch-outset-gradient-bottom-start) 0%, var(--switch-outset-gradient-bottom-end) 100%);
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1), inset 0 0 12px rgba(0, 0, 0, 0.05);
+  height: 0px;
+  position: absolute;
+  transition: height 0.25s ease;
+  width: 100%;
+}
+
+.light-switch {
+    display: none;
+}
+
+input[type=checkbox]:checked + .switch-panel .switch__top {
+  background-color: var(--switch-top);
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1), inset 0 0 12px rgba(0, 0, 0, 0.05);
+}
+input[type=checkbox]:checked + .switch-panel .switch__top-outset {
+  height: 0;
+}
+input[type=checkbox]:checked + .switch-panel .switch__bottom {
+  background-color: var(--switch-bottom);
+}
+input[type=checkbox]:checked + .switch-panel .switch__bottom-outset {
+  height: 10px;
+}
+
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C4T5V47TG6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C4T5V47TG6');
+</script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="panel panel--profile">
+          <div>
+            <div class="avatar">
+                <img src="avatar-luis-ouriach.jpg" alt="Luis"/>
+            </div>
+              <div class="hello">
+                <h1 class="title">Hey, I'm Luis &nbsp;</h1>
+                <p class="subtitle">Designer, writer, podcaster.</p>
+                <hr/>
+                <p>
+                    <a href="https://twitter.com/disco_lu">Twitter</a>
+                    &mdash; <a href="https://read.cv/disco_lu">Read.cv</a>
+                    &mdash; <a href="https://www.linkedin.com/in/luisouriach/">LinkedIn</a>
+                </p>          
+              </div>
+          </div>
+        </div>
+
+        <div class="panel panel--main">
+        <div>
+            <div class="words">
+              <div class="section">
+                  <h1>The portfolio</h1>
+                  <p>I don't have a portfolio.</p>                
+                  <p>The reality is that every piece of design work I've created has either been lost to the mercy of company failure, or been overwritten by our thirst for redesign.</p>
+              </div>
+              <div class="section">
+                  <h1>Working style</h1>
+                  <p>I'm someone who attaches a lot of self worth to my work, and tend to overachieve. My last 4 performance reviews have been 4 or 5 out of 5.</p>
+                  <p>Working with other high achievers makes me happy.</p>
+                  <p>I work best in short bursts of extreme efficiency. This might result in 1000 words being written in 30 minutes, or a few dozen screens being pulled together in a few hours.</p> 
+              </div>
+              <div class="section">
+                  <h1>Figma</h1>
+                  <p>I've been working at Figma since June 2020, here are a few notable achievements:</p>
+                  <ol class="ol">
+                  <li>Figma's first non-sales hire in London</li>  
+                  <li>Sole designer on Simple Design System, a UI kit preloaded into <strong>every Figma account</strong> &mdash; <a href="https://www.figma.com/community/file/1380235722331273046/simple-design-system">Figma Community version</a>, <a href="https://github.com/figma/sds">Github repository</a>.</li>
+                  <li>Launched Variables &#45; Working on the keynote assets and demoing live in front of a friendly audience of 4k+ people</li>
+                      <li>Advised FTSE 100 and New York Stock Exchange enterprise customers on design systems, including <em>JP Morgan Chase</em>, <em>Airbus</em>, <em>Adobe</em>, and approximately ~300 others (2024)</li>
+                      <li>Hosted 8 hours (overnight) of Figma's 24 hour Config conference</li>
+                      <li>Published the official <a href="https://www.figma.com/best-practices/team-file-organization/">best practice guide</a> on structure</li>
+                      <li>Represented Figma in Belgium, Germany, Ireland, Poland, Spain at design conferences</li>
+                  </ol>
+              </div>
+            </div>
+
+            <p>Icons by Iconoir. Font is...</p>
+            <!--<div>
+              <h1>Footnotes</h1>
+              <p>I can make you fancy buttons though if that's your cup of tea.</p>
+              <img src="https://pbs.twimg.com/media/GGuASEIWoAAHuyH?format=jpg&name=medium" alt="Button designs" width="100%"/>
+              <iframe width="100%" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FUxL2NJhVOhVD250jxyu1g7%2F%25F0%259F%2592%25A1%3Ftype%3Ddesign%26node-id%3D118%253A1255%26mode%3Ddesign%26t%3D3nWYJXlLOckEZQZ7-1" allowfullscreen></iframe>
+
+              <p>Here's an example:</p>
+              <iframe width="100%" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F95OxybZoSU11w2fElWMgNC%2FUser-app%3Ftype%3Ddesign%26node-id%3D3%253A4500%26mode%3Ddesign%26t%3DDWPk7alZ11GjDcNA-1" allowfullscreen></iframe>
+            </div>-->
+          </div>
+        </div>
+
+        <div class="theme-switcher">
+          <label for="lightSwitch" class="wrap">
+              <input type="checkbox" checked id="lightSwitch" name="lightSwitch" class="light-switch" />
+              <div class="switch-panel">
+              <div class="switch__hole">
+                  <div class="switch__groove">
+                  <div class="switch">
+                      <div class="switch__shadow-box top">
+                      <div class="switch__shadow top"></div>
+                      </div>
+                      <div class="switch__shadow-box bottom">
+                      <div class="switch__shadow bottom"></div>
+                      </div>
+                      <div class="switch__top">
+                      <div class="switch__top-outset"></div>
+                      </div>
+                      <div class="switch__bottom">
+                      <div class="switch__bottom-outset"></div>
+                      </div>
+                  </div>
+                  </div>
+              </div>
+              </div>
+          </label>
+      </div>        
+
+    </div>   
+
+    <script>
+
+        /* Light / dark switch code, modified slightly from this Codepen: https://codepen.io/ananyaneogi/pen/zXZyMP */
+
+        const toggleSwitch = document.querySelector('#lightSwitch');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+        
+            if (currentTheme === 'dark') {
+                toggleSwitch.checked = true;
+            }
+        }
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                console.log("clicked dark")
+            }
+            else {        document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                console.log("clicked light")
+            }    
+        }
+
+        toggleSwitch.addEventListener('change', switchTheme, false);
+        </script>
+
+</body>

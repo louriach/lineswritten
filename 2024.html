@@ -73,14 +73,18 @@ body {
     cursor: url('custom-cursor.png'), auto;
 }
 
+em {
+  font-style: italic;
+}
+
 /* Scroller */
 
 .scroller {
   /* align-items: center; */
   display: flex;
   /* justify-content: center; */
-  height: 400vh;
-  width: 400vw; 
+  /* height: 400vh;
+  width: 400vw;  */
 }
 
 /* Grid pattern */
@@ -127,12 +131,12 @@ body {
     "header header header header header header header header header header avatar social"
     "header header header header header header header header header header . ."
     "header header header header header header header header header header . ."
-    ". . intro intro intro . . . . . . ."
-    ". . intro intro intro . . . sidebar sidebar . ."
-    ". . intro intro intro . . . . . . ."
-    ". . . . . . . . . . . ."
-    ". . . . . . . . . . . ."
-    ". . . . side . . . . . . ."
+    ". . . intro intro intro intro intro intro . . ."
+    ". . . intro intro intro intro intro intro . . ."
+    ". . . intro intro intro intro intro intro . . ."
+    ". . . intro intro intro intro intro intro . . ."
+    ". . . intro intro intro intro intro intro . . ."
+    ". . . intro intro intro intro intro intro . . ."
     "footer footer footer footer footer footer footer footer footer footer footer footer"
     "footer footer footer footer footer footer footer footer footer footer footer footer"
     "footer footer footer footer footer footer footer footer footer footer footer footer"
@@ -183,13 +187,13 @@ body {
 .item {
     border: .25px solid rgba(0,0,0,0.1);
     border-radius: 6px;
-    overflow: hidden;
+    /* overflow: hidden; */
     color: white;
 }
 
 .item-content {
-  background: rgba(0,0,0,0.2);
-  box-shadow: .25px .25px 2px 0px rgba(255,255,255,0.04) inset, 1px 1px 2px 0px rgba(255,255,255,0.04), -8px -8px 24px 0px rgba(0,0,0,0.1), 8px 8px 24px 0px rgba(0,0,0,0.1), 4px 4px 24px 0px rgba(0,0,0,0.1) inset;
+  /* background: rgb(21, 21, 21); */
+  /* box-shadow: .25px .25px 2px 0px rgba(255,255,255,0.04) inset, 1px 1px 2px 0px rgba(255,255,255,0.04), -8px -8px 24px 0px rgba(0,0,0,0.1), 8px 8px 24px 0px rgba(0,0,0,0.1), 4px 4px 24px 0px rgba(0,0,0,0.1) inset; */
   overflow: hidden;
 }
 
@@ -217,26 +221,59 @@ body {
 .intro {
   grid-area: intro;
 }
-.item-c {
+/* .item-c {
   grid-area: sidebar;
 }
 .item-d {
-  grid-area: side;
+  grid-area: side; */
 }
 .footer {
   grid-area: footer;
 }
 
-/* Type stuff */
+/* Stuff */
+
+.intro {
+  background: rgba(0,0,0,0.9);
+  color: rgb(208, 203, 209);
+  overflow: scroll;
+  padding: 2rem;
+}
 
 .title {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
   margin-bottom: .5rem;
 }
 
+hr {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255,255,255,0.2);
+  border-left: none;
+  border-right: none;
+  margin: 2rem 0;
+  padding: 0.25px;
+}
+
 .stuff {
-  padding: 1rem;
+  padding: 2rem;
+}
+
+.words {
+  letter-spacing: .5px;
+  line-height: 140%;
+}
+
+.words p, .words iframe {
+  margin-bottom: 1rem;
+}
+
+.words em {
+  color: white;
+}
+
+.ol {
+  margin-left: 2rem;
 }
 
 </style>
@@ -481,22 +518,38 @@ body {
       </div>
 
         <div class="item item-content intro">
-          <div class="stuff">
+          <div class="hello">
             <h1 class="title">Hey, I'm Luis</h1>
             <p>Designer, writer, podcaster.</p>            
           </div>
+          <hr/> 
+          <div class="words">
+            <p>I don't have a portfolio.</p>
+            <p>The reality is that every piece of design work I've created has either been lost to the mercy of company failure, or been overwritten by our thirst for redesign.</p>
+            <p>I can make you fancy buttons though if that's your cup of tea.</p>
+            <!-- <img src="https://pbs.twimg.com/media/GGuASEIWoAAHuyH?format=jpg&name=medium" alt="Button designs" width="100%"/> -->
+            <iframe width="100%" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FUxL2NJhVOhVD250jxyu1g7%2F%25F0%259F%2592%25A1%3Ftype%3Ddesign%26node-id%3D118%253A1255%26mode%3Ddesign%26t%3D3nWYJXlLOckEZQZ7-1" allowfullscreen></iframe>
+            <hr/> 
+            <p>I'm someone who attaches a lot of self worth to my work, and tend to overachieve. My last 4 performance reviews have been 4 or 5 out of 5.</p>
+            <p>Working with other high achievers makes me happy.</p>
+            <hr/> 
+            <p>I work best in short bursts of extreme efficiency. This might result in 1000 words being written in 30 minutes, or a few dozen screens being pulled together in a few hours.</p> 
+            <p>Here's an example:</p>
+            <iframe width="100%" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F95OxybZoSU11w2fElWMgNC%2FUser-app%3Ftype%3Ddesign%26node-id%3D3%253A4500%26mode%3Ddesign%26t%3DDWPk7alZ11GjDcNA-1" allowfullscreen></iframe>
+            <p>As I memtioned before though, this work never saw production, because this is how things work in startup land.</p>
+            <hr/> 
+            <p>I've been working at Figma since June 2020. A few notable achievements:</p>
+            <ol class="ol">
+              <li>Figma's first non-sales hire in London</li>  
+              <li>Launched Variables &#45; Working on the keynote assets and demoing live in front of a friendly audience of 4k+ people</li>
+                <li>Advised FTSE 100 and New York Stock Exchange enterprise customers on design systems, including <em>JP Morgan Chase</em>, <em>Airbus</em>, <em>Adobe</em>, and approximately ~300 others (2024)</li>
+                <li>Hosted 8 hours (overnight) of Figma's 24 hour Config conference</li>
+                <li>Published the official <a href="https://www.figma.com/best-practices/team-file-organization/">best practice guide</a> on structure</li>
+                <li>Represented Figma in Belgium, Germany, Ireland, Poland, Spain at design conferences</li>
+              </ol>
+          </div>
         </div>  
 
-        <div class="item item-content item-c">
-          <div class="stuff">
-            <p>This is a section</p>
-          </div>
-        </div>  
-        
-        <div class="item item-content item-d">
-          <div class="stuff">
-            <p>This is a section</p>
-          </div>
         </div>  
 
 
