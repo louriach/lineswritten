@@ -70,6 +70,34 @@
       },
       {
         "listItem": {
+          "thumbnail": "design-systems/my-first-variable.jpg",
+          "body": {
+            "labels": [
+              {
+                "label": "Video series"
+              } 
+            ],
+            "content": {
+              "callout": "My First Variable: A Figma series",
+              "supplements": [
+                {
+                    "text": "I scripted, recorded, and published a video series on the official Figma YouTube channel, introducing designers to variables and how to get them set up. The series currently has ~90k views.",
+                    "links": []
+                }
+              ],
+              
+              "buttons": [
+                {
+                  "text": "View the playlist",
+                  "href": "https://www.youtube.com/playlist?list=PLXDU_eVOJTx6V9PNAxvagzaMWHDFOsYQI"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "listItem": {
           "thumbnail": "design-systems/handoff-prototype.png",
           "body": {
             "labels": [
