@@ -5,30 +5,28 @@
           "thumbnail": "design-systems/simple-design-system.jpg",
           "body": {
             "labels": [
-              {
-                "label": "Design System"
-              }
+              { "label": "Design System" }
             ],
             "content": {
               "callout": "Figma's Simple Design System",
               "supplements": [
                 {
-                    "text": "Role: Solo designer on Figma's first ever in-product design system.",
-                    "links": []
-                  },
-                  {
-                    "text": "Key metric: 4 million component inserts in 30 days.",
-                    "links": []
-                  },
-                  {
-                    "text": "Launch: Released as part of the official 2024 keynote at Figma's annual conference, Config. This was launched alongside brand new UI kits from Apple and Google, another company first.",
-                    "links": [
-                      {
-                        "word": "Config",
-                        "href": "https://www.youtube.com/watch?v=n5gJgkO2Dg0&t=879s"
-                      }
-                    ]
-                  }
+                  "text": "Role: Solo designer on Figma's first ever in-product design system.",
+                  "links": []
+                },
+                {
+                  "text": "Key metric: 4 million component inserts in 30 days.",
+                  "links": []
+                },
+                {
+                  "text": "Launch: Released as part of the official 2024 keynote at Figma's annual conference, Config. This was launched alongside brand new UI kits from Apple and Google, another company first.",
+                  "links": [
+                    {
+                      "word": "Config",
+                      "href": "https://www.youtube.com/watch?v=n5gJgkO2Dg0&t=879s"
+                    }
+                  ]
+                }
               ],
               "buttons": [
                 {
@@ -45,19 +43,16 @@
           "thumbnail": "design-systems/smashing-magazine.jpg",
           "body": {
             "labels": [
-              {
-                "label": "Article"
-              } 
+              { "label": "Article" }
             ],
             "content": {
               "callout": "Building components for consumption, not complexity",
               "supplements": [
                 {
-                    "text": "Two mega articles — roughly 10k words in total — with best practice advice on component composition within Figma.",
-                    "links": []
+                  "text": "Two mega articles — roughly 10k words in total — with best practice advice on component composition within Figma.",
+                  "links": []
                 }
               ],
-              
               "buttons": [
                 {
                   "text": "Read on Smashing Magazine",
@@ -73,19 +68,16 @@
           "thumbnail": "design-systems/my-first-variable.jpg",
           "body": {
             "labels": [
-              {
-                "label": "Video series"
-              } 
+              { "label": "Video series" }
             ],
             "content": {
               "callout": "My First Variable: A Figma series",
               "supplements": [
                 {
-                    "text": "I scripted, recorded, and published a video series on the official Figma YouTube channel, introducing designers to variables and how to get them set up. The series currently has ~90k views.",
-                    "links": []
+                  "text": "I scripted, recorded, and published a video series on the official Figma YouTube channel, introducing designers to variables and how to get them set up. The series currently has ~90k views.",
+                  "links": []
                 }
               ],
-              
               "buttons": [
                 {
                   "text": "View the playlist",
@@ -101,19 +93,16 @@
           "thumbnail": "design-systems/ways-conf.jpg",
           "body": {
             "labels": [
-              {
-                "label": "Conference talk"
-              } 
+              { "label": "Conference talk" }
             ],
             "content": {
               "callout": "An introduction to variables",
               "supplements": [
                 {
-                    "text": "A talk I delivered at WaysConf in Poland, taking people through my advice when it comes to variables.",
-                    "links": []
+                  "text": "A talk I delivered at WaysConf in Poland, taking people through my advice when it comes to variables.",
+                  "links": []
                 }
               ],
-              
               "buttons": [
                 {
                   "text": "Watch the talk (21 mins)",
@@ -123,25 +112,22 @@
             }
           }
         }
-      },   
+      },
       {
         "listItem": {
           "thumbnail": "design-systems/design-system-best-practices.jpg",
           "body": {
             "labels": [
-              {
-                "label": "Best practice guide"
-              } 
+              { "label": "Best practice guide" }
             ],
             "content": {
               "callout": "Design system structure for teams, projects and files",
               "supplements": [
                 {
-                    "text": "Advice for structuring a design system on all Figma paid plans. The file takes you through the structural differences between each plan, the 3 types of design system file, 4 recommended design system structures, and a proposal for non-global components.",
-                    "links": []
+                  "text": "Advice for structuring a design system on all Figma paid plans. The file takes you through the structural differences between each plan, the 3 types of design system file, 4 recommended design system structures, and a proposal for non-global components.",
+                  "links": []
                 }
               ],
-              
               "buttons": [
                 {
                   "text": "View the guide",
@@ -151,20 +137,21 @@
             }
           }
         }
-      },  
+      },
       {
         "listItem": {
           "thumbnail": "design-systems/variable-mapping.jpg",
           "body": {
             "labels": [
-              {
-                "label": "Variables"
-              }
+              { "label": "Variables" }
             ],
             "content": {
               "callout": "Variable mapping and design system structure",
               "supplements": [
-                "Structural best practice advice for how to structure variables within a system for single and multiple brands."
+                {
+                  "text": "Structural best practice advice for how to structure variables within a system for single and multiple brands.",
+                  "links": []
+                }
               ],
               "buttons": [
                 {
@@ -175,20 +162,21 @@
             }
           }
         }
-      },    
+      },
       {
         "listItem": {
           "thumbnail": "",
           "body": {
             "labels": [
-              {
-                "label": "Design Ops"
-              }
+              { "label": "Design Ops" }
             ],
             "content": {
               "callout": "New component decision tree",
               "supplements": [
-                "A flow chart to help you with your process when adding new components to your design system."
+                {
+                  "text": "A flow chart to help you with your process when adding new components to your design system.",
+                  "links": []
+                }
               ],
               "buttons": [
                 {
@@ -205,14 +193,15 @@
           "thumbnail": "design-systems/component-naming-conventions.jpg",
           "body": {
             "labels": [
-              {
-                "label": "Components"
-              }
+              { "label": "Components" }
             ],
             "content": {
               "callout": "Guide: Component naming conventions",
               "supplements": [
-                "A manifesto for naming There is advice on naming: components, component types, components instances, child layers, variant properties, variant values, disabled states, resting states, system elements, icons."
+                {
+                  "text": "A manifesto for naming. There is advice on naming: components, component types, component instances, child layers, variant properties, variant values, disabled states, resting states, system elements, icons.",
+                  "links": []
+                }
               ],
               "buttons": [
                 {
@@ -229,14 +218,15 @@
           "thumbnail": "design-systems/typography-variable-starter-kit.jpg",
           "body": {
             "labels": [
-              {
-                "label": "Variables"
-              }
+              { "label": "Variables" }
             ],
             "content": {
-              "callout": "Typography variables stater kit",
+              "callout": "Typography variables starter kit",
               "supplements": [
-                "A boilerplate variables kit for getting started. I created an example type ramp, and made variables for: font family, font size, line height, font weight"
+                {
+                  "text": "A boilerplate variables kit for getting started. I created an example type ramp and made variables for: font family, font size, line height, font weight.",
+                  "links": []
+                }
               ],
               "buttons": [
                 {
@@ -253,14 +243,15 @@
           "thumbnail": "design-systems/variable-starter-kit.jpg",
           "body": {
             "labels": [
-              {
-                "label": "Variables"
-              }
+              { "label": "Variables" }
             ],
             "content": {
-              "callout": "Variable stater kit",
+              "callout": "Variable starter kit",
               "supplements": [
-                "A boilerplate variables kit for getting started."
+                {
+                  "text": "A boilerplate variables kit for getting started.",
+                  "links": []
+                }
               ],
               "buttons": [
                 {
