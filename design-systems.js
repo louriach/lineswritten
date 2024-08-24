@@ -43,11 +43,40 @@ fetch('design-systems.json')
             callout.textContent = item.listItem.body.content.callout;
             contentDiv.appendChild(callout);
 
-            // Supplement paragraphs
+            // Supplement paragraphs with possible links
             item.listItem.body.content.supplements.forEach(supplement => {
                 const p = document.createElement('p');
                 p.className = 'supplement';
-                p.textContent = supplement;
+                
+                // Check for links in the supplement
+                if (supplement.links && supplement.links.length > 0) {
+                    // Split text by the word that needs to be linked
+                    let currentText = supplement.text;
+                    supplement.links.forEach(link => {
+                        const linkIndex = currentText.indexOf(link.word);
+                        if (linkIndex !== -1) {
+                            // Text before the link
+                            const beforeLinkText = currentText.slice(0, linkIndex);
+                            p.appendChild(document.createTextNode(beforeLinkText));
+
+                            // The link itself
+                            const a = document.createElement('a');
+                            a.href = link.href;
+                            a.textContent = link.word;
+                            a.className = 'inline-link';
+                            p.appendChild(a);
+
+                            // Update remaining text
+                            currentText = currentText.slice(linkIndex + link.word.length);
+                        }
+                    });
+                    // Append the remaining text after the last link
+                    p.appendChild(document.createTextNode(currentText));
+                } else {
+                    // No links, add text normally
+                    p.textContent = supplement.text;
+                }
+
                 contentDiv.appendChild(p);
             });
 

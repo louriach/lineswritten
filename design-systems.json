@@ -12,8 +12,23 @@
             "content": {
               "callout": "Figma's Simple Design System",
               "supplements": [
-                "Role: Solo designer on Figma's first ever in-product design system.",
-                "Key metric: 4 million component inserts in 30 days."
+                {
+                    "text": "Role: Solo designer on Figma's first ever in-product design system.",
+                    "links": []
+                  },
+                  {
+                    "text": "Key metric: 4 million component inserts in 30 days.",
+                    "links": []
+                  },
+                  {
+                    "text": "Launch: Released as part of the official 2024 keynote at Figma's annual conference, Config. This was launched alongside brand new UI kits from Apple and Google, with which I helped too.",
+                    "links": [
+                      {
+                        "word": "Config",
+                        "href": "https://www.youtube.com/watch?v=n5gJgkO2Dg0&t=879s"
+                      }
+                    ]
+                  }
               ],
               "buttons": [
                 {
@@ -27,7 +42,7 @@
       },
       {
         "listItem": {
-          "thumbnail": "design-systems/handoff-prototype.png",
+          "thumbnail": "design-systems/smashing-magazine.jpg",
           "body": {
             "labels": [
               {
