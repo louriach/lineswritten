@@ -144,32 +144,128 @@
               
               "buttons": [
                 {
-                  "text": "Watch the talk (21 mins)",
-                  "href": "https://www.youtube.com/watch?v=3CrBBaJDcuk"
+                  "text": "View the guide",
+                  "href": "https://www.figma.com/community/file/985175703891677674/design-system-structure-for-teams-projects-and-files"
                 }
               ]
             }
           }
         }
-      },      
+      },  
       {
         "listItem": {
-          "thumbnail": "design-systems/handoff-prototype.png",
+          "thumbnail": "design-systems/variable-mapping.jpg",
           "body": {
             "labels": [
               {
-                "label": "Handoff"
+                "label": "Variables"
               }
             ],
             "content": {
-              "callout": "Component annotations using a Figma prototype",
+              "callout": "Variable mapping and design system structure",
               "supplements": [
-                "An experiment to show component annotations in the Figma prototype viewer."
+                "Structural best practice advice for how to structure variables within a system for single and multiple brands."
               ],
               "buttons": [
                 {
-                  "text": "View this prototype",
-                  "href": "https://www.figma.com/community/file/1005505895825202287/responsive-handoff-components"
+                  "text": "View the guide",
+                  "href": "https://www.figma.com/community/file/1262724388830684966/guide-variable-mapping-and-design-system-structure"
+                }
+              ]
+            }
+          }
+        }
+      },    
+      {
+        "listItem": {
+          "thumbnail": "",
+          "body": {
+            "labels": [
+              {
+                "label": "Design Ops"
+              }
+            ],
+            "content": {
+              "callout": "New component decision tree",
+              "supplements": [
+                "A flow chart to help you with your process when adding new components to your design system."
+              ],
+              "buttons": [
+                {
+                  "text": "View the guide",
+                  "href": "https://www.figma.com/community/file/989121626983620108/new-component-decision-tree"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "listItem": {
+          "thumbnail": "design-systems/component-naming-conventions.jpg",
+          "body": {
+            "labels": [
+              {
+                "label": "Components"
+              }
+            ],
+            "content": {
+              "callout": "Guide: Component naming conventions",
+              "supplements": [
+                "A manifesto for naming There is advice on naming: components, component types, components instances, child layers, variant properties, variant values, disabled states, resting states, system elements, icons."
+              ],
+              "buttons": [
+                {
+                  "text": "View the guide",
+                  "href": "https://www.figma.com/community/file/1345404188541317938/guide-component-naming-manifesto"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "listItem": {
+          "thumbnail": "design-systems/typography-variable-starter-kit.jpg",
+          "body": {
+            "labels": [
+              {
+                "label": "Variables"
+              }
+            ],
+            "content": {
+              "callout": "Typography variables stater kit",
+              "supplements": [
+                "A boilerplate variables kit for getting started. I created an example type ramp, and made variables for: font family, font size, line height, font weight"
+              ],
+              "buttons": [
+                {
+                  "text": "View the guide",
+                  "href": "https://www.figma.com/community/file/1362098125068472724/typography-variables-starter-kit"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "listItem": {
+          "thumbnail": "design-systems/variable-starter-kit.jpg",
+          "body": {
+            "labels": [
+              {
+                "label": "Variables"
+              }
+            ],
+            "content": {
+              "callout": "Variable stater kit",
+              "supplements": [
+                "A boilerplate variables kit for getting started."
+              ],
+              "buttons": [
+                {
+                  "text": "View the guide",
+                  "href": "https://www.figma.com/community/file/1256624568359563073/variable-starter-kit"
                 }
               ]
             }
