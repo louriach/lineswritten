@@ -1,0 +1,78 @@
+{
+    "items": [
+      {
+        "listItem": {
+          "thumbnail": "design-systems/simple-design-system.png",
+          "body": {
+            "labels": [
+              {
+                "label": "Design System"
+              }
+            ],
+            "content": {
+              "callout": "Figma's Simple Design System",
+              "supplements": [
+                "Role: Solo designer on Figma's first ever in-product design system.",
+                "Key metric: 4 million component inserts in 30 days."
+              ],
+              "buttons": [
+                {
+                  "text": "Take a look",
+                  "href": "https://www.figma.com/community/file/1005505895825202287/responsive-handoff-components"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "listItem": {
+          "thumbnail": "design-systems/handoff-prototype.png",
+          "body": {
+            "labels": [
+              {
+                "label": "Article"
+              }
+            ],
+            "content": {
+              "callout": "Building components for consumption, not complexity",
+              "supplements": [
+                "Two mega articles with best practice advice on component composition within Figma."
+              ],
+              "buttons": [
+                {
+                  "text": "Read on Smashing Magazine",
+                  "href": "https://www.figma.com/community/file/1005505895825202287/responsive-handoff-components"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "listItem": {
+          "thumbnail": "design-systems/handoff-prototype.png",
+          "body": {
+            "labels": [
+              {
+                "label": "Handoff"
+              }
+            ],
+            "content": {
+              "callout": "Component annotations using a Figma prototype",
+              "supplements": [
+                "An experiment to show component annotations in the Figma prototype viewer."
+              ],
+              "buttons": [
+                {
+                  "text": "View this prototype",
+                  "href": "https://www.figma.com/community/file/1005505895825202287/responsive-handoff-components"
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+  

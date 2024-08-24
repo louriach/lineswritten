@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Luis Ouriach</title>
+
+  <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/louriach/lineswritten/master/favicon.jpg"/>
+
+  <meta name="description" content="Designer, writer, podcaster, advocate.">
+  <meta name="author" content="Luis Ouriach">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="Luis Ouriach - Designer, writer, podcaster, advocate" />
+    <meta property="og:description" content="Designer, writer, podcaster, advocate.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/louriach/lineswritten/master/lineswritten-share-og.jpg">
+    <meta property="og:url" content="https://lineswritten.co.uk/">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <meta property="og:site_name" content="Luis Ouriach - Designer, writer, podcaster, advocate">
+    <meta name="twitter:image:alt" content="Designer, writer, podcaster, advocate.">
+    
+    <meta name="twitter:site" content="@disco_lu">
+
+    <!-- iOS top bar color settings -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+
+<style>
+    /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+
+body {
+    background-color: #0F002E;
+    background: linear-gradient(129.38deg, #0F002E 0%, #220066 100%);  
+    color: #3b4040;
+    font-family: 'Prata', Serif;
+    font-size: 22px;
+    min-height: 100vh;
+}
+
+a {
+    color: #FFCCFD;
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 50%;
+}
+
+.container {
+    padding: 24px;
+}
+
+@media all and (min-width: 480px) {
+    .container {
+        padding: 120px 24px;
+    }
+}
+
+.card {
+    background-color: #0F002E;
+    background: linear-gradient(311.38deg, #0F002E 0%, #220066 96.37%);
+    border: 1px solid #220066;
+    border-radius: 24px;
+    box-shadow: 32px 32px 120px #0f0035;
+    color: #FFCCFD;
+    margin: 0 auto 24px;
+    max-width: 95%;
+    position: relative;
+    z-index: 1;
+}
+
+@media all and (min-width: 768px) {
+    .card {
+        max-width: 640px;
+    }
+}
+
+.intro {
+    background: #FFCCFD;
+    background: linear-gradient(311.38deg, #0F002E 0%, #220066 96.37%);
+    border-bottom: 1px solid #220066;
+    border-radius: 24px 24px 0 0;
+    padding: 48px;
+    text-align: center;
+}
+
+.intro h1 {
+    font-size: 32px;
+    line-height: 100%;
+    margin-bottom: 8px;
+}
+
+.intro a {
+    text-decoration: none;
+}
+
+.divider-horizontal {
+    background: #220066;
+    height: 1px;
+    left: 50%; 
+    margin-left: -50vw; 
+    margin-right: -50vw;  
+    position: relative;     
+    right: 50%; 
+    width: 100vw;     
+}
+
+.items {
+    padding: 0 24px;
+}
+
+.list-item {
+    margin: 24px 0;
+}
+
+@media all and (min-width: 768px) {
+    /* .list-item a {
+        display: flex;
+    } */
+}
+
+.list-item p {
+    font-size: 14px;
+}
+
+.label {
+    border: 1px solid #FFCCFD; 
+    border-radius: 100px;
+    color: #FFCCFD; 
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 14px;
+    margin-bottom: 16px;
+    padding: 6px 10px;
+    text-transform: uppercase;
+}
+
+.label-wrap {
+    flex-basis: 25%;
+}
+
+.callout {
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 8px;
+}
+
+@media all and (min-width: 768px) {
+    .callout {
+        font-size: 32px;
+        line-height: 40px;
+    }
+}
+
+.content {
+    flex-basis: 75%;
+}
+
+.content p {
+    font-size: 18px;
+    line-height: 150%;
+}
+
+.social-icon {
+    width: 24px;
+}
+
+.connector {
+    background: #220066;
+    height: 120px;
+    margin: 0 auto;
+    width: 2px;
+}
+
+.date-sticky {
+    margin-bottom: -44px;
+    position: sticky;
+    top: 12px;
+    z-index: 10;
+}
+
+.date {
+    background: linear-gradient(129.38deg, #0F002E 0%, #220066 100%); 
+    color: #FFCCFD;
+    display: inline-block;
+    font-family: monospace;
+    font-size: 12px;
+    margin-left: -64px;
+}
+
+.thumbnail {
+    border-radius: 6px;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.supplement {
+    color: rgba(255,204,253,9);
+    font-family: sans-serif;
+    letter-spacing: .24px;
+}
+
+.button {
+    background: linear-gradient(100deg, #27EBBC 0%, #0AC296 100%);
+    border: 1px solid #0DDDAC;
+    border-radius: 6px;
+    box-shadow: 0px 0px 0px 1px #02372A, 0px 2px 12px 1px #02372A;
+    color: #02372A;
+    display: inline-block;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    margin-top: 40px;
+    padding: 8px 12px;
+}
+</style>
+	
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C4T5V47TG6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C4T5V47TG6');
+</script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+            <section class="intro">
+                <!-- <img src="luis-ouriach-headshot.jpg" alt="Luis" class="avatar"/> -->
+                <h1>My design systems work</h1>
+            </section>
+
+            <div class="divider-horizontal"></div>
+
+            <div class="items" id="items-container">
+                <!-- JavaScript will populate this container -->
+            </div>
+        
+        </div>
+
+        <script>
+            // Fetch JSON data and dynamically create HTML content
+            fetch('design-systems.json')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('items-container');
+                    
+                    data.items.forEach(item => {
+                        const listItem = document.createElement('div');
+                        listItem.className = 'list-item';
+    
+                        // Create the thumbnail image element
+                        if (item.listItem.thumbnail) {
+                            const img = document.createElement('img');
+                            img.src = item.listItem.thumbnail;
+                            img.className = 'thumbnail';
+                            listItem.appendChild(img);
+                        }
+    
+                        // Create the body container
+                        const bodyDiv = document.createElement('div');
+                        bodyDiv.className = 'body';
+    
+                        // Create label elements
+                        const labelWrap = document.createElement('div');
+                        labelWrap.className = 'label-wrap';
+    
+                        item.listItem.body.labels.forEach(labelObj => {
+                            const span = document.createElement('span');
+                            span.className = 'label';
+                            span.textContent = labelObj.label;
+                            labelWrap.appendChild(span);
+                        });
+    
+                        bodyDiv.appendChild(labelWrap);
+    
+                        // Create content elements
+                        const contentDiv = document.createElement('div');
+                        contentDiv.className = 'content';
+    
+                        // Callout (h3)
+                        const callout = document.createElement('h3');
+                        callout.className = 'callout';
+                        callout.textContent = item.listItem.body.content.callout;
+                        contentDiv.appendChild(callout);
+    
+                        // Supplement paragraphs
+                        item.listItem.body.content.supplements.forEach(supplement => {
+                            const p = document.createElement('p');
+                            p.className = 'supplement';
+                            p.textContent = supplement;
+                            contentDiv.appendChild(p);
+                        });
+    
+                        // Buttons (links)
+                        item.listItem.body.content.buttons.forEach(buttonObj => {
+                            const a = document.createElement('a');
+                            a.href = buttonObj.href;
+                            a.className = 'button';
+                            a.textContent = buttonObj.text;
+                            contentDiv.appendChild(a);
+                        });
+    
+                        bodyDiv.appendChild(contentDiv);
+                        listItem.appendChild(bodyDiv);
+                        container.appendChild(listItem);
+                    });
+                })
+                .catch(error => console.error('Error loading the JSON data:', error));
+        </script>
+
+</body>
