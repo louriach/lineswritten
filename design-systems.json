@@ -40,6 +40,31 @@
       },
       {
         "listItem": {
+          "thumbnail": "design-systems/variables-deep-dive.jpg",
+          "body": {
+            "labels": [
+              { "label": "Variables" }
+            ],
+            "content": {
+              "callout": "Figma Deep Dive: Variables",
+              "supplements": [
+                {
+                  "text": "I was fortunate to officially launch the Figma variables feature alongside Jacob on stage in front of ~4k people at their conference, Config.",
+                  "links": []
+                }
+              ],
+              "buttons": [
+                {
+                  "text": "Watch the launch",
+                  "href": "https://www.youtube.com/watch?v=M0NU5QFLCl4"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "listItem": {
           "thumbnail": "design-systems/smashing-magazine.jpg",
           "body": {
             "labels": [
