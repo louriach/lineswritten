@@ -92,6 +92,11 @@ fetch('design-systems.json')
             bodyDiv.appendChild(contentDiv);
             listItem.appendChild(bodyDiv);
             container.appendChild(listItem);
+
+            // Add the divider after each list item
+            const divider = document.createElement('div');
+            divider.className = 'divider-horizontal';
+            container.appendChild(divider);
         });
     })
     .catch(error => console.error('Error loading the JSON data:', error));
