@@ -123,6 +123,34 @@
             }
           }
         }
+      },   
+      {
+        "listItem": {
+          "thumbnail": "design-systems/design-system-best-practices.jpg",
+          "body": {
+            "labels": [
+              {
+                "label": "Best practice guide"
+              } 
+            ],
+            "content": {
+              "callout": "Design system structure for teams, projects and files",
+              "supplements": [
+                {
+                    "text": "Advice for structuring a design system on all Figma paid plans. The file takes you through the structural differences between each plan, the 3 types of design system file, 4 recommended design system structures, and a proposal for non-global components.",
+                    "links": []
+                }
+              ],
+              
+              "buttons": [
+                {
+                  "text": "Watch the talk (21 mins)",
+                  "href": "https://www.youtube.com/watch?v=3CrBBaJDcuk"
+                }
+              ]
+            }
+          }
+        }
       },      
       {
         "listItem": {
