@@ -52,8 +52,12 @@
             "content": {
               "callout": "Building components for consumption, not complexity",
               "supplements": [
-                "Two mega articles with best practice advice on component composition within Figma."
+                {
+                    "text": "Two mega articles &mdash; of roughly 5k words each &mdash; with best practice advice on component composition within Figma.",
+                    "links": []
+                }
               ],
+              
               "buttons": [
                 {
                   "text": "Read on Smashing Magazine",
