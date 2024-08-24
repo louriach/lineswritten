@@ -32,7 +32,7 @@
             "labels": [
               {
                 "label": "Article"
-              }
+              } 
             ],
             "content": {
               "callout": "Building components for consumption, not complexity",
