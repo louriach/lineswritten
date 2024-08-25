@@ -198,7 +198,6 @@ a:hover {
 @media all and (min-width: 768px) {
   .intro {
     padding: calc(var(--padding-small) * 2);
-    text-align: center;
   }
 }
 
@@ -215,10 +214,22 @@ a:hover {
   }
 }
 
+.intro p, .intro li {
+    font-weight: var(--font-weight-light);
+}
+
 .intro p {
   font-size: var(--font-size-small);
-  font-weight: var(--font-weight-light);
   line-height: var(--line-height-normal);
+}
+
+.intro li {
+    list-style: circle;
+    margin-bottom: var(--margin-small);
+}
+
+.intro li:last-child {
+    margin: 0;
 }
 
 @media all and (min-width: 768px) {
