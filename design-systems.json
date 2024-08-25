@@ -11,11 +11,28 @@
               "callout": "Figma's Simple Design System",
               "supplements": [
                 {
+                    "text": "Timeline: February 2024 start,launched June 2024. Maintenance and component additions are ongoing, logged via public Asana form.",
+                    "links": [
+                        {
+                            "word": "Asana",
+                            "href": "https://form.asana.com/?k=wcWtx3xQsHp26re5PZLkwQ&d=10497086658021"
+                        }
+                    ]
+                  },
+                {
                   "text": "Role: Solo designer on Figma's first ever in-product design system.",
                   "links": []
                 },
                 {
-                  "text": "Key metric: 4 million component inserts in 30 days.",
+                    "text": "Collaborators: For launch, Jake Albaugh built the code, Jacob Miller was product manager, Zoe Adelman was project manager.",
+                    "links": []
+                  },
+                {
+                    "text": "Users: ~18 thousand.",
+                    "links": []
+                  },
+                {
+                  "text": "Usage: 4 million component inserts in 30 days.",
                   "links": []
                 },
                 {
