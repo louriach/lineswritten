@@ -11,13 +11,8 @@
               "callout": "Figma's Simple Design System",
               "supplements": [
                 {
-                    "text": "Timeline: February 2024 start,launched June 2024. Maintenance and component additions are ongoing, logged via public Asana form.",
-                    "links": [
-                        {
-                            "word": "Asana",
-                            "href": "https://form.asana.com/?k=wcWtx3xQsHp26re5PZLkwQ&d=10497086658021"
-                        }
-                    ]
+                    "text": "I was fortunate to be asked to build Figma's first public-facing UI Kit, which is integrated into the assets panel of the product. I was responsible for creating a best-practice approach that could potentially be used by millions of designers worldwide. The launch was also a partnership first, with Apple and Google's Material Design being shipped as UI Kits too; alongside Simple Design System.",
+                    "links": []
                   },
                 {
                   "text": "Role: Solo designer on Figma's first ever in-product design system.",
@@ -35,6 +30,15 @@
                   "text": "Usage: 4 million component inserts in 30 days.",
                   "links": []
                 },
+                {
+                    "text": "Timeline: February 2024 start, launched June 2024. Maintenance and component additions are ongoing, logged via public Asana form.",
+                    "links": [
+                        {
+                            "word": "Asana",
+                            "href": "https://form.asana.com/?k=wcWtx3xQsHp26re5PZLkwQ&d=10497086658021"
+                        }
+                    ]
+                },                
                 {
                   "text": "Launch: Released as part of the official 2024 keynote at Figma's annual conference, Config. This was launched alongside brand new UI kits from Apple and Google, another company first.",
                   "links": [
