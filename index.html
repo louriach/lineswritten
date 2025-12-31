@@ -6,365 +6,1066 @@
 
   <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/louriach/lineswritten/master/favicon.jpg"/>
 
-  <meta name="description" content="Designer, writer, podcaster, advocate.">
+  <meta name="description" content="Design systems, Figma plugins, and community work.">
   <meta name="author" content="Luis Ouriach">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta property="og:title" content="Luis Ouriach - Designer, writer, podcaster, advocate" />
-    <meta property="og:description" content="Designer, writer, podcaster, advocate.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/louriach/lineswritten/master/lineswritten-share-og.jpg">
-    <meta property="og:url" content="https://lineswritten.co.uk/">
-    <meta name="twitter:card" content="summary_large_image">
-    
-    <meta property="og:site_name" content="Luis Ouriach - Designer, writer, podcaster, advocate">
-    <meta name="twitter:image:alt" content="Designer, writer, podcaster, advocate.">
-    
-    <meta name="twitter:site" content="@disco_lu">
+  <meta property="og:title" content="Luis Ouriach" />
+  <meta property="og:description" content="Design systems, Figma plugins, and community work.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/louriach/lineswritten/master/lineswritten-share-og.jpg">
+  <meta property="og:url" content="https://lineswritten.co.uk/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:site_name" content="Luis Ouriach">
+  <meta name="twitter:image:alt" content="Luis Ouriach">
+  <meta name="twitter:site" content="@disco_lu">
 
-    <!-- iOS top bar color settings -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <link href="https://fonts.googleapis.com/css?family=Martel:400,900|Poppins:400,900" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-    /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+:root {
+  --color-primary: #5C3E2A;
+  --color-secondary: rgba(92, 62, 42, 0.7);
+  --color-background: #ffffff;
+  --color-highlighter: #E8D5C4;
+  --color-border: #D4C4B0;
+  --font-size: 13px;
+  --line-height: 1.6;
+  --font-family: 'DM Mono', 'Courier New', monospace;
+}
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+/* Global dark mode - only applies when no specific theme palette is set */
+[data-theme="dark"]:not([data-theme-palette]) {
+  --color-primary: #E8D5C4;
+  --color-secondary: rgba(232, 213, 196, 0.7);
+  --color-background: #1a1a1a;
+  --color-highlighter: #5C3E2A;
+  --color-border: #3a3a3a;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+
+/* Classic theme (default coffee colors) */
+[data-theme-palette="classic"]:not([data-theme="dark"]) {
+  --color-primary: #5C3E2A;
+  --color-secondary: rgba(92, 62, 42, 0.7);
+  --color-background: #ffffff;
+  --color-highlighter: #E8D5C4;
+  --color-border: #D4C4B0;
 }
+
+[data-theme-palette="classic"][data-theme="dark"] {
+  --color-primary: #E8D5C4;
+  --color-secondary: rgba(232, 213, 196, 0.7);
+  --color-background: #1a1a1a;
+  --color-highlighter: #5C3E2A;
+  --color-border: #3a3a3a;
+}
+
+/* Brutal theme (black and white) */
+[data-theme-palette="brutal"]:not([data-theme="dark"]) {
+  --color-primary: #000000;
+  --color-secondary: rgba(0, 0, 0, 0.7);
+  --color-background: #ffffff;
+  --color-highlighter: #f0f0f0;
+  --color-border: #000000;
+}
+
+[data-theme-palette="brutal"][data-theme="dark"] {
+  --color-primary: #ffffff;
+  --color-secondary: rgba(255, 255, 255, 0.7);
+  --color-background: #000000;
+  --color-highlighter: #333333;
+  --color-border: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font-size);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
-	line-height: 1;
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  min-height: 100vh;
 }
 
-body {
-    background-color: #0F002E;
-    background: linear-gradient(129.38deg, #0F002E 0%, #220066 100%);  
-    color: #3b4040;
-    font-family: 'Prata', Serif;
-    font-size: 22px;
-    min-height: 100vh;
+.page {
+  padding: 1.5rem;
+  max-width: 70ch;
 }
 
-a {
-    color: #FFCCFD;
-    text-decoration: none;
+.header {
+  margin-bottom: 3rem;
 }
 
-a:hover {
-    opacity: 50%;
+.header__name {
+  font-size: var(--font-size);
+  font-weight: 500;
+  letter-spacing: -0.02em;
 }
 
-.container {
-    padding: 24px;
+.header__tagline {
+  font-size: var(--font-size);
+  color: var(--color-secondary);
 }
 
-@media all and (min-width: 480px) {
-    .container {
-        padding: 120px 24px;
-    }
+.bio,
+.work,
+.writing,
+.talks {
+  margin-bottom: 3rem;
 }
 
-.card {
-    background-color: #0F002E;
-    background: linear-gradient(311.38deg, #0F002E 0%, #220066 96.37%);
-    border: 1px solid #220066;
-    border-radius: 24px;
-    box-shadow: 32px 32px 120px #0f0035;
-    color: #FFCCFD;
-    margin: 0 auto;
-    max-width: 480px;
-    position: relative;
-    z-index: 1;
+.bio__text {
+  font-size: var(--font-size);
+  margin-bottom: 1rem;
 }
 
-.avatar {
-    border: 1px solid #220066;
-    border-radius: 100%;
-    margin-bottom: 16px;
-    max-width: 120px;
+.bio__text:last-child {
+  margin-bottom: 0;
 }
 
-.intro {
-    background: #FFCCFD;
-    background: linear-gradient(311.38deg, #0F002E 0%, #220066 96.37%);
-    border-bottom: 1px solid #220066;
-    border-radius: 24px 24px 0 0;
-    padding: 48px;
-    text-align: center;
+.bio__toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: var(--color-secondary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-secondary);
+  text-underline-offset: 2px;
+  cursor: pointer;
+  font-size: var(--font-size);
+  font-family: inherit;
+  transition: text-decoration-color 0.2s ease;
 }
 
-.intro h1 {
-    font-size: 32px;
-    line-height: 100%;
-    margin-bottom: 8px;
+.bio__toggle:hover {
+  text-decoration-color: currentColor;
 }
 
-.intro a {
-    text-decoration: none;
+.bio__text--long {
+  display: none;
 }
 
-.divider-vertical {
-    background: #220066;
-    bottom: 0;
-    left: 50%;   
-    position: fixed;     
-    right: 50%;
-    top: 0; 
-    width: 1px;
+.bio__text--long.is-visible {
+  display: block;
 }
 
-.divider-horizontal {
-    background: #220066;
-    height: 1px;
-    left: 50%; 
-    margin-left: -50vw; 
-    margin-right: -50vw;  
-    position: relative;     
-    right: 50%; 
-    width: 100vw;     
+.bio__section {
+  margin-bottom: 1rem;
 }
 
-.card p {
-    font-family: 'Prata', Serif;
-    font-style: normal;
-    font-weight: 250;
-    font-size: 18px;
-    line-height: 150%;
+.bio__section:last-child {
+  margin-bottom: 0;
 }
 
-.items {
-    padding: 0 24px;
+.bio__section-title {
+  font-size: var(--font-size);
+  font-weight: 500;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
 }
 
-.list-item {
-    margin: 24px 0;
+.bio__section p {
+  font-size: var(--font-size);
+  margin-bottom: 1rem;
 }
 
-.list-item p {
-    font-size: 14px;
+.bio__section p:last-child {
+  margin-bottom: 0;
 }
 
-.label {
-    background: #FFCCFD;
-    border-radius: 100px;
-    color: #220066;
-    display: inline-block;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    letter-spacing: 1px;
-    line-height: 100%;
-    margin-bottom: 16px;
-    padding: 6px 10px;
-    text-transform: uppercase;
+.bio__section ol {
+  list-style: decimal;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.label-wrap {
-    flex-basis: 25%;
+.bio__section ol:last-child {
+  margin-bottom: 0;
 }
 
-.callout {
-    align-items: center;
-    display: flex;
-    font-size: 32px;
-    gap: 8px;
-    margin-bottom: 8px;
+.bio__section li {
+  font-size: var(--font-size);
+  margin-bottom: 0.5rem;
 }
 
-.content {
-    flex-basis: 75%;
+.bio__section li:last-child {
+  margin-bottom: 0;
 }
 
-.content p {
-    font-size: 18px;
-    line-height: 150%;
+.bio__section a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.2s ease, text-decoration-style 0.2s ease, background-color 0.2s ease;
 }
 
-.social-icon {
-    width: 24px;
+.bio__section a:hover {
+  text-decoration-style: wavy;
+  background-color: var(--color-highlighter);
 }
 
-.connector {
-    background: #220066;
-    height: 120px;
-    margin: 0 auto;
-    width: 2px;
+.bio__section strong {
+  font-weight: 500;
+}
+
+.bio__section em {
+  font-style: italic;
+}
+
+
+.section-title {
+  font-size: var(--font-size);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  color: var(--color-secondary);
+}
+
+.work__list {
+  list-style: none;
+}
+
+.link-item {
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.link-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 0.5em;
+  height: 0.5em;
+  background-color: var(--color-highlighter);
+  display: block;
+}
+
+.link-block {
+  color: var(--color-primary);
+  text-decoration: none;
+  display: block;
+}
+
+.link-block__title {
+  font-size: var(--font-size);
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.2s ease, text-decoration-style 0.2s ease, background-color 0.2s ease;
+}
+
+.link-block:hover .link-block__title {
+  text-decoration-color: currentColor;
+  text-decoration-style: wavy;
+  background-color: var(--color-highlighter);
+}
+
+.link-block__meta {
+  font-size: var(--font-size);
+  color: var(--color-secondary);
+}
+
+.link-inline {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.2s ease, text-decoration-style 0.2s ease, background-color 0.2s ease;
+}
+
+.link-inline:hover {
+  text-decoration-color: currentColor;
+  text-decoration-style: wavy;
+  background-color: var(--color-highlighter);
+}
+
+
+
+.work__category {
+  margin-bottom: 2rem;
+}
+
+.work__category:last-child {
+  margin-bottom: 0;
+}
+
+.work__category-title {
+  font-size: var(--font-size);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--color-secondary);
+}
+
+.work__list .link-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+
+
+.writing__list {
+  list-style: none;
+}
+
+.writing__intro, .writing__note {
+  font-size: var(--font-size);
+  color: var(--color-primary);
+  line-height: var(--line-height);
+}
+.writing__note {
+  margin-bottom: 1.5rem;
+}
+
+
+.talks__list {
+  list-style: none;
+}
+
+
+
+.footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.footer__links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.footer__link {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-underline-offset: 2px;
+  font-size: var(--font-size);
+  transition: text-decoration-color 0.2s ease;
+}
+
+.footer__link:hover {
+  text-decoration-color: currentColor;
+}
+
+.styling-info {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.styling-info__title {
+  font-size: var(--font-size);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+.styling-info p {
+  font-size: var(--font-size);
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.code {
+  border: 1px solid var(--color-border);
+  color: var(--color-primary);
+  word-wrap: break-word;
+  box-decoration-break: clone;
+  padding: 1rem;
+  margin-top: 1rem;
+  overflow-x: auto;
+}
+
+.code pre {
+  margin: 0;
+}
+
+.code code {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  white-space: pre;
+  display: block;
+}
+
+.mode-switcher {
+  font-size: var(--font-size);
+  color: var(--color-primary);
+  margin-top: 1rem;
+}
+
+.mode-switcher__link {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.2s ease, text-decoration-style 0.2s ease, background-color 0.2s ease;
+}
+
+.mode-switcher__link:hover {
+  text-decoration-color: currentColor;
+  text-decoration-style: wavy;
+  background-color: var(--color-highlighter);
+}
+
+.mode-switcher__link.active {
+  text-decoration: none;
+  cursor: default;
+}
+
+.mode-switcher__link.active:hover {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.theme-switcher {
+  font-size: var(--font-size);
+  color: var(--color-primary);
+  margin-top: 1rem;
+}
+
+.theme-switcher__link {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.2s ease, text-decoration-style 0.2s ease, background-color 0.2s ease;
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+/* Classic theme link color */
+.theme-switcher__link[data-theme-palette="classic"] {
+  color: #5C3E2A;
+  text-decoration-color: #5C3E2A;
+}
+
+[data-theme="dark"] .theme-switcher__link[data-theme-palette="classic"] {
+  color: #E8D5C4;
+  text-decoration-color: #E8D5C4;
+}
+
+/* Brutal theme link color */
+.theme-switcher__link[data-theme-palette="brutal"] {
+  color: #000000;
+  text-decoration-color: #000000;
+}
+
+[data-theme="dark"] .theme-switcher__link[data-theme-palette="brutal"] {
+  color: #ffffff;
+  text-decoration-color: #ffffff;
+}
+
+/* Random theme link color - uses current random color */
+.theme-switcher__link[data-theme-palette="random"] {
+  color: var(--color-primary);
+  text-decoration-color: var(--color-primary);
+}
+
+.theme-switcher__link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.35em;
+  width: 0.5em;
+  height: 0.5em;
+  display: block;
+}
+
+/* Classic theme color preview */
+.theme-switcher__link[data-theme-palette="classic"]::before {
+  background-color: #5C3E2A;
+}
+
+[data-theme="dark"] .theme-switcher__link[data-theme-palette="classic"]::before {
+  background-color: #E8D5C4;
+}
+
+/* Brutal theme color preview */
+.theme-switcher__link[data-theme-palette="brutal"]::before {
+  background-color: #000000;
+}
+
+[data-theme="dark"] .theme-switcher__link[data-theme-palette="brutal"]::before {
+  background-color: #ffffff;
+}
+
+/* Random theme color preview - uses current random color */
+.theme-switcher__link[data-theme-palette="random"]::before {
+  background-color: var(--color-primary);
+}
+
+.theme-switcher__link:hover {
+  text-decoration-color: currentColor;
+  text-decoration-style: wavy;
+}
+
+/* Hover background for each theme */
+.theme-switcher__link[data-theme-palette="classic"]:hover {
+  background-color: #E8D5C4;
+}
+
+[data-theme="dark"] .theme-switcher__link[data-theme-palette="classic"]:hover {
+  background-color: #5C3E2A;
+}
+
+.theme-switcher__link[data-theme-palette="brutal"]:hover {
+  background-color: #f0f0f0;
+}
+
+[data-theme="dark"] .theme-switcher__link[data-theme-palette="brutal"]:hover {
+  background-color: #333333;
+}
+
+.theme-switcher__link[data-theme-palette="random"]:hover {
+  background-color: var(--color-highlighter);
+}
+
+.theme-switcher__link.active {
+  text-decoration: none;
+  cursor: default;
+}
+
+.theme-switcher__link.active:hover {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.theme-switcher__try-again {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.2s ease, text-decoration-style 0.2s ease, background-color 0.2s ease;
+  margin-left: 0.25rem;
+}
+
+.theme-switcher__try-again:hover {
+  text-decoration-color: currentColor;
+  text-decoration-style: wavy;
+  background-color: var(--color-highlighter);
 }
 
 </style>
-	
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-C4T5V47TG6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-C4T5V47TG6');
-</script>
 
 </head>
 
 <body>
 
-    <div class="divider-vertical"></div>
+  <div class="page">
+    
+    <header class="header">
+      <h1 class="header__name">Luis Ouriach</h1>
+      <p class="header__tagline">Design systems, Figma plugins, community work, cold wit.</p>
+    </header>
 
-    <div class="container">
-
-        <div class="card">
-            <section class="intro">
-                <img src="luis-ouriach-headshot.jpg" alt="Luis" class="avatar"/>
-                <h1>Hey, I'm Luis
-                    <a href="https://twitter.com/disco_lu" target="_blank">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M21.533 7.11169C21.5482 7.32488 21.5482 7.53811 21.5482 7.7513C21.5482 14.2538 16.599 21.7462 7.5533 21.7462C4.76648 21.7462 2.17767 20.9391 0 19.5381C0.395953 19.5838 0.776625 19.599 1.18781 19.599C3.48727 19.599 5.60405 18.8224 7.29441 17.4975C5.13197 17.4518 3.31978 16.0356 2.69541 14.0863C3 14.132 3.30455 14.1624 3.62437 14.1624C4.06598 14.1624 4.50764 14.1015 4.91878 13.995C2.66498 13.5381 0.974578 11.5584 0.974578 9.16753V9.10664C1.62937 9.47213 2.39086 9.70055 3.19791 9.73097C1.87303 8.8477 1.00505 7.34011 1.00505 5.63452C1.00505 4.72083 1.24866 3.88327 1.67508 3.1523C4.09641 6.13706 7.73602 8.08627 11.8172 8.2995C11.7411 7.93402 11.6954 7.55335 11.6954 7.17263C11.6954 4.46194 13.8883 2.25385 16.6141 2.25385C18.0304 2.25385 19.3095 2.84775 20.208 3.80714C21.3197 3.59395 22.3857 3.18277 23.3299 2.61933C22.9643 3.76149 22.1877 4.72088 21.1674 5.32997C22.1573 5.22342 23.1167 4.94925 23.9999 4.56858C23.33 5.54316 22.4924 6.41114 21.533 7.11169V7.11169Z" fill="#FFCCFD"/>
-                        </svg>                                                    
-                    </a>      
-                </h1>
-                <p>Designer, writer, podcaster.</p>
-            </section>     
-
-            <div class="divider-horizontal"></div>
-
-            <div class="items">
-
-                <div class="list-item">
-                    <a href="https://www.figma.com/community/file/1380235722331273046/simple-design-system" target="_blank">
-                        <div class="label-wrap">                
-                            <span class="label">Design systems</span>
-                        </div>
-                        <div class="content">
-                            <h3 class="callout">Simple Design System
-                                <span class="icon">
-                                    <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5.82852 0H11.117C12.6629 0 14.1454 0.614075 15.2384 1.70713C16.3315 2.80019 16.9456 4.2827 16.9456 5.82852V6.17995C16.9433 7.72428 16.3282 9.20459 15.2354 10.2958C14.1426 11.387 12.6614 11.9999 11.117 11.9999H10.2856V10.2856H11.117C12.2038 10.2834 13.2455 9.85126 14.0147 9.08364C14.7839 8.31602 15.2182 7.27523 15.2227 6.18852V5.82852C15.2227 4.74032 14.7916 3.69643 14.0238 2.92535C13.2559 2.15427 12.2138 1.71881 11.1256 1.71427H5.82852C4.73735 1.71427 3.69088 2.14774 2.91931 2.91931C2.53726 3.30135 2.23421 3.7549 2.02745 4.25407C1.82069 4.75323 1.71427 5.28823 1.71427 5.82852V6.17995C1.71685 7.14942 2.06254 8.08668 2.6901 8.82563C3.31766 9.56458 4.18656 10.0575 5.14281 10.2171V11.9313C3.73335 11.7644 2.43324 11.0889 1.48639 10.0316C0.539535 8.97427 0.0110208 7.60779 0 6.18852V5.82852C0.00226724 4.2834 0.61707 2.80221 1.70964 1.70964C2.80221 0.61707 4.2834 0.00226724 5.82852 0Z" fill="#FFCCFD"/>
-                                        <path d="M18.8572 6.92566V5.21139C20.2696 5.3787 21.572 6.05665 22.5193 7.11756C23.4665 8.17847 23.9931 9.54911 24 10.9713V11.3228C23.9955 12.8649 23.3809 14.3426 22.2904 15.4331C21.1999 16.5236 19.7222 17.1382 18.18 17.1427H12.883C11.3416 17.1405 9.86386 16.5277 8.77315 15.4386C7.68243 14.3495 7.06753 12.8727 7.063 11.3313V10.9713C7.063 9.42701 7.6759 7.9458 8.7671 6.85298C9.85831 5.76017 11.3386 5.14509 12.883 5.14282H13.7144V6.85709H12.883C11.7933 6.85936 10.749 7.29383 9.97928 8.06516C9.20956 8.83648 8.77727 9.88166 8.77727 10.9713V11.3228C8.77954 12.411 9.21282 13.4539 9.9823 14.2234C10.7518 14.9929 11.7948 15.4262 12.883 15.4284H18.18C19.2668 15.4262 20.3085 14.9941 21.0777 14.2265C21.8469 13.4588 22.2812 12.4181 22.2857 11.3313V10.9713C22.2852 10.0004 21.9404 9.0611 21.3127 8.32037C20.6849 7.57964 19.8149 7.08546 18.8572 6.92566Z" fill="#FFCCFD"/>
-                                    </svg>    
-                                </span>
-                            </h3>
-                        </div>
-                    </a>
-                </div> 	
-<div class="divider-horizontal"></div>
-
-                <div class="list-item">
-                    <a href="https://www.figma.com/community/collections/getting-started" target="_blank">
-                        <div class="label-wrap">                
-                            <span class="label">Guides</span>
-                        </div>
-                        <div class="content">
-                            <h3 class="callout">Figma best practice files
-                                <span class="icon">
-                                    <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5.82852 0H11.117C12.6629 0 14.1454 0.614075 15.2384 1.70713C16.3315 2.80019 16.9456 4.2827 16.9456 5.82852V6.17995C16.9433 7.72428 16.3282 9.20459 15.2354 10.2958C14.1426 11.387 12.6614 11.9999 11.117 11.9999H10.2856V10.2856H11.117C12.2038 10.2834 13.2455 9.85126 14.0147 9.08364C14.7839 8.31602 15.2182 7.27523 15.2227 6.18852V5.82852C15.2227 4.74032 14.7916 3.69643 14.0238 2.92535C13.2559 2.15427 12.2138 1.71881 11.1256 1.71427H5.82852C4.73735 1.71427 3.69088 2.14774 2.91931 2.91931C2.53726 3.30135 2.23421 3.7549 2.02745 4.25407C1.82069 4.75323 1.71427 5.28823 1.71427 5.82852V6.17995C1.71685 7.14942 2.06254 8.08668 2.6901 8.82563C3.31766 9.56458 4.18656 10.0575 5.14281 10.2171V11.9313C3.73335 11.7644 2.43324 11.0889 1.48639 10.0316C0.539535 8.97427 0.0110208 7.60779 0 6.18852V5.82852C0.00226724 4.2834 0.61707 2.80221 1.70964 1.70964C2.80221 0.61707 4.2834 0.00226724 5.82852 0Z" fill="#FFCCFD"/>
-                                        <path d="M18.8572 6.92566V5.21139C20.2696 5.3787 21.572 6.05665 22.5193 7.11756C23.4665 8.17847 23.9931 9.54911 24 10.9713V11.3228C23.9955 12.8649 23.3809 14.3426 22.2904 15.4331C21.1999 16.5236 19.7222 17.1382 18.18 17.1427H12.883C11.3416 17.1405 9.86386 16.5277 8.77315 15.4386C7.68243 14.3495 7.06753 12.8727 7.063 11.3313V10.9713C7.063 9.42701 7.6759 7.9458 8.7671 6.85298C9.85831 5.76017 11.3386 5.14509 12.883 5.14282H13.7144V6.85709H12.883C11.7933 6.85936 10.749 7.29383 9.97928 8.06516C9.20956 8.83648 8.77727 9.88166 8.77727 10.9713V11.3228C8.77954 12.411 9.21282 13.4539 9.9823 14.2234C10.7518 14.9929 11.7948 15.4262 12.883 15.4284H18.18C19.2668 15.4262 20.3085 14.9941 21.0777 14.2265C21.8469 13.4588 22.2812 12.4181 22.2857 11.3313V10.9713C22.2852 10.0004 21.9404 9.0611 21.3127 8.32037C20.6849 7.57964 19.8149 7.08546 18.8572 6.92566Z" fill="#FFCCFD"/>
-                                    </svg>    
-                                </span>
-                            </h3>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="divider-horizontal"></div>
-                
-                <div class="list-item">
-                    <a href="https://read.cv/disco_lu/writing" target="_blank">
-                        <div class="label-wrap">                
-                            <span class="label">Articles</span>
-                        </div>
-                        <div class="content">
-                            <h3 class="callout">Design systems, components, and industry interrogation
-                                <span class="icon">
-                                    <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5.82852 0H11.117C12.6629 0 14.1454 0.614075 15.2384 1.70713C16.3315 2.80019 16.9456 4.2827 16.9456 5.82852V6.17995C16.9433 7.72428 16.3282 9.20459 15.2354 10.2958C14.1426 11.387 12.6614 11.9999 11.117 11.9999H10.2856V10.2856H11.117C12.2038 10.2834 13.2455 9.85126 14.0147 9.08364C14.7839 8.31602 15.2182 7.27523 15.2227 6.18852V5.82852C15.2227 4.74032 14.7916 3.69643 14.0238 2.92535C13.2559 2.15427 12.2138 1.71881 11.1256 1.71427H5.82852C4.73735 1.71427 3.69088 2.14774 2.91931 2.91931C2.53726 3.30135 2.23421 3.7549 2.02745 4.25407C1.82069 4.75323 1.71427 5.28823 1.71427 5.82852V6.17995C1.71685 7.14942 2.06254 8.08668 2.6901 8.82563C3.31766 9.56458 4.18656 10.0575 5.14281 10.2171V11.9313C3.73335 11.7644 2.43324 11.0889 1.48639 10.0316C0.539535 8.97427 0.0110208 7.60779 0 6.18852V5.82852C0.00226724 4.2834 0.61707 2.80221 1.70964 1.70964C2.80221 0.61707 4.2834 0.00226724 5.82852 0Z" fill="#FFCCFD"/>
-                                        <path d="M18.8572 6.92566V5.21139C20.2696 5.3787 21.572 6.05665 22.5193 7.11756C23.4665 8.17847 23.9931 9.54911 24 10.9713V11.3228C23.9955 12.8649 23.3809 14.3426 22.2904 15.4331C21.1999 16.5236 19.7222 17.1382 18.18 17.1427H12.883C11.3416 17.1405 9.86386 16.5277 8.77315 15.4386C7.68243 14.3495 7.06753 12.8727 7.063 11.3313V10.9713C7.063 9.42701 7.6759 7.9458 8.7671 6.85298C9.85831 5.76017 11.3386 5.14509 12.883 5.14282H13.7144V6.85709H12.883C11.7933 6.85936 10.749 7.29383 9.97928 8.06516C9.20956 8.83648 8.77727 9.88166 8.77727 10.9713V11.3228C8.77954 12.411 9.21282 13.4539 9.9823 14.2234C10.7518 14.9929 11.7948 15.4262 12.883 15.4284H18.18C19.2668 15.4262 20.3085 14.9941 21.0777 14.2265C21.8469 13.4588 22.2812 12.4181 22.2857 11.3313V10.9713C22.2852 10.0004 21.9404 9.0611 21.3127 8.32037C20.6849 7.57964 19.8149 7.08546 18.8572 6.92566Z" fill="#FFCCFD"/>
-                                    </svg>    
-                                </span>                               
-                            </h3>
-                        </div>
-                    </a>
-                </div>		    
-	    <div class="divider-horizontal"></div>
-                <div class="list-item">
-                                   
-                        <div class="label-wrap">
-                            <span class="label">Podcast</span>
-                        </div>
-                        <div class="content">
-				<a href="https://open.spotify.com/show/3xuuekPjZ85D1ova8h5zGH" target="_blank"> 
-                            <h3 class="callout">8px Radio 
-                                <span class="icon">
-                                    <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5.82852 0H11.117C12.6629 0 14.1454 0.614075 15.2384 1.70713C16.3315 2.80019 16.9456 4.2827 16.9456 5.82852V6.17995C16.9433 7.72428 16.3282 9.20459 15.2354 10.2958C14.1426 11.387 12.6614 11.9999 11.117 11.9999H10.2856V10.2856H11.117C12.2038 10.2834 13.2455 9.85126 14.0147 9.08364C14.7839 8.31602 15.2182 7.27523 15.2227 6.18852V5.82852C15.2227 4.74032 14.7916 3.69643 14.0238 2.92535C13.2559 2.15427 12.2138 1.71881 11.1256 1.71427H5.82852C4.73735 1.71427 3.69088 2.14774 2.91931 2.91931C2.53726 3.30135 2.23421 3.7549 2.02745 4.25407C1.82069 4.75323 1.71427 5.28823 1.71427 5.82852V6.17995C1.71685 7.14942 2.06254 8.08668 2.6901 8.82563C3.31766 9.56458 4.18656 10.0575 5.14281 10.2171V11.9313C3.73335 11.7644 2.43324 11.0889 1.48639 10.0316C0.539535 8.97427 0.0110208 7.60779 0 6.18852V5.82852C0.00226724 4.2834 0.61707 2.80221 1.70964 1.70964C2.80221 0.61707 4.2834 0.00226724 5.82852 0Z" fill="#FFCCFD"/>
-                                        <path d="M18.8572 6.92566V5.21139C20.2696 5.3787 21.572 6.05665 22.5193 7.11756C23.4665 8.17847 23.9931 9.54911 24 10.9713V11.3228C23.9955 12.8649 23.3809 14.3426 22.2904 15.4331C21.1999 16.5236 19.7222 17.1382 18.18 17.1427H12.883C11.3416 17.1405 9.86386 16.5277 8.77315 15.4386C7.68243 14.3495 7.06753 12.8727 7.063 11.3313V10.9713C7.063 9.42701 7.6759 7.9458 8.7671 6.85298C9.85831 5.76017 11.3386 5.14509 12.883 5.14282H13.7144V6.85709H12.883C11.7933 6.85936 10.749 7.29383 9.97928 8.06516C9.20956 8.83648 8.77727 9.88166 8.77727 10.9713V11.3228C8.77954 12.411 9.21282 13.4539 9.9823 14.2234C10.7518 14.9929 11.7948 15.4262 12.883 15.4284H18.18C19.2668 15.4262 20.3085 14.9941 21.0777 14.2265C21.8469 13.4588 22.2812 12.4181 22.2857 11.3313V10.9713C22.2852 10.0004 21.9404 9.0611 21.3127 8.32037C20.6849 7.57964 19.8149 7.08546 18.8572 6.92566Z" fill="#FFCCFD"/>
-                                    </svg>    
-                                </span>
-                            </h3>
-				</a>
-                        </div>
-<div class="content">
-	<a href="https://open.spotify.com/show/3xuuekPjZ85D1ova8h5zGH" target="_blank"> 
-                            <h3 class="callout">Design and Whine 
-                                <span class="icon">
-                                    <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5.82852 0H11.117C12.6629 0 14.1454 0.614075 15.2384 1.70713C16.3315 2.80019 16.9456 4.2827 16.9456 5.82852V6.17995C16.9433 7.72428 16.3282 9.20459 15.2354 10.2958C14.1426 11.387 12.6614 11.9999 11.117 11.9999H10.2856V10.2856H11.117C12.2038 10.2834 13.2455 9.85126 14.0147 9.08364C14.7839 8.31602 15.2182 7.27523 15.2227 6.18852V5.82852C15.2227 4.74032 14.7916 3.69643 14.0238 2.92535C13.2559 2.15427 12.2138 1.71881 11.1256 1.71427H5.82852C4.73735 1.71427 3.69088 2.14774 2.91931 2.91931C2.53726 3.30135 2.23421 3.7549 2.02745 4.25407C1.82069 4.75323 1.71427 5.28823 1.71427 5.82852V6.17995C1.71685 7.14942 2.06254 8.08668 2.6901 8.82563C3.31766 9.56458 4.18656 10.0575 5.14281 10.2171V11.9313C3.73335 11.7644 2.43324 11.0889 1.48639 10.0316C0.539535 8.97427 0.0110208 7.60779 0 6.18852V5.82852C0.00226724 4.2834 0.61707 2.80221 1.70964 1.70964C2.80221 0.61707 4.2834 0.00226724 5.82852 0Z" fill="#FFCCFD"/>
-                                        <path d="M18.8572 6.92566V5.21139C20.2696 5.3787 21.572 6.05665 22.5193 7.11756C23.4665 8.17847 23.9931 9.54911 24 10.9713V11.3228C23.9955 12.8649 23.3809 14.3426 22.2904 15.4331C21.1999 16.5236 19.7222 17.1382 18.18 17.1427H12.883C11.3416 17.1405 9.86386 16.5277 8.77315 15.4386C7.68243 14.3495 7.06753 12.8727 7.063 11.3313V10.9713C7.063 9.42701 7.6759 7.9458 8.7671 6.85298C9.85831 5.76017 11.3386 5.14509 12.883 5.14282H13.7144V6.85709H12.883C11.7933 6.85936 10.749 7.29383 9.97928 8.06516C9.20956 8.83648 8.77727 9.88166 8.77727 10.9713V11.3228C8.77954 12.411 9.21282 13.4539 9.9823 14.2234C10.7518 14.9929 11.7948 15.4262 12.883 15.4284H18.18C19.2668 15.4262 20.3085 14.9941 21.0777 14.2265C21.8469 13.4588 22.2812 12.4181 22.2857 11.3313V10.9713C22.2852 10.0004 21.9404 9.0611 21.3127 8.32037C20.6849 7.57964 19.8149 7.08546 18.8572 6.92566Z" fill="#FFCCFD"/>
-                                    </svg>    
-                                </span>
-                            </h3>
-	</a>
-                        </div>			    
-                </div>
-
-                <div class="divider-horizontal"></div>
-
-                <div class="list-item">
-                    <a href="https://milknosugar.substack.com/" target="_blank">
-                        <div class="label-wrap">
-                            <span class="label">Newsletter</span>
-                        </div>
-                        <div class="content">
-                            <h3 class="callout">Milk, No Sugar 
-                                <span class="icon">
-                                    <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5.82852 0H11.117C12.6629 0 14.1454 0.614075 15.2384 1.70713C16.3315 2.80019 16.9456 4.2827 16.9456 5.82852V6.17995C16.9433 7.72428 16.3282 9.20459 15.2354 10.2958C14.1426 11.387 12.6614 11.9999 11.117 11.9999H10.2856V10.2856H11.117C12.2038 10.2834 13.2455 9.85126 14.0147 9.08364C14.7839 8.31602 15.2182 7.27523 15.2227 6.18852V5.82852C15.2227 4.74032 14.7916 3.69643 14.0238 2.92535C13.2559 2.15427 12.2138 1.71881 11.1256 1.71427H5.82852C4.73735 1.71427 3.69088 2.14774 2.91931 2.91931C2.53726 3.30135 2.23421 3.7549 2.02745 4.25407C1.82069 4.75323 1.71427 5.28823 1.71427 5.82852V6.17995C1.71685 7.14942 2.06254 8.08668 2.6901 8.82563C3.31766 9.56458 4.18656 10.0575 5.14281 10.2171V11.9313C3.73335 11.7644 2.43324 11.0889 1.48639 10.0316C0.539535 8.97427 0.0110208 7.60779 0 6.18852V5.82852C0.00226724 4.2834 0.61707 2.80221 1.70964 1.70964C2.80221 0.61707 4.2834 0.00226724 5.82852 0Z" fill="#FFCCFD"/>
-                                        <path d="M18.8572 6.92566V5.21139C20.2696 5.3787 21.572 6.05665 22.5193 7.11756C23.4665 8.17847 23.9931 9.54911 24 10.9713V11.3228C23.9955 12.8649 23.3809 14.3426 22.2904 15.4331C21.1999 16.5236 19.7222 17.1382 18.18 17.1427H12.883C11.3416 17.1405 9.86386 16.5277 8.77315 15.4386C7.68243 14.3495 7.06753 12.8727 7.063 11.3313V10.9713C7.063 9.42701 7.6759 7.9458 8.7671 6.85298C9.85831 5.76017 11.3386 5.14509 12.883 5.14282H13.7144V6.85709H12.883C11.7933 6.85936 10.749 7.29383 9.97928 8.06516C9.20956 8.83648 8.77727 9.88166 8.77727 10.9713V11.3228C8.77954 12.411 9.21282 13.4539 9.9823 14.2234C10.7518 14.9929 11.7948 15.4262 12.883 15.4284H18.18C19.2668 15.4262 20.3085 14.9941 21.0777 14.2265C21.8469 13.4588 22.2812 12.4181 22.2857 11.3313V10.9713C22.2852 10.0004 21.9404 9.0611 21.3127 8.32037C20.6849 7.57964 19.8149 7.08546 18.8572 6.92566Z" fill="#FFCCFD"/>
-                                    </svg>    
-                                </span>
-                            </h3>
-                        </div>
-                    </a>
-                </div>
-            </div>
+    <section class="bio">
+      <p class="bio__text bio__text--short">
+        I'm lucky to be positioned as "the design systems guy" at Figma, where I help teams across the world build better workflows through consultation sessions, starter files, plugins, and widgets for the Figma community. Occasionally, I speak at design conferences around the world.
+      </p>
+      <div class="bio__text--long">
+        <div class="bio__section">
+          <h2 class="bio__section-title">The portfolio</h2>
+          <p>I don't have a portfolio.</p>
+          <p>The reality is that every piece of design work I've created has either been lost to the mercy of company failure, or been overwritten by our thirst for redesign.</p>
         </div>
-    </div>        
+        <div class="bio__section">
+          <h2 class="bio__section-title">Working style</h2>
+          <p>I'm someone who attaches a lot of self worth to my work (a good and a bad thing). If I'm engaged, I will <a href="https://x.com/tranhelen/status/1756787440357134797">do more reps</a>.</p>
+          <p>I've been very lucky to work with some exceptionally high achievers, it makes me happy.</p>
+          <p>I work best in short bursts of extreme efficiency. This might result in 1000 words being written in 30 minutes, or a few dozen screens being pulled together in a few hours.</p>
+          <p>Constraints, particularly time-based, are a forcing function for decisions to be made and good work to be produced.</p>
+          <p>Always move forward.</p>
+        </div>
+        <div class="bio__section">
+          <h2 class="bio__section-title">Figma</h2>
+          <p>I've been working at Figma since June 2020, here are a few notable achievements:</p>
+          <ol>
+            <li>Figma's first non-sales hire in London</li>
+            <li>Sole designer on Simple Design System, a <abbr title="user interface">UI</abbr> kit preloaded into <strong>every Figma account</strong>.<br/><a href="https://www.figma.com/community/file/1380235722331273046/simple-design-system">Figma Community version</a>, <a href="https://github.com/figma/sds">Github repository</a>.</li>
+            <li>Helped launched Variables — Working on the keynote assets and demoing live in front of a friendly audience of 4k+ people</li>
+            <li>Advised FTSE 100 and New York Stock Exchange enterprise customers on design systems, including <em>JP Morgan Chase</em>, <em>Airbus</em>, <em>Adobe</em>, and more than 300 others</li>
+            <li>Hosted 8 hours (overnight) of Figma's 24 hour Config conference</li>
+            <li>Published the official <a href="https://www.figma.com/community/collections/getting-started">best practice guides</a> on structure</li>
+            <li>Represented Figma in Belgium, Croatia, Germany, Ireland, Poland, Spain, Sweden, and Switzerland at design events</li>
+          </ol>
+        </div>
+        <div class="bio__section">
+          <h2 class="bio__section-title">Before Figma</h2>
+          <p>I've worked in a lot of different industries: e-commerce, charity, hospitality, and travel.</p>
+          <p>Notably, I've previously worked <em>mostly</em> as a solo designer, or in product teams smaller than 10 people. This comes with it a requirement to be more than a designer, which I think is a good thing.</p>
+          <p>Cross-departmental collaboration is the best way to reduce silos and improve company culture.</p>
+          <p>A few things I'm proud of:</p>
+          <ol>
+            <li>As lead designer, I helped <a href="https://www.linkedin.com/company/upgradepack/">Upgrade Pack</a> secure a community funding round of £500k+ in ~14 days via <a href="https://www.crowdfundinsider.com/2019/04/146255-travel-upgrade-marketplace-upgrade-pack-soaring-on-seedrs-now-overfunding/">Seedrs.com</a></li>
+            <li>After Facebook restricted our API access, I drove the design of "Pulse", an <a href="https://www.hospitalitynet.org/news/4088962.html">emoji-based rating system and WiFi <abbr title="authentication">auth</abbr></a> product for <a href="https://localmeasure.com">Local Measure</a>, helping the company pivot within 3 months</li>
+            <li>Helped scale the <a href="https://www.ibtimes.co.uk/">IBTimes.co.uk</a> newsletter from 70k to 365k signups within 9 months. Modal popups!</li>
+            <li>Helped <a href="https://slurp.co.uk">Slurp.co.uk</a> win "<a href="https://harpers.co.uk/news/fullstory.php/aid/11730/Merchants__triumph_at_IWC_Awards.html">direct merchant of the year</a>" at an industry awards ceremony</li>
+          </ol>
+        </div>
+      </div>
+      <button class="bio__toggle" id="bio-toggle" aria-label="Toggle bio length">Expand and read the long version</button>
+    </section>
 
+    <section class="work">
+      
+      <div class="work__category">
+        <h3 class="work__category-title">Plugins & widgets</h3>
+        <ul class="work__list">
+          <li class="link-item">
+            <a href="https://www.figma.com/community/plugin/1420068564395680405/copy-selection-colors" class="link-block" target="_blank">
+              <span class="link-block__title">Copy Selection Colors</span>
+              <span class="link-block__meta">Plugin</span>
+            </a>
+          </li>
+          <li class="link-item">
+            <a href="https://www.figma.com/community/plugin/1470777269812001046/css-variables-import-export" class="link-block" target="_blank">
+              <span class="link-block__title">CSS Variables Import Export</span>
+              <span class="link-block__meta">Plugin</span>
+            </a>
+          </li>
+          <li class="link-item">
+            <a href="https://www.figma.com/community/plugin/1507388761724175545/batch-rename-variables" class="link-block" target="_blank">
+              <span class="link-block__title">Batch Rename Variables</span>
+              <span class="link-block__meta">Plugin</span>
+            </a>
+          </li>
+          <li class="link-item">
+            <a href="https://www.figma.com/community/plugin/1507674229202977725/favicon-to-figma" class="link-block" target="_blank">
+              <span class="link-block__title">Favicon to Figma</span>
+              <span class="link-block__meta">Plugin</span>
+            </a>
+          </li>
+          <li class="link-item">
+            <a href="https://www.figma.com/community/plugin/1509934696728283546/import-css-shadows-create-figma-styles" class="link-block" target="_blank">
+              <span class="link-block__title">Import CSS Shadows Create Figma Styles</span>
+              <span class="link-block__meta">Plugin</span>
+            </a>
+          </li>
+          <li class="link-item">
+            <a href="https://www.figma.com/community/widget/1532072013420297079" class="link-block" target="_blank">
+              <span class="link-block__title">Design system component audit and linting</span>
+              <span class="link-block__meta">Widget</span>
+            </a>
+          </li>
+          <li class="link-item">
+            <a href="https://www.figma.com/community/widget/1582789587380074979" class="link-block" target="_blank">
+              <span class="link-block__title">Component to do list</span>
+              <span class="link-block__meta">Widget</span>
+            </a>
+          </li>
+          <li class="link-item">
+            <a href="https://www.figma.com/community/widget/1583446112792638592" class="link-block" target="_blank">
+              <span class="link-block__title">Today's day and date (FigJam)</span>
+              <span class="link-block__meta">Widget</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="work__category">
+        <h3 class="work__category-title">Files</h3>
+        <ul class="work__list">
+          <li class="link-item">
+            <a href="https://www.figma.com/community/collections/getting-started" class="link-block" target="_blank">
+              <span class="link-block__title">Figma best practice guides</span>
+              <span class="link-block__meta">17 files</span>
+            </a>
+          </li>
+          <li class="link-item">
+            <a href="https://www.figma.com/community/file/1380235722331273046/simple-design-system" class="link-block" target="_blank">
+              <span class="link-block__title">Simple Design System</span>
+              <span class="link-block__meta"><abbr title="user interface">UI</abbr> kit</span>
+            </a>
+          </li>
+          <li class="link-item">
+            <a href="https://www.figma.com/community/file/1414738876845632189" class="link-block" target="_blank">
+              <span class="link-block__title">shadcn Figma kit</span>
+              <span class="link-block__meta"><abbr title="user interface">UI</abbr> kit</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
+    <section class="writing">
+      <h2 class="section-title">Writing</h2>
+      <p class="writing__intro">There are a lot more, but life is short.</p>
+      <p class="writing__note">Here's an <a href="https://arc.net/folder/3C8FA0F9-765F-4440-A413-0605FA7C44CB" class="link-inline" target="_blank">Arc sharing folder</a> if you'd like to read later.</p>
+      <ul class="writing__list">
+        <li class="link-item">
+          <a href="https://medium.com/@disco_lu/building-agentic-design-systems-the-future-of-ai-enhanced-design-6ad0470cf1e3" class="link-block" target="_blank">
+            <span class="link-block__title">Building agentic design systems: The future of AI-enhanced design</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://medium.com/@disco_lu/portfolios-prioritise-pixels-over-presentations-c49f0838db1b" class="link-block" target="_blank">
+            <span class="link-block__title">Portfolios: Prioritise pixels over presentations</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://medium.com/@disco_lu/do-we-really-need-icon-bounding-boxes-6dcc83381580" class="link-block" target="_blank">
+            <span class="link-block__title">Do we really need icon bounding boxes?</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://medium.com/@disco_lu/saying-bye-to-4px-spacing-and-hello-to-fibonacci-58477e3ecca3" class="link-block" target="_blank">
+            <span class="link-block__title">Saying bye to 4px spacing and hello to Fibonacci</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://medium.com/@disco_lu/rethinking-atomic-design-f578844efde2" class="link-block" target="_blank">
+            <span class="link-block__title">Rethinking atomic design</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://medium.com/@disco_lu/no-variable-is-an-island-11ec47f48c3b" class="link-block" target="_blank">
+            <span class="link-block__title">No variable is an island</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://medium.com/@disco_lu/a-case-for-primitive-semantic-965c0a004690" class="link-block" target="_blank">
+            <span class="link-block__title">A case for primitive semantic</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://medium.com/@disco_lu/encourage-component-experimentation-in-figma-with-staging-libraries-43e690ebf3e4" class="link-block" target="_blank">
+            <span class="link-block__title">Encourage component experimentation in Figma with staging libraries</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://medium.com/@disco_lu/i-still-dont-know-what-craft-means-235b018f5e24" class="link-block" target="_blank">
+            <span class="link-block__title">I still don't know what craft means</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://www.smashingmagazine.com/2023/12/building-components-consumption-not-complexity-part2/" class="link-block" target="_blank">
+            <span class="link-block__title">Building components: Consumption not complexity, part 2</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://www.smashingmagazine.com/2023/12/building-components-consumption-not-complexity-part1/" class="link-block" target="_blank">
+            <span class="link-block__title">Building components: Consumption not complexity, part 1</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://www.smashingmagazine.com/2022/07/overcoming-imposter-syndrome-developing-guiding-principles/" class="link-block" target="_blank">
+            <span class="link-block__title">Overcoming imposter syndrome by developing your own guiding principles</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://www.smashingmagazine.com/2022/01/ten-tips-aspiring-designer-beginners-part2/" class="link-block" target="_blank">
+            <span class="link-block__title">Ten tips for aspiring designers (beginners), part 2</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://www.smashingmagazine.com/2022/01/ten-tips-aspiring-designer-beginners-part1/" class="link-block" target="_blank">
+            <span class="link-block__title">Ten tips for aspiring designers (beginners), part 1</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="talks">
+      <h2 class="section-title">Talks (non virtual)</h2>
+      <ul class="talks__list">
+        <li class="link-item">
+          <a href="https://events.dentsu.com/designsystems" class="link-block" target="_blank">
+            <span class="link-block__title">3 roundtable videos: Understanding, investing, and implementing design systems</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://webinars.zeroheight.com/videos/d528ddf5-6c6e-4dfd-827f-01f17b1db041" class="link-block" target="_blank">
+            <span class="link-block__title">Converge 2025: Minimum Viable Tokens</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://www.youtube.com/watch?v=3CrBBaJDcuk" class="link-block" target="_blank">
+            <span class="link-block__title">WaysConf Poland: An introduction to variables</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://www.youtube.com/watch?v=M0NU5QFLCl4" class="link-block" target="_blank">
+            <span class="link-block__title">Deep Dive: Variables (Config 2023)</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="work">
+      <div class="work__category">
+        <h3 class="work__category-title">Side projects</h3>
+        <ul class="work__list">
+          <li class="link-item">
+            <a href="https://creators.spotify.com/pod/profile/8px/" class="link-block" target="_blank">
+              <span class="link-block__title">8px Radio</span>
+              <span class="link-block__meta">Podcast</span>
+            </a>
+          </li>
+          <li class="link-item">
+            <a href="https://creators.spotify.com/pod/profile/design-and-whine/" class="link-block" target="_blank">
+              <span class="link-block__title">Design &amp; Whine</span>
+              <span class="link-block__meta">Podcast</span>
+            </a>
+          </li>
+          <li class="link-item">
+            <a href="https://milknosugar.substack.com/" class="link-block" target="_blank">
+              <span class="link-block__title">Milk, No Sugar</span>
+              <span class="link-block__meta">Newsletter</span>
+            </a>
+          </li>
+          <li class="link-item">
+            <a href="https://8pxmagazine.substack.com/" class="link-block" target="_blank">
+              <span class="link-block__title">Clipped Content</span>
+              <span class="link-block__meta">Newsletter</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <ul class="footer__links">
+        <li><a href="https://twitter.com/disco_lu" class="footer__link" target="_blank">Twitter</a></li>
+        <li><a href="https://github.com/louriach" class="footer__link" target="_blank">GitHub</a></li>
+        <li><a href="https://www.figma.com/@disco_lu" class="footer__link" target="_blank">Figma</a></li>
+      </ul>
+    </footer>
+
+    <section class="styling-info">
+      <h1 class="styling-info__title">Website stuff</h1>
+      <p>Font: <a href="https://fonts.google.com/specimen/DM+Mono?query=dm" class="link-inline" target="_blank">DM Mono</a>.</p>
+        <div class="code">
+          <pre><code>:root {
+  --color-primary: #5C3E2A;
+  --color-secondary: rgba(92, 62, 42, 0.7);
+  --color-background: #ffffff;
+  --color-highlighter: #E8D5C4;
+  --color-border: #D4C4B0;
+  --font-size: 13px;
+  --line-height: 1.6;
+  --font-family: 'DM Mono', 'Courier New', monospace;
+}</code></pre>
+        </div>
+        <p class="mode-switcher">Mode: <a href="#" class="mode-switcher__link" data-mode="light">Light</a> • <a href="#" class="mode-switcher__link" data-mode="dark">Dark</a></p>
+        <p class="theme-switcher">Theme: <a href="#" class="theme-switcher__link" data-theme-palette="classic">Classic</a> • <a href="#" class="theme-switcher__link" data-theme-palette="brutal">Brutalist</a> • <a href="#" class="theme-switcher__link" data-theme-palette="random">Randomise</a><span class="theme-switcher__try-again-wrapper"></span></p>
+      </section>
+
+  </div>
+
+  <script>
+    const toggle = document.getElementById('bio-toggle');
+    const shortText = document.querySelector('.bio__text--short');
+    const longText = document.querySelector('.bio__text--long');
+    
+    toggle.addEventListener('click', function() {
+      const isLong = longText.classList.contains('is-visible');
+      
+      if (isLong) {
+        longText.classList.remove('is-visible');
+        toggle.textContent = 'Expand and read the long version';
+      } else {
+        longText.classList.add('is-visible');
+        toggle.textContent = 'Show less';
+      }
+    });
+
+    // Mode switcher
+    const modeLinks = document.querySelectorAll('.mode-switcher__link');
+    const html = document.documentElement;
+    
+    // Check for saved theme preference or default to light
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', currentTheme);
+    updateActiveMode(currentTheme);
+
+    modeLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const mode = this.getAttribute('data-mode');
+        html.setAttribute('data-theme', mode);
+        localStorage.setItem('theme', mode);
+        updateActiveMode(mode);
+        
+        // Update random theme colors if active
+        if (html.getAttribute('data-theme-palette') === 'random') {
+          const savedRandomColors = localStorage.getItem('random-colors');
+          if (savedRandomColors) {
+            const colors = JSON.parse(savedRandomColors);
+            applyRandomTheme(colors);
+          }
+        }
+      });
+    });
+
+    function updateActiveMode(mode) {
+      modeLinks.forEach(link => {
+        if (link.getAttribute('data-mode') === mode) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+
+    // Theme switcher
+    const themeLinks = document.querySelectorAll('.theme-switcher__link');
+    const currentThemePalette = localStorage.getItem('theme-palette') || 'classic';
+    html.setAttribute('data-theme-palette', currentThemePalette);
+    
+    // Update active theme (this will add "try again" if random is selected)
+    updateActiveTheme(currentThemePalette);
+
+    // If random theme was saved, regenerate it
+    if (currentThemePalette === 'random') {
+      const savedRandomColors = localStorage.getItem('random-colors');
+      if (savedRandomColors) {
+        const colors = JSON.parse(savedRandomColors);
+        applyRandomTheme(colors);
+      } else {
+        generateRandomTheme();
+      }
+    }
+
+    themeLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const palette = this.getAttribute('data-theme-palette');
+        
+        if (palette === 'random') {
+          // Always generate a new random theme, even if already active
+          generateRandomTheme();
+          updateActiveTheme(palette);
+        } else {
+          html.setAttribute('data-theme-palette', palette);
+          localStorage.setItem('theme-palette', palette);
+          localStorage.removeItem('random-colors');
+          // Clear inline styles to use CSS variables
+          html.style.removeProperty('--color-primary');
+          html.style.removeProperty('--color-secondary');
+          html.style.removeProperty('--color-background');
+          html.style.removeProperty('--color-highlighter');
+          html.style.removeProperty('--color-border');
+          updateActiveTheme(palette);
+        }
+      });
+    });
+
+    function updateActiveTheme(palette) {
+      const tryAgainWrapper = document.querySelector('.theme-switcher__try-again-wrapper');
+      
+      themeLinks.forEach(link => {
+        if (link.getAttribute('data-theme-palette') === palette) {
+          link.classList.add('active');
+          
+          // Add "try again" link for random theme
+          if (palette === 'random' && tryAgainWrapper) {
+            if (!tryAgainWrapper.querySelector('.theme-switcher__try-again')) {
+              const tryAgain = document.createElement('a');
+              tryAgain.href = '#';
+              tryAgain.className = 'theme-switcher__try-again';
+              tryAgain.textContent = 'try again';
+              tryAgain.addEventListener('click', function(e) {
+                e.preventDefault();
+                generateRandomTheme();
+              });
+              tryAgainWrapper.appendChild(tryAgain);
+            }
+          }
+        } else {
+          link.classList.remove('active');
+        }
+      });
+      
+      // Remove "try again" if not random theme
+      if (palette !== 'random' && tryAgainWrapper) {
+        tryAgainWrapper.innerHTML = '';
+      }
+    }
+
+    function generateRandomTheme() {
+      // Generate a random hue (0-360)
+      const hue = Math.floor(Math.random() * 360);
+      
+      // Generate colors with good contrast
+      const colors = calculateContrastColors(hue);
+      
+      // Apply the colors
+      applyRandomTheme(colors);
+      
+      // Save the theme
+      html.setAttribute('data-theme-palette', 'random');
+      localStorage.setItem('theme-palette', 'random');
+      localStorage.setItem('random-colors', JSON.stringify(colors));
+    }
+
+    function calculateContrastColors(hue) {
+      // For light mode: use the hue with high saturation and medium lightness for primary
+      // Ensure 4.5:1 contrast ratio on white background
+      const primaryLight = `hsl(${hue}, 60%, 25%)`; // Dark enough for good contrast on white
+      const secondaryLight = `hsla(${hue}, 60%, 25%, 0.7)`;
+      const highlighterLight = `hsl(${hue}, 40%, 85%)`; // Light tint for hover
+      const borderLight = `hsl(${hue}, 30%, 75%)`;
+      
+      // For dark mode: use lighter versions
+      const primaryDark = `hsl(${hue}, 40%, 85%)`; // Light enough for good contrast on dark
+      const secondaryDark = `hsla(${hue}, 40%, 85%, 0.7)`;
+      const highlighterDark = `hsl(${hue}, 60%, 25%)`; // Dark tint for hover
+      const borderDark = `hsl(${hue}, 30%, 40%)`;
+      
+      return {
+        light: {
+          primary: primaryLight,
+          secondary: secondaryLight,
+          background: '#ffffff',
+          highlighter: highlighterLight,
+          border: borderLight
+        },
+        dark: {
+          primary: primaryDark,
+          secondary: secondaryDark,
+          background: '#1a1a1a',
+          highlighter: highlighterDark,
+          border: borderDark
+        }
+      };
+    }
+
+    function applyRandomTheme(colors) {
+      const currentMode = html.getAttribute('data-theme') || 'light';
+      const modeColors = currentMode === 'dark' ? colors.dark : colors.light;
+      
+      // Apply colors via CSS custom properties
+      html.style.setProperty('--color-primary', modeColors.primary);
+      html.style.setProperty('--color-secondary', modeColors.secondary);
+      html.style.setProperty('--color-background', modeColors.background);
+      html.style.setProperty('--color-highlighter', modeColors.highlighter);
+      html.style.setProperty('--color-border', modeColors.border);
+    }
+
+  </script>
 
 </body>
+</html>
+
