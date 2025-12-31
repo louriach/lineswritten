@@ -1,0 +1,1071 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Luis Ouriach</title>
+
+  <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/louriach/lineswritten/master/favicon.jpg"/>
+
+  <meta name="description" content="Design systems, Figma plugins, and community work.">
+  <meta name="author" content="Luis Ouriach">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Luis Ouriach" />
+  <meta property="og:description" content="Design systems, Figma plugins, and community work.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/louriach/lineswritten/master/lineswritten-share-og.jpg">
+  <meta property="og:url" content="https://lineswritten.co.uk/2026.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:site_name" content="Luis Ouriach">
+  <meta name="twitter:image:alt" content="Luis Ouriach">
+  <meta name="twitter:site" content="@disco_lu">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --color-primary: #5C3E2A;
+  --color-secondary: rgba(92, 62, 42, 0.7);
+  --color-background: #ffffff;
+  --color-highlighter: #E8D5C4;
+  --color-border: #D4C4B0;
+  --font-size: 13px;
+  --line-height: 1.6;
+  --font-family: 'DM Mono', 'Courier New', monospace;
+}
+
+/* Global dark mode - only applies when no specific theme palette is set */
+[data-theme="dark"]:not([data-theme-palette]) {
+  --color-primary: #E8D5C4;
+  --color-secondary: rgba(232, 213, 196, 0.7);
+  --color-background: #1a1a1a;
+  --color-highlighter: #5C3E2A;
+  --color-border: #3a3a3a;
+}
+
+/* Classic theme (default coffee colors) */
+[data-theme-palette="classic"]:not([data-theme="dark"]) {
+  --color-primary: #5C3E2A;
+  --color-secondary: rgba(92, 62, 42, 0.7);
+  --color-background: #ffffff;
+  --color-highlighter: #E8D5C4;
+  --color-border: #D4C4B0;
+}
+
+[data-theme-palette="classic"][data-theme="dark"] {
+  --color-primary: #E8D5C4;
+  --color-secondary: rgba(232, 213, 196, 0.7);
+  --color-background: #1a1a1a;
+  --color-highlighter: #5C3E2A;
+  --color-border: #3a3a3a;
+}
+
+/* Brutal theme (black and white) */
+[data-theme-palette="brutal"]:not([data-theme="dark"]) {
+  --color-primary: #000000;
+  --color-secondary: rgba(0, 0, 0, 0.7);
+  --color-background: #ffffff;
+  --color-highlighter: #f0f0f0;
+  --color-border: #000000;
+}
+
+[data-theme-palette="brutal"][data-theme="dark"] {
+  --color-primary: #ffffff;
+  --color-secondary: rgba(255, 255, 255, 0.7);
+  --color-background: #000000;
+  --color-highlighter: #333333;
+  --color-border: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font-size);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  min-height: 100vh;
+}
+
+.page {
+  padding: 1.5rem;
+  max-width: 70ch;
+}
+
+.header {
+  margin-bottom: 3rem;
+}
+
+.header__name {
+  font-size: var(--font-size);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.header__tagline {
+  font-size: var(--font-size);
+  color: var(--color-secondary);
+}
+
+.bio,
+.work,
+.writing,
+.talks {
+  margin-bottom: 3rem;
+}
+
+.bio__text {
+  font-size: var(--font-size);
+  margin-bottom: 1rem;
+}
+
+.bio__text:last-child {
+  margin-bottom: 0;
+}
+
+.bio__toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: var(--color-secondary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-secondary);
+  text-underline-offset: 2px;
+  cursor: pointer;
+  font-size: var(--font-size);
+  font-family: inherit;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.bio__toggle:hover {
+  text-decoration-color: currentColor;
+}
+
+.bio__text--long {
+  display: none;
+}
+
+.bio__text--long.is-visible {
+  display: block;
+}
+
+.bio__section {
+  margin-bottom: 1rem;
+}
+
+.bio__section:last-child {
+  margin-bottom: 0;
+}
+
+.bio__section-title {
+  font-size: var(--font-size);
+  font-weight: 500;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.bio__section p {
+  font-size: var(--font-size);
+  margin-bottom: 1rem;
+}
+
+.bio__section p:last-child {
+  margin-bottom: 0;
+}
+
+.bio__section ol {
+  list-style: decimal;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.bio__section ol:last-child {
+  margin-bottom: 0;
+}
+
+.bio__section li {
+  font-size: var(--font-size);
+  margin-bottom: 0.5rem;
+}
+
+.bio__section li:last-child {
+  margin-bottom: 0;
+}
+
+.bio__section a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.2s ease, text-decoration-style 0.2s ease, background-color 0.2s ease;
+}
+
+.bio__section a:hover {
+  text-decoration-style: wavy;
+  background-color: var(--color-highlighter);
+}
+
+.bio__section strong {
+  font-weight: 500;
+}
+
+.bio__section em {
+  font-style: italic;
+}
+
+
+.section-title {
+  font-size: var(--font-size);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  color: var(--color-secondary);
+}
+
+.work__list {
+  list-style: none;
+}
+
+.link-item {
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.link-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 0.5em;
+  height: 0.5em;
+  background-color: var(--color-highlighter);
+  display: block;
+}
+
+.link-block {
+  color: var(--color-primary);
+  text-decoration: none;
+  display: block;
+}
+
+.link-block__title {
+  font-size: var(--font-size);
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.2s ease, text-decoration-style 0.2s ease, background-color 0.2s ease;
+}
+
+.link-block:hover .link-block__title {
+  text-decoration-color: currentColor;
+  text-decoration-style: wavy;
+  background-color: var(--color-highlighter);
+}
+
+.link-block__meta {
+  font-size: var(--font-size);
+  color: var(--color-secondary);
+}
+
+.link-inline {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.2s ease, text-decoration-style 0.2s ease, background-color 0.2s ease;
+}
+
+.link-inline:hover {
+  text-decoration-color: currentColor;
+  text-decoration-style: wavy;
+  background-color: var(--color-highlighter);
+}
+
+
+
+.work__category {
+  margin-bottom: 2rem;
+}
+
+.work__category:last-child {
+  margin-bottom: 0;
+}
+
+.work__category-title {
+  font-size: var(--font-size);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--color-secondary);
+}
+
+.work__list .link-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+
+
+.writing__list {
+  list-style: none;
+}
+
+.writing__intro, .writing__note {
+  font-size: var(--font-size);
+  color: var(--color-primary);
+  line-height: var(--line-height);
+}
+.writing__note {
+  margin-bottom: 1.5rem;
+}
+
+
+.talks__list {
+  list-style: none;
+}
+
+
+
+.footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.footer__links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.footer__link {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-underline-offset: 2px;
+  font-size: var(--font-size);
+  transition: text-decoration-color 0.2s ease;
+}
+
+.footer__link:hover {
+  text-decoration-color: currentColor;
+}
+
+.styling-info {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.styling-info__title {
+  font-size: var(--font-size);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+.styling-info p {
+  font-size: var(--font-size);
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.code {
+  border: 1px solid var(--color-border);
+  color: var(--color-primary);
+  word-wrap: break-word;
+  box-decoration-break: clone;
+  padding: 1rem;
+  margin-top: 1rem;
+  overflow-x: auto;
+}
+
+.code pre {
+  margin: 0;
+}
+
+.code code {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  white-space: pre;
+  display: block;
+}
+
+.mode-switcher {
+  font-size: var(--font-size);
+  color: var(--color-primary);
+  margin-top: 1rem;
+}
+
+.mode-switcher__link {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.2s ease, text-decoration-style 0.2s ease, background-color 0.2s ease;
+}
+
+.mode-switcher__link:hover {
+  text-decoration-color: currentColor;
+  text-decoration-style: wavy;
+  background-color: var(--color-highlighter);
+}
+
+.mode-switcher__link.active {
+  text-decoration: none;
+  cursor: default;
+}
+
+.mode-switcher__link.active:hover {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.theme-switcher {
+  font-size: var(--font-size);
+  color: var(--color-primary);
+  margin-top: 1rem;
+}
+
+.theme-switcher__link {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.2s ease, text-decoration-style 0.2s ease, background-color 0.2s ease;
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+/* Classic theme link color */
+.theme-switcher__link[data-theme-palette="classic"] {
+  color: #5C3E2A;
+  text-decoration-color: #5C3E2A;
+}
+
+[data-theme="dark"] .theme-switcher__link[data-theme-palette="classic"] {
+  color: #E8D5C4;
+  text-decoration-color: #E8D5C4;
+}
+
+/* Brutal theme link color */
+.theme-switcher__link[data-theme-palette="brutal"] {
+  color: #000000;
+  text-decoration-color: #000000;
+}
+
+[data-theme="dark"] .theme-switcher__link[data-theme-palette="brutal"] {
+  color: #ffffff;
+  text-decoration-color: #ffffff;
+}
+
+/* Random theme link color - uses current random color */
+.theme-switcher__link[data-theme-palette="random"] {
+  color: var(--color-primary);
+  text-decoration-color: var(--color-primary);
+}
+
+.theme-switcher__link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.35em;
+  width: 0.5em;
+  height: 0.5em;
+  display: block;
+}
+
+/* Classic theme color preview */
+.theme-switcher__link[data-theme-palette="classic"]::before {
+  background-color: #5C3E2A;
+}
+
+[data-theme="dark"] .theme-switcher__link[data-theme-palette="classic"]::before {
+  background-color: #E8D5C4;
+}
+
+/* Brutal theme color preview */
+.theme-switcher__link[data-theme-palette="brutal"]::before {
+  background-color: #000000;
+}
+
+[data-theme="dark"] .theme-switcher__link[data-theme-palette="brutal"]::before {
+  background-color: #ffffff;
+}
+
+/* Random theme color preview - uses current random color */
+.theme-switcher__link[data-theme-palette="random"]::before {
+  background-color: var(--color-primary);
+}
+
+.theme-switcher__link:hover {
+  text-decoration-color: currentColor;
+  text-decoration-style: wavy;
+}
+
+/* Hover background for each theme */
+.theme-switcher__link[data-theme-palette="classic"]:hover {
+  background-color: #E8D5C4;
+}
+
+[data-theme="dark"] .theme-switcher__link[data-theme-palette="classic"]:hover {
+  background-color: #5C3E2A;
+}
+
+.theme-switcher__link[data-theme-palette="brutal"]:hover {
+  background-color: #f0f0f0;
+}
+
+[data-theme="dark"] .theme-switcher__link[data-theme-palette="brutal"]:hover {
+  background-color: #333333;
+}
+
+.theme-switcher__link[data-theme-palette="random"]:hover {
+  background-color: var(--color-highlighter);
+}
+
+.theme-switcher__link.active {
+  text-decoration: none;
+  cursor: default;
+}
+
+.theme-switcher__link.active:hover {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.theme-switcher__try-again {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.2s ease, text-decoration-style 0.2s ease, background-color 0.2s ease;
+  margin-left: 0.25rem;
+}
+
+.theme-switcher__try-again:hover {
+  text-decoration-color: currentColor;
+  text-decoration-style: wavy;
+  background-color: var(--color-highlighter);
+}
+
+</style>
+
+</head>
+
+<body>
+
+  <div class="page">
+    
+    <header class="header">
+      <h1 class="header__name">Luis Ouriach</h1>
+      <p class="header__tagline">Design systems, Figma plugins, community work, cold wit.</p>
+    </header>
+
+    <section class="bio">
+      <p class="bio__text bio__text--short">
+        I'm lucky to be positioned as "the design systems guy" at Figma, where I help teams across the world build better workflows through consultation sessions, starter files, plugins, and widgets for the Figma community. Occasionally, I speak at design conferences around the world.
+      </p>
+      <div class="bio__text--long">
+        <div class="bio__section">
+          <h2 class="bio__section-title">The portfolio</h2>
+          <p>I don't have a portfolio.</p>
+          <p>The reality is that every piece of design work I've created has either been lost to the mercy of company failure, or been overwritten by our thirst for redesign.</p>
+        </div>
+        <div class="bio__section">
+          <h2 class="bio__section-title">Working style</h2>
+          <p>I'm someone who attaches a lot of self worth to my work (a good and a bad thing). If I'm engaged, I will <a href="https://x.com/tranhelen/status/1756787440357134797">do more reps</a>.</p>
+          <p>I've been very lucky to work with some exceptionally high achievers, it makes me happy.</p>
+          <p>I work best in short bursts of extreme efficiency. This might result in 1000 words being written in 30 minutes, or a few dozen screens being pulled together in a few hours.</p>
+          <p>Constraints, particularly time-based, are a forcing function for decisions to be made and good work to be produced.</p>
+          <p>Always move forward.</p>
+        </div>
+        <div class="bio__section">
+          <h2 class="bio__section-title">Figma</h2>
+          <p>I've been working at Figma since June 2020, here are a few notable achievements:</p>
+          <ol>
+            <li>Figma's first non-sales hire in London</li>
+            <li>Sole designer on Simple Design System, a <abbr title="user interface">UI</abbr> kit preloaded into <strong>every Figma account</strong>.<br/><a href="https://www.figma.com/community/file/1380235722331273046/simple-design-system">Figma Community version</a>, <a href="https://github.com/figma/sds">Github repository</a>.</li>
+            <li>Helped launched Variables — Working on the keynote assets and demoing live in front of a friendly audience of 4k+ people</li>
+            <li>Advised FTSE 100 and New York Stock Exchange enterprise customers on design systems, including <em>JP Morgan Chase</em>, <em>Airbus</em>, <em>Adobe</em>, and more than 300 others</li>
+            <li>Hosted 8 hours (overnight) of Figma's 24 hour Config conference</li>
+            <li>Published the official <a href="https://www.figma.com/community/collections/getting-started">best practice guides</a> on structure</li>
+            <li>Represented Figma in Belgium, Croatia, Germany, Ireland, Poland, Spain, Sweden, and Switzerland at design events</li>
+          </ol>
+        </div>
+        <div class="bio__section">
+          <h2 class="bio__section-title">Before Figma</h2>
+          <p>I've worked in a lot of different industries: e-commerce, charity, hospitality, and travel.</p>
+          <p>Notably, I've previously worked <em>mostly</em> as a solo designer, or in product teams smaller than 10 people. This comes with it a requirement to be more than a designer, which I think is a good thing.</p>
+          <p>Cross-departmental collaboration is the best way to reduce silos and improve company culture.</p>
+          <p>A few things I'm proud of:</p>
+          <ol>
+            <li>As lead designer, I helped <a href="https://www.linkedin.com/company/upgradepack/">Upgrade Pack</a> secure a community funding round of £500k+ in ~14 days via <a href="https://www.crowdfundinsider.com/2019/04/146255-travel-upgrade-marketplace-upgrade-pack-soaring-on-seedrs-now-overfunding/">Seedrs.com</a></li>
+            <li>After Facebook restricted our API access, I drove the design of "Pulse", an <a href="https://www.hospitalitynet.org/news/4088962.html">emoji-based rating system and WiFi <abbr title="authentication">auth</abbr></a> product for <a href="https://localmeasure.com">Local Measure</a>, helping the company pivot within 3 months</li>
+            <li>Helped scale the <a href="https://www.ibtimes.co.uk/">IBTimes.co.uk</a> newsletter from 70k to 365k signups within 9 months. Modal popups!</li>
+            <li>Helped <a href="https://slurp.co.uk">Slurp.co.uk</a> win "<a href="https://harpers.co.uk/news/fullstory.php/aid/11730/Merchants__triumph_at_IWC_Awards.html">direct merchant of the year</a>" at an industry awards ceremony</li>
+          </ol>
+        </div>
+      </div>
+      <button class="bio__toggle" id="bio-toggle" aria-label="Toggle bio length">Expand and read the long version</button>
+    </section>
+
+    <section class="work">
+      
+      <div class="work__category">
+        <h3 class="work__category-title">Plugins & widgets</h3>
+        <ul class="work__list">
+          <li class="link-item">
+            <a href="https://www.figma.com/community/plugin/1420068564395680405/copy-selection-colors" class="link-block" target="_blank">
+              <span class="link-block__title">Copy Selection Colors</span>
+              <span class="link-block__meta">Plugin</span>
+            </a>
+          </li>
+          <li class="link-item">
+            <a href="https://www.figma.com/community/plugin/1470777269812001046/css-variables-import-export" class="link-block" target="_blank">
+              <span class="link-block__title">CSS Variables Import Export</span>
+              <span class="link-block__meta">Plugin</span>
+            </a>
+          </li>
+          <li class="link-item">
+            <a href="https://www.figma.com/community/plugin/1507388761724175545/batch-rename-variables" class="link-block" target="_blank">
+              <span class="link-block__title">Batch Rename Variables</span>
+              <span class="link-block__meta">Plugin</span>
+            </a>
+          </li>
+          <li class="link-item">
+            <a href="https://www.figma.com/community/plugin/1507674229202977725/favicon-to-figma" class="link-block" target="_blank">
+              <span class="link-block__title">Favicon to Figma</span>
+              <span class="link-block__meta">Plugin</span>
+            </a>
+          </li>
+          <li class="link-item">
+            <a href="https://www.figma.com/community/plugin/1509934696728283546/import-css-shadows-create-figma-styles" class="link-block" target="_blank">
+              <span class="link-block__title">Import CSS Shadows Create Figma Styles</span>
+              <span class="link-block__meta">Plugin</span>
+            </a>
+          </li>
+          <li class="link-item">
+            <a href="https://www.figma.com/community/widget/1532072013420297079" class="link-block" target="_blank">
+              <span class="link-block__title">Design system component audit and linting</span>
+              <span class="link-block__meta">Widget</span>
+            </a>
+          </li>
+          <li class="link-item">
+            <a href="https://www.figma.com/community/widget/1582789587380074979" class="link-block" target="_blank">
+              <span class="link-block__title">Component to do list</span>
+              <span class="link-block__meta">Widget</span>
+            </a>
+          </li>
+          <li class="link-item">
+            <a href="https://www.figma.com/community/widget/1583446112792638592" class="link-block" target="_blank">
+              <span class="link-block__title">Today's day and date (FigJam)</span>
+              <span class="link-block__meta">Widget</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="work__category">
+        <h3 class="work__category-title">Files</h3>
+        <ul class="work__list">
+          <li class="link-item">
+            <a href="https://www.figma.com/community/collections/getting-started" class="link-block" target="_blank">
+              <span class="link-block__title">Figma best practice guides</span>
+              <span class="link-block__meta">17 files</span>
+            </a>
+          </li>
+          <li class="link-item">
+            <a href="https://www.figma.com/community/file/1380235722331273046/simple-design-system" class="link-block" target="_blank">
+              <span class="link-block__title">Simple Design System</span>
+              <span class="link-block__meta"><abbr title="user interface">UI</abbr> kit</span>
+            </a>
+          </li>
+          <li class="link-item">
+            <a href="https://www.figma.com/community/file/1414738876845632189" class="link-block" target="_blank">
+              <span class="link-block__title">shadcn Figma kit</span>
+              <span class="link-block__meta"><abbr title="user interface">UI</abbr> kit</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
+    <section class="writing">
+      <h2 class="section-title">Writing</h2>
+      <p class="writing__intro">There are a lot more, but life is short.</p>
+      <p class="writing__note">Here's an <a href="https://arc.net/folder/3C8FA0F9-765F-4440-A413-0605FA7C44CB" class="link-inline" target="_blank">Arc sharing folder</a> if you'd like to read later.</p>
+      <ul class="writing__list">
+        <li class="link-item">
+          <a href="https://medium.com/@disco_lu/building-agentic-design-systems-the-future-of-ai-enhanced-design-6ad0470cf1e3" class="link-block" target="_blank">
+            <span class="link-block__title">Building agentic design systems: The future of AI-enhanced design</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://medium.com/@disco_lu/portfolios-prioritise-pixels-over-presentations-c49f0838db1b" class="link-block" target="_blank">
+            <span class="link-block__title">Portfolios: Prioritise pixels over presentations</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://medium.com/@disco_lu/do-we-really-need-icon-bounding-boxes-6dcc83381580" class="link-block" target="_blank">
+            <span class="link-block__title">Do we really need icon bounding boxes?</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://medium.com/@disco_lu/saying-bye-to-4px-spacing-and-hello-to-fibonacci-58477e3ecca3" class="link-block" target="_blank">
+            <span class="link-block__title">Saying bye to 4px spacing and hello to Fibonacci</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://medium.com/@disco_lu/rethinking-atomic-design-f578844efde2" class="link-block" target="_blank">
+            <span class="link-block__title">Rethinking atomic design</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://medium.com/@disco_lu/no-variable-is-an-island-11ec47f48c3b" class="link-block" target="_blank">
+            <span class="link-block__title">No variable is an island</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://medium.com/@disco_lu/a-case-for-primitive-semantic-965c0a004690" class="link-block" target="_blank">
+            <span class="link-block__title">A case for primitive semantic</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://medium.com/@disco_lu/encourage-component-experimentation-in-figma-with-staging-libraries-43e690ebf3e4" class="link-block" target="_blank">
+            <span class="link-block__title">Encourage component experimentation in Figma with staging libraries</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://medium.com/@disco_lu/i-still-dont-know-what-craft-means-235b018f5e24" class="link-block" target="_blank">
+            <span class="link-block__title">I still don't know what craft means</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://www.smashingmagazine.com/2023/12/building-components-consumption-not-complexity-part2/" class="link-block" target="_blank">
+            <span class="link-block__title">Building components: Consumption not complexity, part 2</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://www.smashingmagazine.com/2023/12/building-components-consumption-not-complexity-part1/" class="link-block" target="_blank">
+            <span class="link-block__title">Building components: Consumption not complexity, part 1</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://www.smashingmagazine.com/2022/07/overcoming-imposter-syndrome-developing-guiding-principles/" class="link-block" target="_blank">
+            <span class="link-block__title">Overcoming imposter syndrome by developing your own guiding principles</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://www.smashingmagazine.com/2022/01/ten-tips-aspiring-designer-beginners-part2/" class="link-block" target="_blank">
+            <span class="link-block__title">Ten tips for aspiring designers (beginners), part 2</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://www.smashingmagazine.com/2022/01/ten-tips-aspiring-designer-beginners-part1/" class="link-block" target="_blank">
+            <span class="link-block__title">Ten tips for aspiring designers (beginners), part 1</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="talks">
+      <h2 class="section-title">Talks (non virtual)</h2>
+      <ul class="talks__list">
+        <li class="link-item">
+          <a href="https://events.dentsu.com/designsystems" class="link-block" target="_blank">
+            <span class="link-block__title">3 roundtable videos: Understanding, investing, and implementing design systems</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://webinars.zeroheight.com/videos/d528ddf5-6c6e-4dfd-827f-01f17b1db041" class="link-block" target="_blank">
+            <span class="link-block__title">Converge 2025: Minimum Viable Tokens</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://www.youtube.com/watch?v=3CrBBaJDcuk" class="link-block" target="_blank">
+            <span class="link-block__title">WaysConf Poland: An introduction to variables</span>
+          </a>
+        </li>
+        <li class="link-item">
+          <a href="https://www.youtube.com/watch?v=M0NU5QFLCl4" class="link-block" target="_blank">
+            <span class="link-block__title">Deep Dive: Variables (Config 2023)</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="work">
+      <div class="work__category">
+        <h3 class="work__category-title">Side projects</h3>
+        <ul class="work__list">
+          <li class="link-item">
+            <a href="https://creators.spotify.com/pod/profile/8px/" class="link-block" target="_blank">
+              <span class="link-block__title">8px Radio</span>
+              <span class="link-block__meta">Podcast</span>
+            </a>
+          </li>
+          <li class="link-item">
+            <a href="https://creators.spotify.com/pod/profile/design-and-whine/" class="link-block" target="_blank">
+              <span class="link-block__title">Design &amp; Whine</span>
+              <span class="link-block__meta">Podcast</span>
+            </a>
+          </li>
+          <li class="link-item">
+            <a href="https://milknosugar.substack.com/" class="link-block" target="_blank">
+              <span class="link-block__title">Milk, No Sugar</span>
+              <span class="link-block__meta">Newsletter</span>
+            </a>
+          </li>
+          <li class="link-item">
+            <a href="https://8pxmagazine.substack.com/" class="link-block" target="_blank">
+              <span class="link-block__title">Clipped Content</span>
+              <span class="link-block__meta">Newsletter</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <ul class="footer__links">
+        <li><a href="https://twitter.com/disco_lu" class="footer__link" target="_blank">Twitter</a></li>
+        <li><a href="https://github.com/louriach" class="footer__link" target="_blank">GitHub</a></li>
+        <li><a href="https://www.figma.com/@disco_lu" class="footer__link" target="_blank">Figma</a></li>
+      </ul>
+    </footer>
+
+    <section class="styling-info">
+      <h1 class="styling-info__title">Website stuff</h1>
+      <p>Font: <a href="https://fonts.google.com/specimen/DM+Mono?query=dm" class="link-inline" target="_blank">DM Mono</a>.</p>
+        <div class="code">
+          <pre><code>:root {
+  --color-primary: #5C3E2A;
+  --color-secondary: rgba(92, 62, 42, 0.7);
+  --color-background: #ffffff;
+  --color-highlighter: #E8D5C4;
+  --color-border: #D4C4B0;
+  --font-size: 13px;
+  --line-height: 1.6;
+  --font-family: 'DM Mono', 'Courier New', monospace;
+}</code></pre>
+        </div>
+        <p class="mode-switcher">Mode: <a href="#" class="mode-switcher__link" data-mode="light">Light</a> • <a href="#" class="mode-switcher__link" data-mode="dark">Dark</a></p>
+        <p class="theme-switcher">Theme: <a href="#" class="theme-switcher__link" data-theme-palette="classic">Classic</a> • <a href="#" class="theme-switcher__link" data-theme-palette="brutal">Brutalist</a> • <a href="#" class="theme-switcher__link" data-theme-palette="random">Randomise</a><span class="theme-switcher__try-again-wrapper"></span></p>
+      </section>
+
+  </div>
+
+  <script>
+    const toggle = document.getElementById('bio-toggle');
+    const shortText = document.querySelector('.bio__text--short');
+    const longText = document.querySelector('.bio__text--long');
+    
+    toggle.addEventListener('click', function() {
+      const isLong = longText.classList.contains('is-visible');
+      
+      if (isLong) {
+        longText.classList.remove('is-visible');
+        toggle.textContent = 'Expand and read the long version';
+      } else {
+        longText.classList.add('is-visible');
+        toggle.textContent = 'Show less';
+      }
+    });
+
+    // Mode switcher
+    const modeLinks = document.querySelectorAll('.mode-switcher__link');
+    const html = document.documentElement;
+    
+    // Check for saved theme preference or default to light
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', currentTheme);
+    updateActiveMode(currentTheme);
+
+    modeLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const mode = this.getAttribute('data-mode');
+        html.setAttribute('data-theme', mode);
+        localStorage.setItem('theme', mode);
+        updateActiveMode(mode);
+        
+        // Update random theme colors if active
+        if (html.getAttribute('data-theme-palette') === 'random') {
+          const savedRandomColors = localStorage.getItem('random-colors');
+          if (savedRandomColors) {
+            const colors = JSON.parse(savedRandomColors);
+            applyRandomTheme(colors);
+          }
+        }
+      });
+    });
+
+    function updateActiveMode(mode) {
+      modeLinks.forEach(link => {
+        if (link.getAttribute('data-mode') === mode) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+
+    // Theme switcher
+    const themeLinks = document.querySelectorAll('.theme-switcher__link');
+    const currentThemePalette = localStorage.getItem('theme-palette') || 'classic';
+    html.setAttribute('data-theme-palette', currentThemePalette);
+    
+    // Update active theme (this will add "try again" if random is selected)
+    updateActiveTheme(currentThemePalette);
+
+    // If random theme was saved, regenerate it
+    if (currentThemePalette === 'random') {
+      const savedRandomColors = localStorage.getItem('random-colors');
+      if (savedRandomColors) {
+        const colors = JSON.parse(savedRandomColors);
+        applyRandomTheme(colors);
+      } else {
+        generateRandomTheme();
+      }
+    }
+
+    themeLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const palette = this.getAttribute('data-theme-palette');
+        
+        if (palette === 'random') {
+          // Always generate a new random theme, even if already active
+          generateRandomTheme();
+          updateActiveTheme(palette);
+        } else {
+          html.setAttribute('data-theme-palette', palette);
+          localStorage.setItem('theme-palette', palette);
+          localStorage.removeItem('random-colors');
+          // Clear inline styles to use CSS variables
+          html.style.removeProperty('--color-primary');
+          html.style.removeProperty('--color-secondary');
+          html.style.removeProperty('--color-background');
+          html.style.removeProperty('--color-highlighter');
+          html.style.removeProperty('--color-border');
+          updateActiveTheme(palette);
+        }
+      });
+    });
+
+    function updateActiveTheme(palette) {
+      const tryAgainWrapper = document.querySelector('.theme-switcher__try-again-wrapper');
+      
+      themeLinks.forEach(link => {
+        if (link.getAttribute('data-theme-palette') === palette) {
+          link.classList.add('active');
+          
+          // Add "try again" link for random theme
+          if (palette === 'random' && tryAgainWrapper) {
+            if (!tryAgainWrapper.querySelector('.theme-switcher__try-again')) {
+              const tryAgain = document.createElement('a');
+              tryAgain.href = '#';
+              tryAgain.className = 'theme-switcher__try-again';
+              tryAgain.textContent = 'try again';
+              tryAgain.addEventListener('click', function(e) {
+                e.preventDefault();
+                generateRandomTheme();
+              });
+              tryAgainWrapper.appendChild(tryAgain);
+            }
+          }
+        } else {
+          link.classList.remove('active');
+        }
+      });
+      
+      // Remove "try again" if not random theme
+      if (palette !== 'random' && tryAgainWrapper) {
+        tryAgainWrapper.innerHTML = '';
+      }
+    }
+
+    function generateRandomTheme() {
+      // Generate a random hue (0-360)
+      const hue = Math.floor(Math.random() * 360);
+      
+      // Generate colors with good contrast
+      const colors = calculateContrastColors(hue);
+      
+      // Apply the colors
+      applyRandomTheme(colors);
+      
+      // Save the theme
+      html.setAttribute('data-theme-palette', 'random');
+      localStorage.setItem('theme-palette', 'random');
+      localStorage.setItem('random-colors', JSON.stringify(colors));
+    }
+
+    function calculateContrastColors(hue) {
+      // For light mode: use the hue with high saturation and medium lightness for primary
+      // Ensure 4.5:1 contrast ratio on white background
+      const primaryLight = `hsl(${hue}, 60%, 25%)`; // Dark enough for good contrast on white
+      const secondaryLight = `hsla(${hue}, 60%, 25%, 0.7)`;
+      const highlighterLight = `hsl(${hue}, 40%, 85%)`; // Light tint for hover
+      const borderLight = `hsl(${hue}, 30%, 75%)`;
+      
+      // For dark mode: use lighter versions
+      const primaryDark = `hsl(${hue}, 40%, 85%)`; // Light enough for good contrast on dark
+      const secondaryDark = `hsla(${hue}, 40%, 85%, 0.7)`;
+      const highlighterDark = `hsl(${hue}, 60%, 25%)`; // Dark tint for hover
+      const borderDark = `hsl(${hue}, 30%, 40%)`;
+      
+      return {
+        light: {
+          primary: primaryLight,
+          secondary: secondaryLight,
+          background: '#ffffff',
+          highlighter: highlighterLight,
+          border: borderLight
+        },
+        dark: {
+          primary: primaryDark,
+          secondary: secondaryDark,
+          background: '#1a1a1a',
+          highlighter: highlighterDark,
+          border: borderDark
+        }
+      };
+    }
+
+    function applyRandomTheme(colors) {
+      const currentMode = html.getAttribute('data-theme') || 'light';
+      const modeColors = currentMode === 'dark' ? colors.dark : colors.light;
+      
+      // Apply colors via CSS custom properties
+      html.style.setProperty('--color-primary', modeColors.primary);
+      html.style.setProperty('--color-secondary', modeColors.secondary);
+      html.style.setProperty('--color-background', modeColors.background);
+      html.style.setProperty('--color-highlighter', modeColors.highlighter);
+      html.style.setProperty('--color-border', modeColors.border);
+    }
+
+  </script>
+
+</body>
+</html>
+

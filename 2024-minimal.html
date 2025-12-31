@@ -84,10 +84,11 @@ body {
     --fg-secondary: rgba(0,0,0, 0.25); 
     --bg: rgba(0,0,0,0.05);
     --card: rgba(255,255,255,0.9);
-    --border: rgba(0,0,0, .1);
-    --border-inverse: rgba(0,0,0, .3);
+    --surface: rgba(0,0,0,0.1);
+    --border: rgba(0,0,0, 0.1);
+    --border-inverse: rgba(0,0,0, 0.3);
     --border-link-width: 1px;
-    --border-link-color: rgba(0,0,0, .3);
+    --border-link-color: rgba(0,0,0, 0.3);
 
     --panel-shadow-inner-blur: 0;
     --panel-shadow-inner: rgba(0,0,0,0);
@@ -110,10 +111,11 @@ body {
     --fg-secondary: rgba(255,255,255, 0.3); 
     --bg: rgba(0,0,0,0.9);
     --card: rgba(0,0,0,0.1);
-    --border: rgba(0,0,0, .4);
-    --border-inverse: rgba(255,255,255, .2);
+    --surface: rgba(255,255,255,0.1);
+    --border: rgba(0,0,0, 0.4);
+    --border-inverse: rgba(255,255,255, 0.2);
     --border-link-width: 2px;
-    --border-link-color: rgba(255,255,255, .3);
+    --border-link-color: rgba(255,255,255, 0.3);
 
     --panel-shadow-inner-blur: 4px;
     --panel-shadow-inner: rgba(255,255,255,0.1);
@@ -363,6 +365,25 @@ input[type=checkbox]:checked + .switch-panel .switch__bottom-outset {
   height: 10px;
 }
 
+/* Code */
+.code {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--fg);
+  word-wrap: break-word;
+  box-decoration-break: clone;
+  padding: 1rem;
+
+}
+pre code {
+  white-space: pre-line;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+  max-width: 100%;
+  min-width: 100px;
+  padding: 0;
+}
+
 </style>
 
 <!-- Google tag (gtag.js) -->
@@ -400,44 +421,126 @@ input[type=checkbox]:checked + .switch-panel .switch__bottom-outset {
         </div>
 
         <div class="panel panel--main">
-        <div>
-            <div class="words">
-              <div class="section">
-                  <h1>The portfolio</h1>
-                  <p>I don't have a portfolio.</p>                
-                  <p>The reality is that every piece of design work I've created has either been lost to the mercy of company failure, or been overwritten by our thirst for redesign.</p>
-              </div>
-              <div class="section">
-                  <h1>Working style</h1>
-                  <p>I'm someone who attaches a lot of self worth to my work, and tend to overachieve. My last 4 performance reviews have been 4 or 5 out of 5.</p>
-                  <p>Working with other high achievers makes me happy.</p>
-                  <p>I work best in short bursts of extreme efficiency. This might result in 1000 words being written in 30 minutes, or a few dozen screens being pulled together in a few hours.</p> 
-              </div>
-              <div class="section">
-                  <h1>Figma</h1>
-                  <p>I've been working at Figma since June 2020, here are a few notable achievements:</p>
+          <div>
+              <div class="words">
+                <div class="section">
+                    <h1>The portfolio</h1>
+                    <p>I don't have a portfolio.</p>                
+                    <p>The reality is that every piece of design work I've created has either been lost to the mercy of company failure, or been overwritten by our thirst for redesign.</p>
+                </div>
+                <div class="section">
+                    <h1>Working style</h1>
+                    <p>I'm someone who attaches a lot of self worth to my work, and tend to overachieve because if I'm engaged, I will <a href="https://x.com/tranhelen/status/1756787440357134797">do more reps</a>. My last 4 performance reviews have been 4 or 5 out of 5.</p>
+                    <p>Working with other high achievers makes me happy.</p>
+                    <p>I work best in short bursts of extreme efficiency. This might result in 1000 words being written in 30 minutes, or a few dozen screens being pulled together in a few hours.</p> 
+                    <p>I don't believe that endless streches of uninterupted time create better work. Constraints, particularly time-based, are a forcing function for decisions to be made. Always move forward.</p>
+                </div>
+                <div class="section">
+                    <h1>Figma</h1>
+                    <p>I've been working at Figma since June 2020, here are a few notable achievements:</p>
+                    <ol class="ol">
+                    <li>Figma's first non-sales hire in London</li>  
+                    <li>Sole designer on Simple Design System, a UI kit preloaded into <strong>every Figma account</strong> &mdash; <a href="https://www.figma.com/community/file/1380235722331273046/simple-design-system">Figma Community version</a>, <a href="https://github.com/figma/sds">Github repository</a>.</li>
+                    <li>Launched Variables &#45; Working on the keynote assets and demoing live in front of a friendly audience of 4k+ people</li>
+                        <li>Advised FTSE 100 and New York Stock Exchange enterprise customers on design systems, including <em>JP Morgan Chase</em>, <em>Airbus</em>, <em>Adobe</em>, and approximately ~300 others (2024)</li>
+                        <li>Hosted 8 hours (overnight) of Figma's 24 hour Config conference</li>
+                        <li>Published the official <a href="https://www.figma.com/best-practices/team-file-organization/">best practice guide</a> on structure</li>
+                        <li>Represented Figma in Belgium, Germany, Ireland, Poland, Spain at design conferences</li>
+                    </ol>
+                </div>
+                <div class="section">
+                  <h1>Before Figma</h1>
+                  <p>I've worked in a lot of different industries: e-commerce, charity, hospitality, and travel.</p>
+                  <p>Notably, I've previous worked <em>mostly</em> as a solo designer, or in product teams smaller than 10 people. This comes with it a requirement to be more than a designer, which I think is a good thing.</p>
+                  <p>Cross-departmental collaboration is the best way to reduce silos and improve company culture.</p>
+                  <p>A few previous things I'm proud of:</p>
                   <ol class="ol">
-                  <li>Figma's first non-sales hire in London</li>  
-                  <li>Sole designer on Simple Design System, a UI kit preloaded into <strong>every Figma account</strong> &mdash; <a href="https://www.figma.com/community/file/1380235722331273046/simple-design-system">Figma Community version</a>, <a href="https://github.com/figma/sds">Github repository</a>.</li>
-                  <li>Launched Variables &#45; Working on the keynote assets and demoing live in front of a friendly audience of 4k+ people</li>
-                      <li>Advised FTSE 100 and New York Stock Exchange enterprise customers on design systems, including <em>JP Morgan Chase</em>, <em>Airbus</em>, <em>Adobe</em>, and approximately ~300 others (2024)</li>
-                      <li>Hosted 8 hours (overnight) of Figma's 24 hour Config conference</li>
-                      <li>Published the official <a href="https://www.figma.com/best-practices/team-file-organization/">best practice guide</a> on structure</li>
-                      <li>Represented Figma in Belgium, Germany, Ireland, Poland, Spain at design conferences</li>
+                    <li>As lead designer, I helped <a href="https://www.linkedin.com/company/upgradepack/">Upgrade Pack</a> secure a commnunity funding round of £500k+ in ~14 days via <a href="https://www.crowdfundinsider.com/2019/04/146255-travel-upgrade-marketplace-upgrade-pack-soaring-on-seedrs-now-overfunding/">Seedrs.com</a>
+                    <li>After Facebook restricted our API access, I drove the design of "Pulse", an <a href="https://www.hospitalitynet.org/news/4088962.html">emoji-based rating system and WiFi <abbr title="authentication">auth</abbr></a> product for <a href="https://localmeasure.com">Local Measure</a>, helping the company pivot within 3 months
+                    <li>Helped scale the <a href="https://www.ibtimes.co.uk/">IBTimes.co.uk</a> newsletter from 70k to 365k within 9 months. Modal popups!</li> 
+                    <li>Helped <a href="https://slurp.co.uk">Slurp.co.uk</a> win "<a href="https://harpers.co.uk/news/fullstory.php/aid/11730/Merchants__triumph_at_IWC_Awards.html">direct merchant of the year</a>" at an industry awards ceremony
                   </ol>
+              </div>              
+              <div class="section">
+                <h1>Website stuff</h1>
+                <p>Font: <a href="https://fonts.google.com/specimen/DM+Mono?query=dm">DM Mono</a>.</p>
+                <p>Body font size: 17px.</p>
+                <p>Tokens</p>
+                <div class="code">
+                  <pre>
+                    <code>
+                      :root {
+                        --font-size-body: 17px;
+                        --font-size-h1: calc(var(--font-size-body) *.8);
+                        --body-font: DM Mono, sans-serif;
+                        --body-line-height: 150%;
+                        --body-letter-spacing: .25px;
+                        --font-small: .8rem;
+                    
+                        --fg: rgba(0,0,0, 0.8);
+                        --fg-secondary: rgba(0,0,0, 0.25); 
+                        --bg: rgba(0,0,0,0.05);
+                        --card: rgba(255,255,255,0.9);
+                        --surface: rgba(0,0,0,0.1);
+                        --border: rgba(0,0,0, 0.1);
+                        --border-inverse: rgba(0,0,0, 0.3);
+                        --border-link-width: 1px;
+                        --border-link-color: rgba(0,0,0, 0.3);
+                    
+                        --panel-shadow-inner-blur: 0;
+                        --panel-shadow-inner: rgba(0,0,0,0);
+                        --panel-shadow-outer-blur: 6px;
+                        --panel-shadow-outer-offset: 4px;
+                        --panel-shadow-outer: rgba(0,0,0,0.05);
+                    
+                        /* Light switch */
+                        --switch: #fff;
+                        --switch-border: #ddd;
+                        --switch-groove: #fff;
+                        --switch-top: #eee;
+                        --switch-top-outset: #fff;
+                        --switch-bottom: #fff;
+                        --switch-bottom-outset: #ccc; 
+                    }
+                    
+                    [data-theme="dark"] {
+                        --fg: rgba(255,255,255, 0.8);
+                        --fg-secondary: rgba(255,255,255, 0.3); 
+                        --bg: rgba(0,0,0,0.9);
+                        --card: rgba(0,0,0,0.1);
+                        --surface: rgba(255,255,255,0.1);
+                        --border: rgba(0,0,0, 0.4);
+                        --border-inverse: rgba(255,255,255, 0.2);
+                        --border-link-width: 2px;
+                        --border-link-color: rgba(255,255,255, 0.3);
+                    
+                        --panel-shadow-inner-blur: 4px;
+                        --panel-shadow-inner: rgba(255,255,255,0.1);
+                    
+                        /* Light switch */
+                        --switch: #eee;
+                        --switch-border: #aaa;
+                        --switch-groove: #fcfcfc;
+                        --switch-top: #aaa;
+                        --switch-top-outset: #fcfcfc;
+                        --switch-bottom: #fcfcfc;
+                        --switch-bottom-outset: #aaa; 
+                    }
+                    </code>
+                  </pre>
+                </div>
               </div>
             </div>
 
-            <p>Icons by Iconoir. Font is...</p>
-            <!--<div>
-              <h1>Footnotes</h1>
-              <p>I can make you fancy buttons though if that's your cup of tea.</p>
-              <img src="https://pbs.twimg.com/media/GGuASEIWoAAHuyH?format=jpg&name=medium" alt="Button designs" width="100%"/>
-              <iframe width="100%" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FUxL2NJhVOhVD250jxyu1g7%2F%25F0%259F%2592%25A1%3Ftype%3Ddesign%26node-id%3D118%253A1255%26mode%3Ddesign%26t%3D3nWYJXlLOckEZQZ7-1" allowfullscreen></iframe>
+              <!--<div>
+                <h1>Footnotes</h1>
+                <p>I can make you fancy buttons though if that's your cup of tea.</p>
+                <img src="https://pbs.twimg.com/media/GGuASEIWoAAHuyH?format=jpg&name=medium" alt="Button designs" width="100%"/>
+                <iframe width="100%" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FUxL2NJhVOhVD250jxyu1g7%2F%25F0%259F%2592%25A1%3Ftype%3Ddesign%26node-id%3D118%253A1255%26mode%3Ddesign%26t%3D3nWYJXlLOckEZQZ7-1" allowfullscreen></iframe>
 
-              <p>Here's an example:</p>
-              <iframe width="100%" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F95OxybZoSU11w2fElWMgNC%2FUser-app%3Ftype%3Ddesign%26node-id%3D3%253A4500%26mode%3Ddesign%26t%3DDWPk7alZ11GjDcNA-1" allowfullscreen></iframe>
-            </div>-->
+                <p>Here's an example:</p>
+                <iframe width="100%" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F95OxybZoSU11w2fElWMgNC%2FUser-app%3Ftype%3Ddesign%26node-id%3D3%253A4500%26mode%3Ddesign%26t%3DDWPk7alZ11GjDcNA-1" allowfullscreen></iframe>
+              </div>-->
           </div>
         </div>
 
