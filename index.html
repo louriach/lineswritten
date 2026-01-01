@@ -28,11 +28,11 @@
 
 <style>
 :root {
-  --color-primary: #5C3E2A;
-  --color-secondary: rgba(92, 62, 42, 0.7);
-  --color-background: #ffffff;
-  --color-highlighter: #E8D5C4;
-  --color-border: #D4C4B0;
+  --color-primary: oklch(0.35 0.05 50);
+  --color-secondary: oklch(0.35 0.05 50 / 0.7);
+  --color-background: oklch(1 0 0);
+  --color-highlighter: oklch(0.87 0.03 50);
+  --color-border: oklch(0.80 0.02 50);
   --font-size: 13px;
   --line-height: 1.6;
   --font-family: 'DM Mono', 'Courier New', monospace;
@@ -40,45 +40,45 @@
 
 /* Global dark mode - only applies when no specific theme palette is set */
 [data-theme="dark"]:not([data-theme-palette]) {
-  --color-primary: #E8D5C4;
-  --color-secondary: rgba(232, 213, 196, 0.7);
-  --color-background: #1a1a1a;
-  --color-highlighter: #5C3E2A;
-  --color-border: #3a3a3a;
+  --color-primary: oklch(0.87 0.03 50);
+  --color-secondary: oklch(0.87 0.03 50 / 0.7);
+  --color-background: oklch(0.11 0 0);
+  --color-highlighter: oklch(0.35 0.05 50);
+  --color-border: oklch(0.25 0 0);
 }
 
 /* Classic theme (default coffee colors) */
 [data-theme-palette="classic"]:not([data-theme="dark"]) {
-  --color-primary: #5C3E2A;
-  --color-secondary: rgba(92, 62, 42, 0.7);
-  --color-background: #FCFBFB;
-  --color-highlighter: #E8D5C4;
-  --color-border: #D4C4B0;
+  --color-primary: oklch(0.35 0.05 50);
+  --color-secondary: oklch(0.35 0.05 50 / 0.7);
+  --color-background: oklch(0.99 0.002 50);
+  --color-highlighter: oklch(0.87 0.03 50);
+  --color-border: oklch(0.80 0.02 50);
 }
 
 [data-theme-palette="classic"][data-theme="dark"] {
-  --color-primary: #E8D5C4;
-  --color-secondary: rgba(232, 213, 196, 0.7);
-  --color-background: #1c1a18;
-  --color-highlighter: #5C3E2A;
-  --color-border: #3a3a3a;
+  --color-primary: oklch(0.87 0.03 50);
+  --color-secondary: oklch(0.87 0.03 50 / 0.7);
+  --color-background: oklch(0.12 0.005 50);
+  --color-highlighter: oklch(0.35 0.05 50);
+  --color-border: oklch(0.25 0 0);
 }
 
 /* Brutal theme (black and white) */
 [data-theme-palette="brutal"]:not([data-theme="dark"]) {
-  --color-primary: #000000;
-  --color-secondary: rgba(0, 0, 0, 0.7);
-  --color-background: #ffffff;
-  --color-highlighter: #f0f0f0;
-  --color-border: #000000;
+  --color-primary: oklch(0 0 0);
+  --color-secondary: oklch(0 0 0 / 0.7);
+  --color-background: oklch(1 0 0);
+  --color-highlighter: oklch(0.95 0 0);
+  --color-border: oklch(0 0 0);
 }
 
 [data-theme-palette="brutal"][data-theme="dark"] {
-  --color-primary: #ffffff;
-  --color-secondary: rgba(255, 255, 255, 0.7);
-  --color-background: #000000;
-  --color-highlighter: #333333;
-  --color-border: #ffffff;
+  --color-primary: oklch(1 0 0);
+  --color-secondary: oklch(1 0 0 / 0.7);
+  --color-background: oklch(0 0 0);
+  --color-highlighter: oklch(0.22 0 0);
+  --color-border: oklch(1 0 0);
 }
 
 * {
@@ -456,24 +456,24 @@ body {
 
 /* Classic theme link color */
 .theme-switcher__link[data-theme-palette="classic"] {
-  color: #5C3E2A;
-  text-decoration-color: #5C3E2A;
+  color: oklch(0.35 0.05 50);
+  text-decoration-color: oklch(0.35 0.05 50);
 }
 
 [data-theme="dark"] .theme-switcher__link[data-theme-palette="classic"] {
-  color: #E8D5C4;
-  text-decoration-color: #E8D5C4;
+  color: oklch(0.87 0.03 50);
+  text-decoration-color: oklch(0.87 0.03 50);
 }
 
 /* Brutal theme link color */
 .theme-switcher__link[data-theme-palette="brutal"] {
-  color: #000000;
-  text-decoration-color: #000000;
+  color: oklch(0 0 0);
+  text-decoration-color: oklch(0 0 0);
 }
 
 [data-theme="dark"] .theme-switcher__link[data-theme-palette="brutal"] {
-  color: #ffffff;
-  text-decoration-color: #ffffff;
+  color: oklch(1 0 0);
+  text-decoration-color: oklch(1 0 0);
 }
 
 /* Random theme link color - uses current random color */
@@ -494,20 +494,20 @@ body {
 
 /* Classic theme color preview */
 .theme-switcher__link[data-theme-palette="classic"]::before {
-  background-color: #5C3E2A;
+  background-color: oklch(0.35 0.05 50);
 }
 
 [data-theme="dark"] .theme-switcher__link[data-theme-palette="classic"]::before {
-  background-color: #E8D5C4;
+  background-color: oklch(0.87 0.03 50);
 }
 
 /* Brutal theme color preview */
 .theme-switcher__link[data-theme-palette="brutal"]::before {
-  background-color: #000000;
+  background-color: oklch(0 0 0);
 }
 
 [data-theme="dark"] .theme-switcher__link[data-theme-palette="brutal"]::before {
-  background-color: #ffffff;
+  background-color: oklch(1 0 0);
 }
 
 /* Random theme color preview - uses current random color */
@@ -522,19 +522,19 @@ body {
 
 /* Hover background for each theme */
 .theme-switcher__link[data-theme-palette="classic"]:hover {
-  background-color: #E8D5C4;
+  background-color: oklch(0.87 0.03 50);
 }
 
 [data-theme="dark"] .theme-switcher__link[data-theme-palette="classic"]:hover {
-  background-color: #5C3E2A;
+  background-color: oklch(0.35 0.05 50);
 }
 
 .theme-switcher__link[data-theme-palette="brutal"]:hover {
-  background-color: #f0f0f0;
+  background-color: oklch(0.95 0 0);
 }
 
 [data-theme="dark"] .theme-switcher__link[data-theme-palette="brutal"]:hover {
-  background-color: #333333;
+  background-color: oklch(0.22 0 0);
 }
 
 .theme-switcher__link[data-theme-palette="random"]:hover {
@@ -868,11 +868,11 @@ body {
       <p>Font: <a href="https://fonts.google.com/specimen/DM+Mono?query=dm" class="link-inline" target="_blank">DM Mono</a>.</p>
         <div class="code">
           <pre><code id="css-vars-code">:root {
-  --color-primary: #5C3E2A;
-  --color-secondary: rgba(92, 62, 42, 0.7);
-  --color-background: #ffffff;
-  --color-highlighter: #E8D5C4;
-  --color-border: #D4C4B0;
+  --color-primary: oklch(0.35 0.05 50);
+  --color-secondary: oklch(0.35 0.05 50 / 0.7);
+  --color-background: oklch(1 0 0);
+  --color-highlighter: oklch(0.87 0.03 50);
+  --color-border: oklch(0.80 0.02 50);
   --font-size: 13px;
   --line-height: 1.6;
   --font-family: 'DM Mono', 'Courier New', monospace;
@@ -1044,20 +1044,20 @@ body {
     }
 
     function calculateContrastColors(hue) {
-      // For light mode: use the hue with high saturation and medium lightness for primary
-      // Ensure 4.5:1 contrast ratio on white background
-      const primaryLight = `hsl(${hue}, 60%, 25%)`; // Dark enough for good contrast on white
-      const secondaryLight = `hsla(${hue}, 60%, 25%, 0.7)`;
-      const highlighterLight = `hsl(${hue}, 40%, 85%)`; // Light tint for hover
-      const borderLight = `hsl(${hue}, 30%, 75%)`;
-      const backgroundLight = `hsl(${hue}, 8%, 99%)`; // Very soft tint of primary color
+      // For light mode: use OKLCH with appropriate lightness and chroma for contrast
+      // Ensure 4.5:1 contrast ratio on light background
+      const primaryLight = `oklch(0.35 0.08 ${hue})`; // Dark enough for good contrast
+      const secondaryLight = `oklch(0.35 0.08 ${hue} / 0.7)`;
+      const highlighterLight = `oklch(0.87 0.03 ${hue})`; // Light tint for hover
+      const borderLight = `oklch(0.75 0.02 ${hue})`;
+      const backgroundLight = `oklch(0.99 0.002 ${hue})`; // Very soft tint of primary color
       
       // For dark mode: use lighter versions
-      const primaryDark = `hsl(${hue}, 40%, 85%)`; // Light enough for good contrast on dark
-      const secondaryDark = `hsla(${hue}, 40%, 85%, 0.7)`;
-      const highlighterDark = `hsl(${hue}, 60%, 25%)`; // Dark tint for hover
-      const borderDark = `hsl(${hue}, 30%, 40%)`;
-      const backgroundDark = `hsl(${hue}, 8%, 11%)`; // Very soft tint of primary color
+      const primaryDark = `oklch(0.87 0.05 ${hue})`; // Light enough for good contrast on dark
+      const secondaryDark = `oklch(0.87 0.05 ${hue} / 0.7)`;
+      const highlighterDark = `oklch(0.35 0.08 ${hue})`; // Dark tint for hover
+      const borderDark = `oklch(0.40 0.02 ${hue})`;
+      const backgroundDark = `oklch(0.11 0.002 ${hue})`; // Very soft tint of primary color
       
       return {
         light: {
