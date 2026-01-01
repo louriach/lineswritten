@@ -867,7 +867,7 @@ body {
       <h1 class="styling-info__title">Website stuff</h1>
       <p>Font: <a href="https://fonts.google.com/specimen/DM+Mono?query=dm" class="link-inline" target="_blank">DM Mono</a>.</p>
         <div class="code">
-          <pre><code>:root {
+          <pre><code id="css-vars-code">:root {
   --color-primary: #5C3E2A;
   --color-secondary: rgba(92, 62, 42, 0.7);
   --color-background: #ffffff;
@@ -926,6 +926,11 @@ body {
             applyRandomTheme(colors);
           }
         }
+        
+        // Update code block
+        setTimeout(() => {
+          updateCodeBlock();
+        }, 0);
       });
     });
 
@@ -978,6 +983,11 @@ body {
           html.style.removeProperty('--color-highlighter');
           html.style.removeProperty('--color-border');
           updateActiveTheme(palette);
+          
+          // Update code block
+          setTimeout(() => {
+            updateCodeBlock();
+          }, 0);
         }
       });
     });
@@ -999,6 +1009,9 @@ body {
               tryAgain.addEventListener('click', function(e) {
                 e.preventDefault();
                 generateRandomTheme();
+                setTimeout(() => {
+                  updateCodeBlock();
+                }, 0);
               });
               tryAgainWrapper.appendChild(tryAgain);
             }
@@ -1072,7 +1085,45 @@ body {
       html.style.setProperty('--color-background', modeColors.background);
       html.style.setProperty('--color-highlighter', modeColors.highlighter);
       html.style.setProperty('--color-border', modeColors.border);
+      
+      // Update code block
+      updateCodeBlock();
     }
+
+    function updateCodeBlock() {
+      const codeElement = document.getElementById('css-vars-code');
+      if (!codeElement) return;
+      
+      // Get computed styles from root
+      const rootStyles = getComputedStyle(document.documentElement);
+      const primary = rootStyles.getPropertyValue('--color-primary').trim();
+      const secondary = rootStyles.getPropertyValue('--color-secondary').trim();
+      const background = rootStyles.getPropertyValue('--color-background').trim();
+      const highlighter = rootStyles.getPropertyValue('--color-highlighter').trim();
+      const border = rootStyles.getPropertyValue('--color-border').trim();
+      const fontSize = rootStyles.getPropertyValue('--font-size').trim();
+      const lineHeight = rootStyles.getPropertyValue('--line-height').trim();
+      const fontFamily = rootStyles.getPropertyValue('--font-family').trim();
+      
+      // Format the code block
+      const codeContent = `:root {
+  --color-primary: ${primary};
+  --color-secondary: ${secondary};
+  --color-background: ${background};
+  --color-highlighter: ${highlighter};
+  --color-border: ${border};
+  --font-size: ${fontSize};
+  --line-height: ${lineHeight};
+  --font-family: ${fontFamily};
+}`;
+      
+      codeElement.textContent = codeContent;
+    }
+
+    // Update code block on initial load
+    setTimeout(() => {
+      updateCodeBlock();
+    }, 0);
 
   </script>
 
