@@ -1050,25 +1050,27 @@ body {
       const secondaryLight = `hsla(${hue}, 60%, 25%, 0.7)`;
       const highlighterLight = `hsl(${hue}, 40%, 85%)`; // Light tint for hover
       const borderLight = `hsl(${hue}, 30%, 75%)`;
+      const backgroundLight = `hsl(${hue}, 8%, 99%)`; // Very soft tint of primary color
       
       // For dark mode: use lighter versions
       const primaryDark = `hsl(${hue}, 40%, 85%)`; // Light enough for good contrast on dark
       const secondaryDark = `hsla(${hue}, 40%, 85%, 0.7)`;
       const highlighterDark = `hsl(${hue}, 60%, 25%)`; // Dark tint for hover
       const borderDark = `hsl(${hue}, 30%, 40%)`;
+      const backgroundDark = `hsl(${hue}, 8%, 11%)`; // Very soft tint of primary color
       
       return {
         light: {
           primary: primaryLight,
           secondary: secondaryLight,
-          background: '#ffffff',
+          background: backgroundLight,
           highlighter: highlighterLight,
           border: borderLight
         },
         dark: {
           primary: primaryDark,
           secondary: secondaryDark,
-          background: '#1a1a1a',
+          background: backgroundDark,
           highlighter: highlighterDark,
           border: borderDark
         }
