@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Figma Getting Started Resources — Luis Ouriach</title>
+
+  <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/louriach/lineswritten/master/favicon.jpg"/>
+
+  <meta name="description" content="Essential files, plugins, and widgets to help you build and maintain your design system.">
+  <meta name="author" content="Luis Ouriach">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Figma Getting Started Resources — Luis Ouriach" />
+  <meta property="og:description" content="Essential files, plugins, and widgets to help you build and maintain your design system.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/louriach/lineswritten/master/lineswritten-share-og.jpg">
+  <meta property="og:url" content="https://lineswritten.co.uk/getting-started">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:site_name" content="Luis Ouriach">
+  <meta name="twitter:image:alt" content="Luis Ouriach">
+  <meta name="twitter:site" content="@disco_lu">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --color-primary: oklch(0.35 0.05 50);
+  --color-secondary: oklch(0.35 0.05 50 / 0.7);
+  --color-background: oklch(1 0 0);
+  --color-highlighter: oklch(0.87 0.03 50);
+  --color-border: oklch(0.80 0.02 50);
+  --font-size: 13px;
+  --line-height: 1.6;
+  --font-family: 'DM Mono', 'Courier New', monospace;
+}
+
+[data-theme="dark"]:not([data-theme-palette]) {
+  --color-primary: oklch(0.87 0.03 50);
+  --color-secondary: oklch(0.87 0.03 50 / 0.7);
+  --color-background: oklch(0.11 0 0);
+  --color-highlighter: oklch(0.35 0.05 50);
+  --color-border: oklch(0.25 0 0);
+}
+
+[data-theme-palette="classic"]:not([data-theme="dark"]) {
+  --color-primary: oklch(0.35 0.05 50);
+  --color-secondary: oklch(0.35 0.05 50 / 0.7);
+  --color-background: oklch(0.99 0.002 50);
+  --color-highlighter: oklch(0.87 0.03 50);
+  --color-border: oklch(0.80 0.02 50);
+}
+
+[data-theme-palette="classic"][data-theme="dark"] {
+  --color-primary: oklch(0.87 0.03 50);
+  --color-secondary: oklch(0.87 0.03 50 / 0.7);
+  --color-background: oklch(0.12 0.005 50);
+  --color-highlighter: oklch(0.35 0.05 50);
+  --color-border: oklch(0.25 0 0);
+}
+
+[data-theme-palette="brutal"]:not([data-theme="dark"]) {
+  --color-primary: oklch(0 0 0);
+  --color-secondary: oklch(0 0 0 / 0.7);
+  --color-background: oklch(1 0 0);
+  --color-highlighter: oklch(0.95 0 0);
+  --color-border: oklch(0 0 0);
+}
+
+[data-theme-palette="brutal"][data-theme="dark"] {
+  --color-primary: oklch(1 0 0);
+  --color-secondary: oklch(1 0 0 / 0.7);
+  --color-background: oklch(0 0 0);
+  --color-highlighter: oklch(0.22 0 0);
+  --color-border: oklch(1 0 0);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font-size);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  min-height: 100vh;
+}
+
+.page {
+  padding: 1.5rem;
+  max-width: 70ch;
+}
+
+.header {
+  margin-bottom: 3rem;
+}
+
+.header__back {
+  color: var(--color-secondary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-secondary);
+  text-underline-offset: 2px;
+  font-size: var(--font-size);
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  transition: text-decoration-color 0.2s ease, text-decoration-style 0.2s ease, background-color 0.2s ease;
+}
+
+.header__back:hover {
+  color: var(--color-primary);
+  text-decoration-color: var(--color-primary);
+  text-decoration-style: wavy;
+  background-color: var(--color-highlighter);
+}
+
+.header__title {
+  font-size: var(--font-size);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.header__subtitle {
+  font-size: var(--font-size);
+  color: var(--color-secondary);
+}
+
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: none;
+  border: 1px solid var(--color-border);
+  color: var(--color-secondary);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.filter-btn:hover {
+  background-color: var(--color-highlighter);
+  color: var(--color-primary);
+}
+
+.filter-btn.is-active {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  border-color: var(--color-primary);
+}
+
+.resources {
+  list-style: none;
+}
+
+.resource-item {
+  margin-bottom: 0.75rem;
+}
+
+.resource-item[hidden] {
+  display: none;
+}
+
+.resource-link {
+  display: block;
+  color: var(--color-primary);
+  text-decoration: none;
+  border: 1px solid var(--color-border);
+  padding: 0.875rem 1rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.resource-link:hover {
+  background-color: var(--color-highlighter);
+}
+
+.resource-link__header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.resource-link__title {
+  font-size: var(--font-size);
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-underline-offset: 2px;
+  transition: text-decoration-style 0.2s ease;
+}
+
+.resource-link:hover .resource-link__title {
+  text-decoration-style: wavy;
+}
+
+.resource-link__type {
+  font-size: var(--font-size);
+  color: var(--color-secondary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.resource-link__desc {
+  font-size: var(--font-size);
+  color: var(--color-secondary);
+}
+
+.footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.footer__links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.footer__link {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-underline-offset: 2px;
+  font-size: var(--font-size);
+  transition: text-decoration-color 0.2s ease;
+}
+
+.footer__link:hover {
+  text-decoration-color: currentColor;
+}
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1GEGE3M5CC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1GEGE3M5CC');
+</script>
+
+</head>
+
+<body>
+
+  <div class="page">
+
+    <header class="header">
+      <a href="/" class="header__back">Back home</a>
+      <h1 class="header__title">Figma Getting Started Resources</h1>
+      <p class="header__subtitle">Essential files, plugins, and widgets to help you build and maintain your design system</p>
+    </header>
+
+    <div class="filters" role="group" aria-label="Filter resources">
+      <button class="filter-btn is-active" data-filter="all">All (22)</button>
+      <button class="filter-btn" data-filter="file">Files (17)</button>
+      <button class="filter-btn" data-filter="plugin">Plugins (3)</button>
+      <button class="filter-btn" data-filter="widget">Widgets (2)</button>
+    </div>
+
+    <ul class="resources" id="resources-list">
+
+      <li class="resource-item" data-type="plugin">
+        <a href="https://www.figma.com/community/plugin/1507388761724175545/batch-rename-variables?q_id=4b790ee0-4f9c-402c-9dd7-de4391ded6d8" class="resource-link" target="_blank" rel="noopener noreferrer">
+          <div class="resource-link__header">
+            <span class="resource-link__title">Batch Rename Variables</span>
+            <span class="resource-link__type">Plugin</span>
+          </div>
+          <p class="resource-link__desc">Quickly rename multiple variables at once to keep your design system organized</p>
+        </a>
+      </li>
+
+      <li class="resource-item" data-type="plugin">
+        <a href="https://www.figma.com/community/plugin/1618411983962204133/variable-code-syntax?q_id=4b790ee0-4f9c-402c-9dd7-de4391ded6d8" class="resource-link" target="_blank" rel="noopener noreferrer">
+          <div class="resource-link__header">
+            <span class="resource-link__title">Variable Code Syntax</span>
+            <span class="resource-link__type">Plugin</span>
+          </div>
+          <p class="resource-link__desc">Generate code-ready syntax for your variables to streamline developer handoff</p>
+        </a>
+      </li>
+
+      <li class="resource-item" data-type="plugin">
+        <a href="https://www.figma.com/community/plugin/1634946014443748648/variable-sync-to-repo?q_id=4b790ee0-4f9c-402c-9dd7-de4391ded6d8" class="resource-link" target="_blank" rel="noopener noreferrer">
+          <div class="resource-link__header">
+            <span class="resource-link__title">Variable Sync to Repo</span>
+            <span class="resource-link__type">Plugin</span>
+          </div>
+          <p class="resource-link__desc">Automatically sync your Figma variables to your code repository</p>
+        </a>
+      </li>
+
+      <li class="resource-item" data-type="widget">
+        <a href="https://www.figma.com/community/widget/1532072013420297079/design-system-component-audit-and-linting?q_id=a4be2ca7-81d6-4a3a-ac06-1dcd29ce1a3c" class="resource-link" target="_blank" rel="noopener noreferrer">
+          <div class="resource-link__header">
+            <span class="resource-link__title">Design System Linter</span>
+            <span class="resource-link__type">Widget</span>
+          </div>
+          <p class="resource-link__desc">Audit and lint your components to ensure consistency across your design system</p>
+        </a>
+      </li>
+
+      <li class="resource-item" data-type="widget">
+        <a href="https://www.figma.com/community/widget/1582789587380074979/component-to-do-list?q_id=a4be2ca7-81d6-4a3a-ac06-1dcd29ce1a3c" class="resource-link" target="_blank" rel="noopener noreferrer">
+          <div class="resource-link__header">
+            <span class="resource-link__title">Component To-Do List</span>
+            <span class="resource-link__type">Widget</span>
+          </div>
+          <p class="resource-link__desc">Track tasks and improvements needed for your component library</p>
+        </a>
+      </li>
+
+      <li class="resource-item" data-type="file">
+        <a href="https://www.figma.com/community/file/1345404188541317938/guide-component-naming-manifesto" class="resource-link" target="_blank" rel="noopener noreferrer">
+          <div class="resource-link__header">
+            <span class="resource-link__title">Component Naming Manifesto</span>
+            <span class="resource-link__type">File</span>
+          </div>
+          <p class="resource-link__desc">Best practices and guidelines for naming components in your design system</p>
+        </a>
+      </li>
+
+      <li class="resource-item" data-type="file">
+        <a href="https://www.figma.com/community/file/1262724388830684966/guide-variable-mapping-and-design-system-structure" class="resource-link" target="_blank" rel="noopener noreferrer">
+          <div class="resource-link__header">
+            <span class="resource-link__title">Variable Mapping and Design System Structure</span>
+            <span class="resource-link__type">File</span>
+          </div>
+          <p class="resource-link__desc">Learn how to structure and map variables effectively in your design system</p>
+        </a>
+      </li>
+
+      <li class="resource-item" data-type="file">
+        <a href="https://www.figma.com/community/file/1256624568359563073/variable-starter-kit" class="resource-link" target="_blank" rel="noopener noreferrer">
+          <div class="resource-link__header">
+            <span class="resource-link__title">Variable Starter Kit</span>
+            <span class="resource-link__type">File</span>
+          </div>
+          <p class="resource-link__desc">Get started with variables using this comprehensive starter template</p>
+        </a>
+      </li>
+
+      <li class="resource-item" data-type="file">
+        <a href="https://www.figma.com/community/file/1266014592554475924/variables-migration-flow-charts" class="resource-link" target="_blank" rel="noopener noreferrer">
+          <div class="resource-link__header">
+            <span class="resource-link__title">Variables Migration Flow Charts</span>
+            <span class="resource-link__type">File</span>
+          </div>
+          <p class="resource-link__desc">Visual flowcharts to guide your migration to Figma variables</p>
+        </a>
+      </li>
+
+      <li class="resource-item" data-type="file">
+        <a href="https://www.figma.com/community/file/985175703891677674/design-system-structure-for-teams-projects-and-files" class="resource-link" target="_blank" rel="noopener noreferrer">
+          <div class="resource-link__header">
+            <span class="resource-link__title">Design System Structure for Teams, Projects and Files</span>
+            <span class="resource-link__type">File</span>
+          </div>
+          <p class="resource-link__desc">Organize your design system across teams, projects, and files effectively</p>
+        </a>
+      </li>
+
+      <li class="resource-item" data-type="file">
+        <a href="https://www.figma.com/community/file/987389220902666331/guides-agency-design-system-and-team-structure" class="resource-link" target="_blank" rel="noopener noreferrer">
+          <div class="resource-link__header">
+            <span class="resource-link__title">Agency Design System and Team Structure</span>
+            <span class="resource-link__type">File</span>
+          </div>
+          <p class="resource-link__desc">Structure your design system and team for agency workflows</p>
+        </a>
+      </li>
+
+      <li class="resource-item" data-type="file">
+        <a href="https://www.figma.com/community/file/987389977884676188/guides-team-structure-recommendations" class="resource-link" target="_blank" rel="noopener noreferrer">
+          <div class="resource-link__header">
+            <span class="resource-link__title">Team Structure Recommendations</span>
+            <span class="resource-link__type">File</span>
+          </div>
+          <p class="resource-link__desc">Recommended approaches for organizing your design team in Figma</p>
+        </a>
+      </li>
+
+      <li class="resource-item" data-type="file">
+        <a href="https://www.figma.com/community/file/989121626983620108/new-component-decision-tree" class="resource-link" target="_blank" rel="noopener noreferrer">
+          <div class="resource-link__header">
+            <span class="resource-link__title">Component Decision Tree</span>
+            <span class="resource-link__type">File</span>
+          </div>
+          <p class="resource-link__desc">Decision framework to help you determine when to create new components</p>
+        </a>
+      </li>
+
+      <li class="resource-item" data-type="file">
+        <a href="https://www.figma.com/community/file/1004041613962064465/file-structure-best-practice-guide" class="resource-link" target="_blank" rel="noopener noreferrer">
+          <div class="resource-link__header">
+            <span class="resource-link__title">File Structure Best Practice Guide</span>
+            <span class="resource-link__type">File</span>
+          </div>
+          <p class="resource-link__desc">Best practices for organizing and structuring your Figma files</p>
+        </a>
+      </li>
+
+      <li class="resource-item" data-type="file">
+        <a href="https://www.figma.com/community/file/1005425264130901065/figma-team-and-project-builder" class="resource-link" target="_blank" rel="noopener noreferrer">
+          <div class="resource-link__header">
+            <span class="resource-link__title">Figma Team and Project Builder</span>
+            <span class="resource-link__type">File</span>
+          </div>
+          <p class="resource-link__desc">Template to help you build and organize your teams and projects</p>
+        </a>
+      </li>
+
+      <li class="resource-item" data-type="file">
+        <a href="https://www.figma.com/community/file/1009428516661775503/files-projects-teams-structure-using-branches" class="resource-link" target="_blank" rel="noopener noreferrer">
+          <div class="resource-link__header">
+            <span class="resource-link__title">Files, Projects, Teams Structure Using Branches</span>
+            <span class="resource-link__type">File</span>
+          </div>
+          <p class="resource-link__desc">Learn how to use branches to organize your work across files, projects, and teams</p>
+        </a>
+      </li>
+
+      <li class="resource-item" data-type="file">
+        <a href="https://www.figma.com/community/file/1009497035834925267/project-and-file-structure-shipped-and-feature-work" class="resource-link" target="_blank" rel="noopener noreferrer">
+          <div class="resource-link__header">
+            <span class="resource-link__title">Project and File Structure: Shipped and Feature Work</span>
+            <span class="resource-link__type">File</span>
+          </div>
+          <p class="resource-link__desc">Separate and organize shipped features from work in progress</p>
+        </a>
+      </li>
+
+      <li class="resource-item" data-type="file">
+        <a href="https://www.figma.com/community/file/1010170827859910160/project-and-file-structure-aligning-to-the-design-process" class="resource-link" target="_blank" rel="noopener noreferrer">
+          <div class="resource-link__header">
+            <span class="resource-link__title">Project and File Structure: Aligning to Design Process</span>
+            <span class="resource-link__type">File</span>
+          </div>
+          <p class="resource-link__desc">Align your file structure to your design process and workflow</p>
+        </a>
+      </li>
+
+      <li class="resource-item" data-type="file">
+        <a href="https://www.figma.com/community/file/1012713487002493142/multi-organisation-design-systems" class="resource-link" target="_blank" rel="noopener noreferrer">
+          <div class="resource-link__header">
+            <span class="resource-link__title">Multi-Organisation Design Systems</span>
+            <span class="resource-link__type">File</span>
+          </div>
+          <p class="resource-link__desc">Strategies for managing design systems across multiple organizations</p>
+        </a>
+      </li>
+
+      <li class="resource-item" data-type="file">
+        <a href="https://www.figma.com/community/file/1043509291175170111/team-project-file-branching-file-naming-examples" class="resource-link" target="_blank" rel="noopener noreferrer">
+          <div class="resource-link__header">
+            <span class="resource-link__title">Team, Project, File, Branching &amp; Naming Examples</span>
+            <span class="resource-link__type">File</span>
+          </div>
+          <p class="resource-link__desc">Real-world examples of naming conventions and branching strategies</p>
+        </a>
+      </li>
+
+      <li class="resource-item" data-type="file">
+        <a href="https://www.figma.com/community/file/1064955840810792842/guide-layer-naming-conventions" class="resource-link" target="_blank" rel="noopener noreferrer">
+          <div class="resource-link__header">
+            <span class="resource-link__title">Layer Naming Conventions</span>
+            <span class="resource-link__type">File</span>
+          </div>
+          <p class="resource-link__desc">Establish consistent naming conventions for layers in your designs</p>
+        </a>
+      </li>
+
+      <li class="resource-item" data-type="file">
+        <a href="https://www.figma.com/community/file/1090653399425399141/guide-enterprise-workspace-structure" class="resource-link" target="_blank" rel="noopener noreferrer">
+          <div class="resource-link__header">
+            <span class="resource-link__title">Enterprise Workspace Structure</span>
+            <span class="resource-link__type">File</span>
+          </div>
+          <p class="resource-link__desc">Structure your Figma workspace for enterprise-scale organizations</p>
+        </a>
+      </li>
+
+    </ul>
+
+    <footer class="footer">
+      <ul class="footer__links">
+        <li><a href="/" class="footer__link">Home</a></li>
+        <li><a href="https://medium.com/@disco_lu" class="footer__link" target="_blank" rel="noopener noreferrer">Medium</a></li>
+        <li><a href="https://twitter.com/disco_lu" class="footer__link" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+      </ul>
+    </footer>
+
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.resource-item');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+
+        buttons.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+
+        items.forEach(item => {
+          if (filter === 'all' || item.dataset.type === filter) {
+            item.hidden = false;
+          } else {
+            item.hidden = true;
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
